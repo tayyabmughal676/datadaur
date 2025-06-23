@@ -14,3 +14,6 @@ export const Terms = () => {
         </div>
     );
 };
+
+
+//hello

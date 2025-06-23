@@ -90,6 +90,7 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
 
     const marqueeRepetitions = 8;
 
+//hello
     return (
         <section className={cn('bg-white py-16', className)}>
             {/* This container is for centered content */}

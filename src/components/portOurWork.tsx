@@ -92,6 +92,7 @@ interface WorkCardProps {
     work: WorkItem;
 }
 
+//hello
 const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
     return (
         <div className="group mb-4">

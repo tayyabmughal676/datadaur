@@ -1,5 +1,6 @@
 import React from 'react';
 
+//hello
 const termsContent: React.FC = () => {
     return (
         <div className="bg-white text-black">

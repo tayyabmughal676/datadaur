@@ -52,5 +52,6 @@ const IndexHero = () => {
         </section>
     );
 };
+//hello
 
 export default IndexHero;
