@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '../lib/utils';
 
+//hello
 interface PartnerCardProps {
     title: string;
     description: string;

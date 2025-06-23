@@ -181,6 +181,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         />
                     </div>
 
+
                     {/* Sixth Row: Maintenance Package */}
                     {/* Image - Left Column */}
                     <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
@@ -211,3 +212,5 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 };
 
 export default ServiceWeOffer;
+
+//hello

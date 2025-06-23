@@ -14,3 +14,6 @@ export const Privacy = () => {
         </div>
     );
 };
+
+
+//hello
