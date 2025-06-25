@@ -5,4 +5,6 @@ export function cn(...inputs:any[]) {
     return twMerge(clsx(...inputs));
 }
 
-//hello
+export const setPageTitle = (pageTitle: string) => {
+    document.title = `${pageTitle} | DataDaur`;
+};

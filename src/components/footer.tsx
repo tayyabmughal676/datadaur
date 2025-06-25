@@ -28,10 +28,10 @@ const FooterCompo: React.FC = () => {
     const socialLinks: SocialLink[] = [
         { href: '#', icon: instagramIcon, label: 'Instagram' },
         { href: '#', icon: facebookIcon, label: 'Facebook' },
-        { href: '#', icon: twitterIcon, label: 'Twitter' },
-        { href: '#', icon: linkedinIcon, label: 'LinkedIn' },
+        { href: 'https://x.com/DataDaur/', icon: twitterIcon, label: 'Twitter' },
+        { href: 'https://www.linkedin.com/in/mrtayyabmughal/', icon: linkedinIcon, label: 'LinkedIn' },
         { href: '#', icon: youtubeIcon, label: 'YouTube' },
-        { href: '#', icon: butterflyIcon, label: 'Additional Social' },
+        { href: 'https://bsky.app/profile/datadaur.bsky.social', icon: butterflyIcon, label: 'Bsky' },
     ];
 
     const footerSections: FooterSection[] = [
@@ -44,6 +44,7 @@ const FooterCompo: React.FC = () => {
                 { href: '/about', label: 'About' },
                 { href: '#', label: 'Case-Study' },
                 { href: '/partners', label: 'Partnership' },
+                { href: '/career', label: 'Careers' },
                 { href: '/contact', label: 'Contact' },
             ],
         },
@@ -104,12 +105,13 @@ const FooterCompo: React.FC = () => {
                             </div>
 
                             {/* Social Media Icons */}
-                            <div className="flex flex-wrap max-w-[214px] gap-4">
+                            <div className="hidden sm:flex flex-wrap max-w-[214px] gap-4">
                                 {socialLinks.map(({ href, icon, label }) => (
                                     <a
 
                                         key={label}
                                         href={href}
+                                        target="_blank"
                                         className={cn(
                                             "w-[34px] h-[34px] bg-[#E0E9F7]",
                                             "hover:bg-opacity-30 transition-all cursor-pointer",
@@ -200,5 +202,3 @@ const FooterCompo: React.FC = () => {
 
 export default FooterCompo;
 
-
-//hello

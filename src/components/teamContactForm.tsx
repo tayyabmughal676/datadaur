@@ -61,7 +61,7 @@ const teamContactForm: React.FC = () => {
         { value: '+92', label: '+92' }
     ];
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const teamhandleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -85,7 +85,7 @@ const teamContactForm: React.FC = () => {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const teamhandleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         // Handle form submission here
@@ -102,7 +102,7 @@ const teamContactForm: React.FC = () => {
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={teamhandleSubmit} className="space-y-8">
                 {/* Name and Company Row */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Full Name */}
@@ -117,8 +117,9 @@ const teamContactForm: React.FC = () => {
                             type="text"
                             id="fullName"
                             name="fullName"
+                            required={true}
                             value={formData.fullName}
-                            onChange={handleInputChange}
+                            onChange={teamhandleInputChange}
                             placeholder="Full Name"
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
@@ -140,8 +141,9 @@ const teamContactForm: React.FC = () => {
                             type="text"
                             id="company"
                             name="company"
+                            required={true}
                             value={formData.company}
-                            onChange={handleInputChange}
+                            onChange={teamhandleInputChange}
                             placeholder="Enter Company"
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
@@ -166,8 +168,9 @@ const teamContactForm: React.FC = () => {
                             type="email"
                             id="email"
                             name="email"
+                            required={true}
                             value={formData.email}
-                            onChange={handleInputChange}
+                            onChange={teamhandleInputChange}
                             placeholder="Email"
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
@@ -188,8 +191,9 @@ const teamContactForm: React.FC = () => {
                         <div className="flex">
                             <select
                                 name="countryCode"
+                                required={true}
                                 value={formData.countryCode}
-                                onChange={handleInputChange}
+                                onChange={teamhandleInputChange}
                                 className={cn(
                                     "px-3 py-3 rounded-l-lg border-r-0 border",
                                     "bg-gray-50 border-gray-300 text-gray-500 font-outfit",
@@ -206,8 +210,9 @@ const teamContactForm: React.FC = () => {
                                 type="tel"
                                 id="phone"
                                 name="phone"
+                                required={true}
                                 value={formData.phone}
-                                onChange={handleInputChange}
+                                onChange={teamhandleInputChange}
                                 placeholder="Phone Number"
                                 className={cn(
                                     "flex-1 px-4 py-3 rounded-r-lg border border-l-0 transition-colors duration-200",
@@ -233,7 +238,8 @@ const teamContactForm: React.FC = () => {
                             id="country"
                             name="country"
                             value={formData.country}
-                            onChange={handleInputChange}
+                            required={true}
+                            onChange={teamhandleInputChange}
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
                                 "bg-gray-50 border-gray-300 font-outfit text-gray-500",
@@ -261,7 +267,7 @@ const teamContactForm: React.FC = () => {
                             id="city"
                             name="city"
                             value={formData.city}
-                            onChange={handleInputChange}
+                            onChange={teamhandleInputChange}
                             placeholder="Dubai"
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
@@ -339,7 +345,7 @@ const teamContactForm: React.FC = () => {
                         name="projectDescription"
                         rows={6}
                         value={formData.projectDescription}
-                        onChange={handleInputChange}
+                        onChange={teamhandleInputChange}
                         placeholder="Something about your great idea..."
                         className={cn(
                             "w-full px-4 py-3 rounded-lg border transition-colors duration-200 resize-none",

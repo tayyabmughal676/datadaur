@@ -1,7 +1,11 @@
 import React from 'react';
 import { cn } from '../lib/utils';
-import mockupImage from '../assets/inside-hall.svg';
 import pyramidImg from '../assets/pyramid.svg';
+import blendImg from '../assets/blend.svg';
+import brainImg from '../assets/brain.svg';
+import flowerImage from '../assets/flower.svg';
+import spinnerImage from '../assets/spinner.svg';
+import wheelImage from '../assets/wheel.svg';
 
 interface ServiceWeOfferProps {
     className?: string;
@@ -13,7 +17,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
             <div className="max-w-7xl p-8 mx-auto">
                 {/* Header */}
                 <div className="text-center mb-8 sm:mb-12 md:mb-16">
-                    <h2 className="font-outfit font-medium text-[34px] text-black mb-4">
+                    <h2 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
                         Service We Offer
                     </h2>
                     <p className="service-body-text text-base sm:text-lg max-w-lg mx-auto">
@@ -25,8 +29,17 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 
                     {/* First Row: Development & IT Consultations */}
-                    {/* Content - Left Column */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16">
+                    {/* Image - Mobile/Tablet First, Desktop Right */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl p-4 lg:order-2">
+                        <img
+                            src={blendImg}
+                            alt="Development & IT Consultations"
+                            className="w-full h-auto rounded-lg"
+                        />
+                    </div>
+
+                    {/* Content - Mobile/Tablet Second, Desktop Left */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-1">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">
                             Development & IT Consultations
                         </h3>
@@ -46,27 +59,18 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         </button>
                     </div>
 
-                    {/* Image - Right Column */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16">
-                        <img
-                            src={mockupImage}
-                            alt="Development & IT Consultations"
-                            className="w-full h-auto rounded-lg shadow-sm"
-                        />
-                    </div>
-
                     {/* Second Row: AI Agent Development Package */}
-                    {/* Image - Left Column */}
-                    <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
+                    {/* Image - Mobile/Tablet First, Desktop Left */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-3">
                         <img
-                            src={mockupImage}
+                            src={brainImg}
                             alt="AI Agent Development Package"
-                            className="w-full h-auto rounded-lg shadow-sm"
+                            className="w-full h-auto"
                         />
                     </div>
 
-                    {/* Content - Right Column */}
-                    <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
+                    {/* Content - Mobile/Tablet Second, Desktop Right */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-4">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">
                             AI Agent Development Package
                         </h3>
@@ -98,8 +102,17 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                     </div>
 
                     {/* Third Row: AI Model Context Protocol MCP Package */}
-                    {/* Content - Left Column */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16">
+                    {/* Image - Mobile/Tablet First, Desktop Right */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-6">
+                        <img
+                            src={pyramidImg}
+                            alt="AI Model Context Protocol MCP Package"
+                            className="w-full h-full rounded-lg"
+                        />
+                    </div>
+
+                    {/* Content - Mobile/Tablet Second, Desktop Left */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-5">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">AI Model Context Protocol MCP Package</h3>
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                             <li className="service-body-text text-base sm:text-lg">1. Customized Model Context Protocol</li>
@@ -116,26 +129,18 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         </button>
                     </div>
 
-                    {/* Image - Right Column */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16">
+                    {/* Fourth Row: Mobile Application Development Package */}
+                    {/* Image - Mobile/Tablet First, Desktop Left */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-7">
                         <img
-                            src={pyramidImg}
-                            alt="AI Model Context Protocol MCP Package"
-                            className="w-full h-full rounded-lg"
+                            src={flowerImage}
+                            alt="Mobile Application Development Package"
+                            className="w-full h-auto"
                         />
                     </div>
 
-                    {/* Fourth Row: Mobile Application Development Package */}
-                    {/* Image - Left Column */}
-                    <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
-                        <img
-                            src={mockupImage}
-                            alt="Mobile Application Development Package"
-                            className="w-full h-auto rounded-lg shadow-sm"
-                        />
-                    </div>
-                    {/* Content - Right Column */}
-                    <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
+                    {/* Content - Mobile/Tablet Second, Desktop Right */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-8">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">Mobile Application Development Package</h3>
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                             <li className="service-body-text text-base sm:text-lg">1. Mobile App UI UX Design</li>
@@ -152,10 +157,18 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         </button>
                     </div>
 
-
                     {/* Fifth Row: Website Package */}
-                    {/* Content - Left Column */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16">
+                    {/* Image - Mobile/Tablet First, Desktop Right */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-10">
+                        <img
+                            src={spinnerImage}
+                            alt="Website Package"
+                            className="w-full h-auto"
+                        />
+                    </div>
+
+                    {/* Content - Mobile/Tablet Second, Desktop Left */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-9">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">Website Package</h3>
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                             <li className="service-body-text text-base sm:text-lg">1. Website UX/UI Design</li>
@@ -172,27 +185,18 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         </button>
                     </div>
 
-                    {/* Image - Right Column */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16">
-                        <img
-                            src={mockupImage}
-                            alt="Website Package"
-                            className="w-full h-auto rounded-lg shadow-sm"
-                        />
-                    </div>
-
-
                     {/* Sixth Row: Maintenance Package */}
-                    {/* Image - Left Column */}
-                    <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
+                    {/* Image - Mobile/Tablet First, Desktop Left */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-11">
                         <img
-                            src={mockupImage}
+                            src={wheelImage}
                             alt="Maintenance Package"
-                            className="w-full h-auto rounded-lg shadow-sm" // Retained custom height
+                            className="w-full h-auto"
                         />
                     </div>
-                    {/* Content - Right Column */}
-                    <div className="order-last lg:order-none mb-6 sm:mb-8 lg:mb-16">
+
+                    {/* Content - Mobile/Tablet Second, Desktop Right */}
+                    <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-12">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">Maintenance Package</h3>
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                             <li className="service-body-text text-base sm:text-lg">1. Website Maintenance</li>
@@ -212,5 +216,3 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 };
 
 export default ServiceWeOffer;
-
-//hello

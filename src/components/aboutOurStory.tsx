@@ -19,19 +19,19 @@ const missionItems = [
 
 const AboutOurStory: React.FC = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="max-w-7xl mx-auto px-8 sm:px-8 lg:px-8 py-12 lg:py-20">
             {/* Main Title */}
-            <h1 className="font-heading font-bold text-heading-xl text-black text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black text-center mb-16">
                 About DataDaur
-            </h1>
+            </h2>
 
             {/* Our Story Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-24">
                 {/* Text Content */}
                 <div className="order-2 lg:order-1">
-                    <h2 className="font-heading font-medium text-heading-lg text-black mb-6">
+                    <h3 className="font-heading font-medium text-heading-lg text-black mb-6">
                         Our Story
-                    </h2>
+                    </h3>
                     <p className="font-body font-normal text-base lg:text-lg text-black leading-relaxed">
                         DataDaur is a UAE-based technology company with over five years of experience in delivering smart, scalable, and future-focused digital solutions. We specialize in a full suite of services including IT management, software engineering, AI agent development using our Model Context Protocol (MCP Package), mobile application development, website design and development, and comprehensive maintenance packages. Our mission is simple: To help businesses harness the power of technology and data to solve real-world challenges. At our core, we believe that data is more than information — it's a strategic asset. Through intelligent AI systems and thoughtfully engineered digital products, we empower organizations to make smarter decisions, automate complex processes, and scale with confidence. Whether you're a startup aiming to launch your first digital product or an enterprise looking to modernize operations, we bring the vision, expertise, and innovation needed to move you forward.
                     </p>

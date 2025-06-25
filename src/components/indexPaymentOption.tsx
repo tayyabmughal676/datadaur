@@ -90,61 +90,84 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
 
     const marqueeRepetitions = 8;
 
-//hello
     return (
         <section className={cn('bg-white py-16', className)}>
             {/* This container is for centered content */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h2 className="font-outfit font-bold text-[34px] text-black mb-4">
+                    <h2 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
                         Payment Options
                     </h2>
-                    <p className="font-outfit font-normal text-black text-lg">
+                    <p className="font-normal text-black text-lg">
                         Flexible, Secure, and Convenient Payment Methods
                     </p>
                 </div>
 
-                {/* Main Payment Options (Static) */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
-                    {paymentOptions.map((option, index) => (
-                        <div
-                            key={option.name}
-                            className={cn(
-                                'bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24',
-                                // Simplified logic for spanning columns
-                                index === paymentOptions.length - 1 && paymentOptions.length % 5 !== 0 && paymentOptions.length > 2 ? 'lg:col-span-1' : '',
-                                index === paymentOptions.length - 1 && paymentOptions.length % 3 !== 0 && paymentOptions.length > 1 ? 'sm:col-span-1' : '',
-                                index === 4 && paymentOptions.length >=5 ? 'lg:col-span-1' : '', // Original logic for 5th item if 5 or more exist
-                                index === paymentOptions.length - 1 && paymentOptions.length === 4 ? 'sm:col-span-2 lg:col-span-1' : '' // if 4 items, last one takes 2 on sm
-                            )}
-                        >
-                            <img
-                                src={option.src}
-                                alt={option.alt}
-                                className="max-w-full max-h-full object-contain"
-                            />
+                <div className="mb-16">
+                    <div className="sm:hidden"> {/* Only visible on screens < 640px */}
+                        <div className="grid grid-cols-2 gap-6">
+                            {paymentOptions.slice(0, 4).map((option) => (
+                                <div
+                                    key={option.name}
+                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24'
+                                >
+                                    <img
+                                        src={option.src}
+                                        alt={option.alt}
+                                        className="max-w-full max-h-full object-contain"
+                                    />
+                                </div>
+                            ))}
                         </div>
-                    ))}
+
+                        <div className="flex justify-center mt-6">
+                            {paymentOptions.find(option => option.name === 'stripe') && (
+                                <div
+                                    key="stripe"
+                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24 w-full max-w-[calc(50%-0.75rem)]'
+                                >
+                                    <img
+                                        src={stripeLogo}
+                                        alt="Stripe"
+                                        className="max-w-full max-h-full object-contain"
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                        {paymentOptions.map((option, index) => (
+                            <div
+                                key={option.name}
+                                className={cn(
+                                    'bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24',
+                                    index === paymentOptions.length - 1 && paymentOptions.length % 5 !== 0 && paymentOptions.length > 2 ? 'lg:col-span-1' : '',
+                                    index === paymentOptions.length - 1 && paymentOptions.length % 3 !== 0 && paymentOptions.length > 1 ? 'sm:col-span-1' : '',
+                                    index === 4 && paymentOptions.length >=5 ? 'lg:col-span-1' : '',
+                                    index === paymentOptions.length - 1 && paymentOptions.length === 4 ? 'sm:col-span-2 lg:col-span-1' : ''
+                                )}
+                            >
+                                <img
+                                    src={option.src}
+                                    alt={option.alt}
+                                    className="max-w-full max-h-full object-contain"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
 
-            {/* Animated rows will be outside the max-w-7xl container to go full width */}
-            {/* First Animated Row (Right to Left) */}
-            {/* The overflow-hidden container clips the content */}
             <div className="overflow-hidden mb-8 animate-pause py-4">
-                {/* The flex container that holds the repeated icons and is animated */}
                 <div className="flex space-x-8 slide-left">
-                    {/* Render the repeated icons directly */}
                     {renderMarqueeIcons(firstRowIcons, marqueeRepetitions, 'first-row')}
                 </div>
             </div>
 
-            {/* Second Animated Row (Left to Right) */}
             <div className="overflow-hidden animate-pause py-4">
-                {/* The flex container that holds the repeated icons and is animated */}
                 <div className="flex space-x-8 slide-right">
-                    {/* Render the repeated icons directly */}
                     {renderMarqueeIcons(secondRowIcons, marqueeRepetitions, 'second-row')}
                 </div>
             </div>

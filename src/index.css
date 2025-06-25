@@ -8,11 +8,10 @@
    ============================================================================= */
 @theme {
     --font-outfit: 'Outfit', ui-sans-serif, system-ui, sans-serif;
-    --font-open-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
     --color-brand-primary: #604CC3;
     --color-brand-secondary: #2E245D;
-    --color-text-primary: #1a1a1a;
-    --color-text-secondary: #4a5568;
+    --color-text-primary: #000000;
+    --color-text-secondary: #000000CC;
     --color-text-muted: #718096;
 }
 
@@ -136,7 +135,7 @@
 
     .hero-title {
         @apply text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-gray-900;
-        font-family: var(--font-open-sans);
+        font-family: var(--font-outfit);
         font-size: clamp(2.5rem, 5vw, 48px);
     }
 
@@ -222,7 +221,9 @@
     }
 
     .social-icon {
-        background: linear-gradient(90deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%);
+        @apply w-[34px] h-[34px] bg-[#E0E9F7] hover:bg-[#E0E9F7] transition-all cursor-pointer flex items-center justify-center;
+        border-radius: 24px;
+        padding: 4px;
         transition: all 0.3s ease;
     }
 
@@ -232,9 +233,7 @@
     }
 
     .social-icon-container {
-        @apply w-[34px] h-[34px] bg-[#E0E9F7]/20 hover:bg-[#E0E9F7]/30 transition-all cursor-pointer flex items-center justify-center;
-        border-radius: 24px;
-        padding: 4px;
+
     }
 
     /* Enhanced Button Styles */
@@ -291,13 +290,33 @@
         list-style: none;
         display: flex;
         align-items: baseline;
-        white-space: nowrap;
     }
 
     .footer-list li::before {
         content: '•';
         margin-right: 8px;
         flex-shrink: 0;
+        align-self: flex-start;
+        line-height: 1.5;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1440px) {
+        .footer-list li {
+            /* Allow text to wrap naturally */
+            white-space: normal;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        .footer-list li a {
+            line-height: 1.4;
+        }
+    }
+
+    @media (min-width: 1441px) {
+        .footer-list li {
+            white-space: nowrap;
+        }
     }
 
     /* Team Section */
@@ -436,7 +455,7 @@
 
     .service-body-text {
         font-weight: 400;
-        font-size: 0.9375rem;
+        font-size: 22px;
         line-height: 1.6;
         color: var(--color-text-secondary);
     }
@@ -724,6 +743,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .service-body-text {
+        font-size: 1rem;
+    }
+}
+
 @media (min-width: 768px) {
     .service-heading-3 {
         font-size: 2.25rem;
@@ -733,9 +758,9 @@
         font-size: 2.5rem;
     }
 
-    .team-main-heading {
-        @apply text-4xl;
-    }
+    /*.team-main-heading {*/
+    /*    @apply text-4xl;*/
+    /*}*/
 
     .team-subtitle {
         @apply text-xl;

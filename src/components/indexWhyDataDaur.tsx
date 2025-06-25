@@ -3,10 +3,10 @@ import starRevImg from '../assets/5-star-rev.svg';
 
 const WhyDatadaur: React.FC = () => {
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        <section className="py-16 px-8 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
             {/* Header */}
             <div className="text-center mb-16">
-                <h1 className="datadaur-main-heading mb-6">
+                <h1 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium mb-6"> {/* class of CSS: datadaur-main-heading*/}
                     Why Businesses Turn to Datadaur
                 </h1>
                 <p className="datadaur-subtitle max-w-3xl mx-auto">

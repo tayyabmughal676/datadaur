@@ -72,7 +72,7 @@ const defaultWorkItems: WorkItem[] = [
 
 const OurWork: React.FC<OurWorkProps> = ({ workItems = defaultWorkItems }) => {
     return (
-        <section className="py-16 px-4 max-w-7xl mx-auto">
+        <section className="py-16 px-8 sm:px-8 md:px-10 max-w-7xl mx-auto">
             {/* Section Title */}
             <div className="text-center mb-16">
                 <h2 className="font-outfit font-medium text-4xl text-black">Our Work</h2>

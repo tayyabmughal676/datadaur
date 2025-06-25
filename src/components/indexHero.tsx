@@ -1,7 +1,7 @@
 import ellipseImgBg from "../assets/ellipse.svg";
 import dotsImg from "../assets/dots.svg";
 
-const IndexHero = () => {
+const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Ellipse */}
@@ -13,7 +13,7 @@ const IndexHero = () => {
                 />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto p-6 pt-20">
+            <div className="relative z-10 max-w-7xl mx-auto p-8 pt-20">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className="text-left space-y-6">
@@ -54,4 +54,4 @@ const IndexHero = () => {
 };
 //hello
 
-export default IndexHero;
+export default Hero;

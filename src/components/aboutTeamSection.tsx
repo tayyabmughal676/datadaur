@@ -9,13 +9,12 @@ import haiderImage from '../assets/dummy-image.svg';
 import moazamImage from '../assets/dummy-image.svg';
 import ahmedImage from '../assets/dummy-image.svg';
 import hussainImage from '../assets/dummy-image.svg';
-import signatureImg from '../assets/signature.svg';
 
 interface TeamSectionProps {
     className?: string;
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
+const AboutTeamSection: React.FC<TeamSectionProps> = ({ className }) => {
     const teamMembers = [
         {
             name: "Haider Ali",
@@ -114,28 +113,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                 </div>
             </div>
 
-            {/* Bottom Section */}
-            <div className="bg-white py-10 px-4 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
-                <div className="max-w-6xl mx-auto text-center">
-                    <p className="team-bottom-text leading-relaxed">
-                        Harness the power of AI to elevate your business.
-                        Innovate boldly, adapt swiftly, and lead with
-                        technology—your success begins today!
-                    </p>
-
-                    <div className="flex justify-end mt-4">
-                        <div className="w-32 h-12 sm:w-40 sm:h-14 md:w-48 md:h-16 flex items-center justify-center">
-                            <img
-                                src={signatureImg}
-                                alt="Bottom decoration"
-                                className="w-full h-full"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     );
 };
 
-export default TeamSection;
+export default AboutTeamSection;

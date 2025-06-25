@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { setPageTitle } from "../lib/utils";
+
 import Navbar from "../components/navBar.tsx";
 import CareerHero from "../components/careerHero.tsx";
 import CareerIntro from "../components/careerIntro.tsx";
@@ -8,6 +11,11 @@ import FooterCompo from "../components/footer.tsx";
 
 
 export const Career = () => {
+
+    useEffect(() => {
+        setPageTitle("Careers");
+    }, []);
+
     return (
         <div>
             <Navbar />
@@ -19,4 +27,3 @@ export const Career = () => {
         </div>
     );
 };
-//hello

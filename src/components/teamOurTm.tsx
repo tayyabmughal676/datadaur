@@ -8,27 +8,32 @@ interface OurTeamSectionProps {
     className?: string;
 }
 
-//hello
 const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
+    // 1. Consolidated all team member data into a single, detailed array.
+    // This makes the component much easier to update and manage.
     const teamMembers = [
         {
             name: "Haider Ali",
-            role: "Senior Technical Lead",
+            title: "Senior Technical Lead",
+            description: "Haider has over 3+ years of experience in leading software development projects and addressing complex technical challenges. As our Senior Technical Lead, he plays a crucial role in planning, building, and delivering scalable digital solutions that meet real-world needs. His ability to combine technical expertise with clear communication makes him a strong leader and a trusted mentor within the team. From architecture to deployment, Haider ensures that every project is built with precision and delivered with confidence.",
             image: avatarImage
         },
         {
             name: "Moazam Mughal",
-            role: "Business Manager / Client Support",
+            title: "Business Manager / Client Relationship",
+            description: "Moazam Mughal is the central figure who ensures smooth collaboration between our team and our clients. With excellent communication skills and a genuine understanding of client needs, he plays a crucial role in building long-lasting, trust-based relationships. As our Business Manager, Moazam keeps every project on track, ensuring alignment with business goals, adherence to deadlines, and fulfillment of client expectations. His ability to transform ideas into successful, well-executed partnerships makes him an essential part of our growth and client satisfaction.",
             image: avatarImage
         },
         {
             name: "Ahmed Amir",
-            role: "UX UI Design Lead",
+            title: "UI/UX Design Lead",
+            description: "Ahmed Amir is the creative leader of our UX/UI design team, bringing over 3+ years of experience in Designing thoughtful, user-centered digital experiences. As our UX/UI Design Lead, he combines design skills, user empathy, and a keen attention to detail to create interfaces that are both visually appealing and highly functional. Ahmed works closely with clients and the team to transform complex ideas into clean, intuitive designs that meet business objectives and user needs. His experience and leadership ensure that every product we deliver is not only visually impressive but also purposeful and user-friendly.",
             image: avatarImage
         },
         {
             name: "Hussain Mughal",
-            role: "Full Stack Developer",
+            title: "Full Stack Developer",
+            description: "Hussain Mughal is a vital member of our development team, bringing over three years of experience as a Full Stack Developer. With expertise in both front-end and back-end technologies, he creates fast, reliable, and scalable digital solutions from scratch. Hussain collaborates closely with designers and stakeholders to transform concepts into fully functional products, ensuring that every feature works flawlessly and provides a smooth user experience. His problem-solving mindset, technical skills, and attention to detail make him an essential contributor to driving our projects from conception to completion.",
             image: avatarImage
         }
     ];
@@ -42,10 +47,9 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                 </h1>
             </div>
 
-            {/* Team Section */}
-            <div className="py-10 px-4 bg-white mx-12 sm:mx-8 md:mx-20 lg:mx-24 rounded-3xl">
+            {/* CEO and Co-Founder Section */}
+            <div className="py-10 px-8 bg-white mx-12 sm:mx-8 md:mx-20 lg:mx-24 rounded-3xl">
                 <div className="max-w-7xl mx-auto">
-                    {/* CEO and Co-Founder Grid Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 lg:mb-20">
                         {/* CEO Column */}
                         <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
@@ -79,120 +83,43 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                             </div>
                         </div>
                     </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                        {teamMembers.map((member, index) => (
-                            <div key={index} className="team-member-card-1">
-                                <div className="team-member-avatar-1">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover rounded-full"
-                                    />
-                                </div>
-                                <h3 className="team-member-name">{member.name}</h3>
-                                <p className="team-member-role">{member.role}</p>
-                            </div>
-                        ))}
-                    </div>
                 </div>
             </div>
 
-            <div className="max-w-6xl mx-auto px-6 py-16 space-y-12">
-                {/* Member 1 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                    {/* Avatar */}
-                    <div className="flex justify-center lg:justify-start">
-                        <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg">
-                            <img
-                                src={avatarImage}
-                                alt="Haider Ali"
-                                className="w-full h-full object-cover"
-                            />
+            {/* 2. Replaced the hardcoded, repetitive section with this dynamic one. */}
+            <div className="max-w-6xl mx-auto px-8 py-16 space-y-16">
+                {teamMembers.map((member, index) => (
+                    <div key={member.name} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        {/* Avatar */}
+                        <div className={cn(
+                            'order-1 flex justify-center',
+                            // 3. For alternating rows (index 1, 3, etc.), the image is second on desktop.
+                            index % 2 === 1 ? 'md:order-2 md:justify-end' : 'md:justify-start'
+                        )}>
+                            <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg flex-shrink-0">
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className={cn(
+                            'order-2 text-center md:text-left',
+                            // 4. For alternating rows, the content is first on desktop.
+                            index % 2 === 1 && 'md:order-1'
+                        )}>
+                            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                                {member.name} – {member.title}
+                            </h2>
+                            <p className="text-gray-700 text-lg leading-relaxed">
+                                {member.description}
+                            </p>
                         </div>
                     </div>
-
-                    {/* Content */}
-                    <div>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                            Haider Ali – Senior Technical Lead
-                        </h2>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                            Haider has over 3+ years of experience in leading software development projects and addressing complex technical challenges. As our Senior Technical Lead, he plays a crucial role in planning, building, and delivering scalable digital solutions that meet real-world needs. His ability to combine technical expertise with clear communication makes him a strong leader and a trusted mentor within the team. From architecture to deployment, Haider ensures that every project is built with precision and delivered with confidence.                        </p>
-                    </div>
-                </div>
-
-                {/* Member 2 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                    {/* Content First */}
-                    <div>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                            Moazam Mughal – Business
-                            Manager / Client Relationship
-                        </h2>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                            Moazam Mughal is the central figure who ensures smooth collaboration between our team and our clients. With excellent communication skills and a genuine understanding of client needs, he plays a crucial role in building long-lasting, trust-based relationships. As our Business Manager, Moazam keeps every project on track, ensuring alignment with business goals, adherence to deadlines, and fulfillment of client expectations. His ability to transform ideas into successful, well-executed partnerships makes him an essential part of our growth and client satisfaction.                        </p>
-                    </div>
-
-                    {/* Avatar */}
-                    <div className="flex justify-center lg:justify-end">
-                        <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg">
-                            <img
-                                src={avatarImage}
-                                alt="Moazam Mughal"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Member 3 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                    {/* Avatar */}
-                    <div className="flex justify-center lg:justify-start">
-                        <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg">
-                            <img
-                                src={avatarImage}
-                                alt="Ahmed Amir"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </div>
-
-                    {/* Content */}
-                    <div>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                            Ahmed Amir – UI/UX
-                            Design Lead
-                        </h2>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                            Ahmed Amir is the creative leader of our UX/UI design team, bringing over 3+ years of experience in Designing thoughtful, user-centered digital experiences. As our UX/UI Design Lead, he combines design skills, user empathy, and a keen attention to detail to create interfaces that are both visually appealing and highly functional. Ahmed works closely with clients and the team to transform complex ideas into clean, intuitive designs that meet business objectives and user needs. His experience and leadership ensure that every product we deliver is not only visually impressive but also purposeful and user-friendly.                        </p>
-                    </div>
-                </div>
-
-                {/* Member 4 */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-                    {/* Content First */}
-                    <div>
-                        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                            Hussain Mughal – Full Stack
-                            Developer
-                        </h2>
-                        <p className="text-gray-700 text-lg leading-relaxed">
-                            Hussain Mughal is a vital member of our development team, bringing over three years of experience as a Full Stack Developer. With expertise in both front-end and back-end technologies, he creates fast, reliable, and scalable digital solutions from scratch. Hussain collaborates closely with designers and stakeholders to transform concepts into fully functional products, ensuring that every feature works flawlessly and provides a smooth user experience. His problem-solving mindset, technical skills, and attention to detail make him an essential contributor to driving our projects from conception to completion.                        </p>
-                    </div>
-
-                    {/* Avatar */}
-                    <div className="flex justify-center lg:justify-end">
-                        <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg">
-                            <img
-                                src={avatarImage}
-                                alt="Hussain Shahid"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
 
 
