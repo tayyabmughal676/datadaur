@@ -112,6 +112,21 @@
     .hero-section {
         @apply relative min-h-[80vh] bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden flex items-center py-8;
     }
+    /*.for-hero-img {*/
+    /*    background-image: url('./assets/ellipse.svg');*/
+    /*    background-size: cover;*/
+    /*    background-position: center;*/
+    /*    background-repeat: no-repeat;*/
+    /*    opacity: 1;*/
+    /*}*/
+    /*@media (max-width: 640px) {*/
+    /*    .for-hero-img {*/
+    /*        background-size: cover;*/
+    /*        background-position: center;*/
+    /*    }*/
+
+    /*}*/
+
 
     .hero-background {
         @apply absolute inset-0 z-10 pointer-events-none;
@@ -259,12 +274,12 @@
     /* Animation Classes */
     .slide-left {
         display: flex;
-        animation: slideLeft 30s linear infinite;
+        animation: slideLeft 20s linear infinite;
     }
 
     .slide-right {
         display: flex;
-        animation: slideRight 30s linear infinite;
+        animation: slideRight 20s linear infinite;
     }
 
     .animate-pause:hover .slide-left,
@@ -362,7 +377,7 @@
     }
 
     .team-member-card {
-        @apply bg-white rounded-2xl p-6 text-center shadow-lg;
+        @apply bg-white rounded-2xl p-2 text-center shadow-lg;
     }
 
     .team-member-card-1 {
@@ -416,7 +431,7 @@
     .datadaur-section-heading {
         @apply font-bold;
         font-family: var(--font-outfit);
-        font-size: 1.75rem;
+        font-size: 38px;
         line-height: 1.3;
         background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
         -webkit-background-clip: text;
@@ -699,13 +714,13 @@
         transform: translateX(0%);
     }
     100% {
-        transform: translateX(-20%);
+        transform: translateX(-100%);
     }
 }
 
 @keyframes slideRight {
     0% {
-        transform: translateX(-20%);
+        transform: translateX(-100%);
     }
     100% {
         transform: translateX(0%);
@@ -745,17 +760,18 @@
 
 @media (max-width: 768px) {
     .service-body-text {
-        font-size: 1rem;
+        font-size: 18px;
     }
 }
 
 @media (min-width: 768px) {
     .service-heading-3 {
-        font-size: 2.25rem;
+        font-size: 24px;
     }
 
     .service-price-text {
-        font-size: 2.5rem;
+        font-size: 34px;
+        font-weight: bold;
     }
 
     /*.team-main-heading {*/
@@ -796,11 +812,11 @@
     }
 
     .datadaur-body-text {
-        font-size: 1rem;
+        font-size: 22px;
     }
 
     .datadaur-subtitle {
-        font-size: 1rem;
+        font-size: 22px;
     }
 }
 
@@ -865,11 +881,11 @@
     }
 
     .datadaur-section-heading {
-        font-size: 1.375rem;
+        font-size: 24px;
     }
 
     .datadaur-body-text {
-        font-size: 0.875rem;
+        font-size: 18px;
     }
 
     .text-heading-xl,
@@ -886,10 +902,14 @@
         animation-duration: 40s;
     }
 }
-
+.service-price-text span {
+    font-weight: bold;
+    font-size: 34px;
+}
 @media (max-width: 480px) {
-    .service-price-text {
-        @apply text-lg;
+    .service-price-text, .service-price-text span {
+        font-weight: bold;
+        font-size: 34px;
     }
 
     .service-price-gradient {
@@ -929,7 +949,7 @@
     }
 
     .datadaur-section-heading {
-        font-size: 1.25rem;
+        font-size: 24px;
     }
 
     .datladaur-body-text {
@@ -938,13 +958,18 @@
     }
 }
 
-@media (min-width: 1280px) {
+/*@media (min-width: 1280px) {*/
+/*    .slide-left,*/
+/*    .slide-right {*/
+/*        animation-duration: 20s;*/
+/*    }*/
+/*}*/
+@media (max-width: 640px) {
     .slide-left,
     .slide-right {
-        animation-duration: 20s;
+        animation-duration: 20s; /* Keep consistent with larger screens */
     }
 }
-
 /* =============================================================================
    ACCESSIBILITY & MOTION PREFERENCES
    ============================================================================= */

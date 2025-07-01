@@ -80,7 +80,7 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
                         src={icon.src}
                         alt={icon.alt}
                         // Apply icon styling here
-                        className="h-16 w-auto max-w-20 object-contain icon-hover flex-shrink-0"
+                        className="h-10 w-auto object-contain icon-hover flex-shrink-0"
                     />
                 );
             });
@@ -91,15 +91,15 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
     const marqueeRepetitions = 8;
 
     return (
-        <section className={cn('bg-white py-16', className)}>
+        <section className={cn('bg-white py-8', className)}>
             {/* This container is for centered content */}
             <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8">
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h2 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
+                    <h2 className="text-black text-[24px] md:text-4xl lg:text-5xl font-medium mb-4">
                         Payment Options
                     </h2>
-                    <p className="font-normal text-black text-lg">
+                    <p className=" service-body-text font-normal text-black text-lg">
                         Flexible, Secure, and Convenient Payment Methods
                     </p>
                 </div>

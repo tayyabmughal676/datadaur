@@ -55,10 +55,7 @@ const IndexContactForm: React.FC = () => {
     ];
 
     const countryCodes = [
-        { value: '+971', label: '+971' },
-        { value: '+1', label: '+1' },
-        { value: '+44', label: '+44' },
-        { value: '+92', label: '+92' }
+        { value: '+971', label: '+971' }
     ];
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -277,15 +274,58 @@ const IndexContactForm: React.FC = () => {
                     <label className="block text-sm font-medium mb-4 font-outfit text-black">
                         I'm interested in...
                     </label>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {/* Desktop version (1024px and above) - Keep existing grid layout */}
+                    <div className="hidden lg:block space-y-2 mr-10">
+                        {/* First row - 4 buttons */}
+                        <div className="grid grid-cols-4 gap-2">
+                            {interestOptions.slice(0, 4).map(interest => (
+                                <button
+                                    key={interest}
+                                    type="button"
+                                    onClick={() => toggleInterest(interest)}
+                                    className={cn(
+                                        "px-4 py-3 rounded-lg border text-xs text-center hover:shadow-md transition-all duration-200",
+                                        "font-outfit",
+                                        formData.interests.includes(interest)
+                                            ? "gradient-bg text-white border-transparent"
+                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                    )}
+                                >
+                                    {interest}
+                                </button>
+                            ))}
+                        </div>
+                        {/* Second row - remaining 5 buttons */}
+                        <div className="grid grid-cols-5 gap-2">
+                            {interestOptions.slice(4).map(interest => (
+                                <button
+                                    key={interest}
+                                    type="button"
+                                    onClick={() => toggleInterest(interest)}
+                                    className={cn(
+                                        "px-4 py-3 rounded-lg border text-xs text-center hover:shadow-md transition-all duration-200",
+                                        "font-outfit",
+                                        formData.interests.includes(interest)
+                                            ? "gradient-bg text-white border-transparent"
+                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                    )}
+                                >
+                                    {interest}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Mobile/Tablet version (below 1024px) - Flexible wrapping layout */}
+                    <div className="lg:hidden flex flex-wrap gap-2">
                         {interestOptions.map(interest => (
                             <button
                                 key={interest}
                                 type="button"
                                 onClick={() => toggleInterest(interest)}
                                 className={cn(
-                                    "px-4 py-3 rounded-lg border text-sm text-left hover:shadow-md transition-all duration-200",
-                                    "font-outfit",
+                                    "px-4 py-3 rounded-lg border text-xs text-center hover:shadow-md transition-all duration-200",
+                                    "font-outfit whitespace-nowrap flex-shrink-0",
                                     formData.interests.includes(interest)
                                         ? "gradient-bg text-white border-transparent"
                                         : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
@@ -297,20 +337,44 @@ const IndexContactForm: React.FC = () => {
                     </div>
                 </div>
 
+
                 {/* Budget */}
                 <div>
                     <label className="block text-sm font-medium mb-4 font-outfit text-black">
                         Project Budget (USD)
                     </label>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    {/* Desktop version (1024px and above) - Single row layout */}
+                    <div className="hidden lg:block">
+                        <div className="grid grid-cols-4 gap-2 w-1/2">
+                            {budgetOptions.map(budget => (
+                                <button
+                                    key={budget}
+                                    type="button"
+                                    onClick={() => selectBudget(budget)}
+                                    className={cn(
+                                        "px-4 py-2 rounded-lg border text-sm text-center hover:shadow-md transition-all duration-200",
+                                        "font-outfit",
+                                        formData.budget === budget
+                                            ? "gradient-bg text-white border-transparent"
+                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                    )}
+                                >
+                                    {budget}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Mobile/Tablet version (below 1024px) - Flexible wrapping layout */}
+                    <div className="lg:hidden flex flex-wrap gap-2">
                         {budgetOptions.map(budget => (
                             <button
                                 key={budget}
                                 type="button"
                                 onClick={() => selectBudget(budget)}
                                 className={cn(
-                                    "px-4 py-3 rounded-lg border text-sm text-center hover:shadow-md transition-all duration-200",
-                                    "font-outfit",
+                                    "px-4 py-2 rounded-lg border text-sm text-center hover:shadow-md transition-all duration-200",
+                                    "font-outfit whitespace-nowrap flex-shrink-0",
                                     formData.budget === budget
                                         ? "gradient-bg text-white border-transparent"
                                         : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
@@ -320,6 +384,7 @@ const IndexContactForm: React.FC = () => {
                             </button>
                         ))}
                     </div>
+
                     <p className="text-xs text-gray-500 mt-2 font-outfit">
                         This is the minimum starting price for any project. The final price will be determined based on the
                         project scope and timelines.

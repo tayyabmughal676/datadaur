@@ -9,6 +9,8 @@ import {Terms} from "./pages/termsAndConditions.tsx";
 import {Partners} from "./pages/partners.tsx";
 import {Career} from "./pages/career.tsx";
 import {NotFound} from "./pages/notFound.tsx";
+import {SaveInGoldCase} from "./pages/saveInGoldCS.tsx"
+import {SocialproCase} from "./pages/socialproCaseStudy.tsx";
 
 
 
@@ -22,11 +24,13 @@ function App() {
                     <Route path="/portfolio" element={<Portfolio />} />
                     <Route path="/team" element={<Team />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/contact-us" element={<Contact />} />
                     <Route path="/privacy-policy" element={<Privacy />} />
                     <Route path="/terms-and-conditions" element={<Terms />} />
                     <Route path="/partners" element={<Partners />} />
                     <Route path="/career" element={<Career />} />
+                    <Route path="/save-in-gold-case-study" element={<SaveInGoldCase />} />
+                    <Route path="/socialpro-case-study" element={<SocialproCase />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>

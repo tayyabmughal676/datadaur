@@ -1,8 +1,10 @@
 import React from 'react';
 import { cn } from '../lib/utils';
+import { Link } from 'react-router-dom';
 
-// 1. Import the images at the top of the file
 import phoneMockupsImg from '../assets/phone-mockups.svg';
+import saveingoldImg from '../assets/saveingold.png';
+import socialproImg from '../assets/socialpro.png';
 import arrowIcon from '../assets/arrow-1.svg';
 
 interface WorkItem {
@@ -12,29 +14,31 @@ interface WorkItem {
     backgroundImage: string;
     iconImage: string;
     iconAlt: string;
+    link?: string;
 }
 
 interface OurWorkProps {
     workItems?: WorkItem[];
 }
 
-// 2. Update the array to use the imported image variables
 const defaultWorkItems: WorkItem[] = [
     {
         id: 1,
-        title: "Zarinaya - the Deal",
-        description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
-        backgroundImage: phoneMockupsImg,
+        title: "SaveInGold - Case Study",
+        description: "SaveInGold — Redesigning Trust & Simplicity in Digital Gold Investing",
+        backgroundImage: saveingoldImg,
         iconImage: arrowIcon,
-        iconAlt: "Zarinaya icon"
+        iconAlt: "Icon",
+        link: "/save-in-gold-case-study"
     },
     {
         id: 2,
-        title: "Zarinaya - the Deal",
-        description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
-        backgroundImage: phoneMockupsImg,
+        title: "Socialpro - Case Study",
+        description: "Designing for Impact: Streamlining Social Procurement with SocialPro",
+        backgroundImage: socialproImg,
         iconImage: arrowIcon,
-        iconAlt: "Zarinaya icon"
+        iconAlt: "Icon",
+        link: "/socialpro-case-study"
     },
     {
         id: 3,
@@ -42,7 +46,7 @@ const defaultWorkItems: WorkItem[] = [
         description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
         backgroundImage: phoneMockupsImg,
         iconImage: arrowIcon,
-        iconAlt: "Zarinaya icon"
+        iconAlt: "Icon"
     },
     {
         id: 4,
@@ -50,24 +54,8 @@ const defaultWorkItems: WorkItem[] = [
         description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
         backgroundImage: phoneMockupsImg,
         iconImage: arrowIcon,
-        iconAlt: "Zarinaya icon"
+        iconAlt: "Icon"
     },
-    {
-        id: 5,
-        title: "Zarinaya - the Deal",
-        description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
-        backgroundImage: phoneMockupsImg,
-        iconImage: arrowIcon,
-        iconAlt: "Zarinaya icon"
-    },
-    {
-        id: 6,
-        title: "Zarinaya - the Deal",
-        description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
-        backgroundImage: phoneMockupsImg,
-        iconImage: arrowIcon,
-        iconAlt: "Zarinaya icon"
-    }
 ];
 
 const OurWork: React.FC<OurWorkProps> = ({ workItems = defaultWorkItems }) => {
@@ -92,10 +80,11 @@ interface WorkCardProps {
     work: WorkItem;
 }
 
-//hello
+
 const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
-    return (
-        <div className="group mb-4">
+    // Define the card's inner content. This will be used inside either a <Link> or a <div>.
+    const cardBody = (
+        <>
             <div className={cn(
                 "relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg mb-6",
                 "transition-transform duration-300 group-hover:scale-105"
@@ -133,6 +122,22 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
                     {work.description}
                 </p>
             </div>
+        </>
+    );
+
+    // If a link is provided in the work item, wrap the card body in a Link component.
+    if (work.link) {
+        return (
+            <Link to={work.link} className="group mb-4 block no-underline">
+                {cardBody}
+            </Link>
+        );
+    }
+
+    // Otherwise, render it as a standard non-clickable div.
+    return (
+        <div className="group mb-4">
+            {cardBody}
         </div>
     );
 };

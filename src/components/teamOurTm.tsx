@@ -37,7 +37,28 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
             image: avatarImage
         }
     ];
-
+    const teamMembersIntro = [
+        {
+            name: "Haider Ali",
+            role: "Senior Technical Lead",
+            image: avatarImage
+        },
+        {
+            name: "Moazam Mughal",
+            role: "Business Manager / Client Support",
+            image: avatarImage
+        },
+        {
+            name: "Ahmed Amir",
+            role: "UX UI Design Lead",
+            image: avatarImage
+        },
+        {
+            name: "Hussain Mughal",
+            role: "Full Stack Developer",
+            image: avatarImage
+        }
+    ];
     return (
         <section className={cn("bg-white min-h-screen py-12", className)}>
             {/* Header Section */}
@@ -48,7 +69,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
             </div>
 
             {/* CEO and Co-Founder Section */}
-            <div className="py-10 px-8 bg-white mx-12 sm:mx-8 md:mx-20 lg:mx-24 rounded-3xl">
+            <div className="py-10 px-8 bg-white mx-6 sm:mx-8 md:mx-20 lg:mx-24 rounded-3xl">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 lg:mb-20">
                         {/* CEO Column */}
@@ -83,10 +104,30 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                             </div>
                         </div>
                     </div>
+                    {/* Team Members Section */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-12">
+                        {teamMembersIntro.map((member, index) => (
+                            <div key={index} className="flex flex-col items-center space-y-4">
+                                <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                                <div className="text-center">
+                                    <h3 className="team-member-name">{member.name}</h3>
+                                    <p className="team-member-role">{member.role}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+
                 </div>
             </div>
 
-            {/* 2. Replaced the hardcoded, repetitive section with this dynamic one. */}
+
             <div className="max-w-6xl mx-auto px-8 py-16 space-y-16">
                 {teamMembers.map((member, index) => (
                     <div key={member.name} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -96,7 +137,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                             // 3. For alternating rows (index 1, 3, etc.), the image is second on desktop.
                             index % 2 === 1 ? 'md:order-2 md:justify-end' : 'md:justify-start'
                         )}>
-                            <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg flex-shrink-0">
+                            <div className="w-72 h-72 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg flex-shrink-0">
                                 <img
                                     src={member.image}
                                     alt={member.name}
@@ -108,7 +149,6 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                         {/* Content */}
                         <div className={cn(
                             'order-2 text-center md:text-left',
-                            // 4. For alternating rows, the content is first on desktop.
                             index % 2 === 1 && 'md:order-1'
                         )}>
                             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
@@ -126,6 +166,9 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
             {/* Bottom Section */}
             <div className="bg-white py-10 px-4 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
                 <div className="max-w-6xl mx-auto text-center">
+                    <p className="team-bottom-text leading-relaxed">
+                        At DataDaur, we’re a team that truly cares about what we create. With the right mix of skill, experience, and passion, we work closely with you to build digital solutions that are reliable, thoughtful, and built to help your business grow.
+                    </p>
                     <div className="flex justify-end mt-4">
                         <div className="w-32 h-12 sm:w-40 sm:h-14 md:w-48 md:h-16 flex items-center justify-center">
                             <img
@@ -135,9 +178,6 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                             />
                         </div>
                     </div>
-                    <p className="team-bottom-text leading-relaxed">
-                        At DataDaur, we’re a team that truly cares about what we create. With the right mix of skill, experience, and passion, we work closely with you to build digital solutions that are reliable, thoughtful, and built to help your business grow.
-                    </p>
                 </div>
             </div>
         </section>

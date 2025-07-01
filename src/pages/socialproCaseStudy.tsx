@@ -2,25 +2,23 @@ import { useEffect } from "react";
 import { setPageTitle } from "../lib/utils";
 
 import Navbar from "../components/navBar.tsx";
-import AboutHero from "../components/aboutHero.tsx";
-import AboutOurStory from "../components/aboutOurStory.tsx";
-import IndexWhyDataDaur from "../components/indexWhyDataDaur.tsx";
+import SocialProHero from "../components/socialproHero.tsx";
+import SocialProContent from "../components/socialProContent.tsx";
 import TeamContactForm from "../components/teamContactForm.tsx";
 import FooterCompo from "../components/footer.tsx";
 
 
-export const About = () => {
+export const SocialproCase = () => {
 
     useEffect(() => {
-        setPageTitle("About Us");
+        setPageTitle("Socialpro | Case Study");
     }, []);
 
     return (
         <div>
             <Navbar />
-            <AboutHero />
-            <AboutOurStory />
-            <IndexWhyDataDaur />
+            <SocialProHero />
+            <SocialProContent />
             <TeamContactForm />
             <FooterCompo />
         </div>

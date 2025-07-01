@@ -1,13 +1,13 @@
-import productLifeImg from '../assets/life-cycle.svg';
+import productLifeImg from '../assets/life-cycle-1.svg';
 
 
 
 const ProductLifeCycle = () => {
     return (
-        <section className="relative min-h-screen/30 p-8 md:py-10 lg:py-12 flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen/30 p-6 md:py-10 lg:py-12 flex items-center justify-center overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 sm:mb-12 md:mb-16">
-                    <h2 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium">
+                    <h2 className="text-black text-[24px] md:text-4xl lg:text-5xl font-medium ">
                         End-to-End Product <br/>Development Lifecycle
                     </h2>
                 </div>

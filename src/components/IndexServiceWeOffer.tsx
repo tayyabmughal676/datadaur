@@ -14,10 +14,10 @@ interface ServiceWeOfferProps {
 const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
     return (
         <section className={cn("py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8", className)}>
-            <div className="max-w-7xl p-8 mx-auto">
+            <div className="max-w-7xl p-6 mx-auto">
                 {/* Header */}
                 <div className="text-center mb-8 sm:mb-12 md:mb-16">
-                    <h2 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
+                    <h2 className="text-black text-[24px] md:text-4xl lg:text-5xl font-medium mb-4">
                         Service We Offer
                     </h2>
                     <p className="service-body-text text-base sm:text-lg max-w-lg mx-auto">
@@ -203,7 +203,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                             <li className="service-body-text text-base sm:text-lg">2. Mobile App Maintenance</li>
                         </ul>
                         <div className="mb-4 sm:mb-6">
-                            <div className="service-price-text mb-2">$199.99<span className="text-lg align-baseline">/Month*</span></div>
+                            <div className="service-price-text mb-2">$199.99<strong className="text-lg align-baseline">/Month*</strong></div>
                         </div>
                         <button className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg transform hover:scale-105">
                             Order Now

@@ -2,25 +2,23 @@ import { useEffect } from "react";
 import { setPageTitle } from "../lib/utils";
 
 import Navbar from "../components/navBar.tsx";
-import AboutHero from "../components/aboutHero.tsx";
-import AboutOurStory from "../components/aboutOurStory.tsx";
-import IndexWhyDataDaur from "../components/indexWhyDataDaur.tsx";
+import SaveInGoldHero from "../components/saveInGoldCSHero.tsx";
+import SaveInGoldContent from "../components/saveInGoldContent.tsx";
 import TeamContactForm from "../components/teamContactForm.tsx";
 import FooterCompo from "../components/footer.tsx";
 
 
-export const About = () => {
+export const SaveInGoldCase = () => {
 
     useEffect(() => {
-        setPageTitle("About Us");
+        setPageTitle("Save In Gold | Case Study");
     }, []);
 
     return (
         <div>
             <Navbar />
-            <AboutHero />
-            <AboutOurStory />
-            <IndexWhyDataDaur />
+            <SaveInGoldHero />
+            <SaveInGoldContent />
             <TeamContactForm />
             <FooterCompo />
         </div>

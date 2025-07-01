@@ -51,9 +51,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
             </div>
 
             {/* Team Section */}
-            <div className="py-10 px-4 bg-[#E6F0FF] sm:mx-8 md:mx-20 lg:mx-24 sm:rounded-3xl">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 lg:mb-20">
+            <div className="py-10 px-4 bg-[#E6F0FF] sm:mx-8 md:mx-20 lg:mx-48 sm:rounded-3xl">
+                <div className="max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 mb-12 lg:mb-20">
                         <div className="flex flex-col-reverse sm:flex-col items-center text-center space-y-6 lg:space-y-8">
                             <div>
                                 <h2 className="team-role-heading mb-2">CEO/Chief AI Officer</h2>
@@ -96,18 +96,22 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         <h2 className="team-members-heading">Our Team Members</h2>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-x-8 gap-y-8">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="team-member-card">
-                                <div className="team-member-avatar">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover rounded-full"
-                                    />
+                            <div key={index} className="flex flex-col items-center space-y-2">
+                                {/* Card now only contains the avatar */}
+                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] overflow-hidden team-member-card">
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-full h-full object-cover rounded-full"
+                                        />
+                                    </div>
+                                {/* Name and role are now outside the card, centered below */}
+                                <div className="text-center mt-4">
+                                    <h3 className="team-member-name">{member.name}</h3>
+                                    <p className="team-member-role">{member.role}</p>
                                 </div>
-                                <h3 className="team-member-name">{member.name}</h3>
-                                <p className="team-member-role">{member.role}</p>
                             </div>
                         ))}
                     </div>
