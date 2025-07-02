@@ -8,9 +8,11 @@ import {Privacy} from "./pages/privacyPolicy.tsx";
 import {Terms} from "./pages/termsAndConditions.tsx";
 import {Partners} from "./pages/partners.tsx";
 import {Career} from "./pages/career.tsx";
-import {NotFound} from "./pages/notFound.tsx";
 import {SaveInGoldCase} from "./pages/saveInGoldCS.tsx"
 import {SocialproCase} from "./pages/socialproCaseStudy.tsx";
+import {AllHypeCase} from "./pages/allHypeCaseStudy.tsx";
+import {FarooCase} from "./pages/farooCaseStudy.tsx";
+import {NotFound} from "./pages/notFound.tsx";
 
 
 
@@ -31,6 +33,8 @@ function App() {
                     <Route path="/career" element={<Career />} />
                     <Route path="/save-in-gold-case-study" element={<SaveInGoldCase />} />
                     <Route path="/socialpro-case-study" element={<SocialproCase />} />
+                    <Route path="/all-hype-case-study" element={<AllHypeCase />} />
+                    <Route path="/faroo-case-study" element={<FarooCase />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>

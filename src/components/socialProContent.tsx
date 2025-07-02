@@ -53,9 +53,9 @@ const SocialProContent: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-2 lg:mb-2">
                         {/* Text Content - Left Side */}
                         <div className="order-2 lg:order-1 self-start">
-                            <h1 className="font-semibold text-3xl sm:text-4xl lg:text-5xl gradient-text leading-tight mb-12">
+                            <h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl gradient-text leading-tight mb-12">
                                 The Outcome
-                            </h1>
+                            </h2>
 
                             <div className="space-y-4">
                                 <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">

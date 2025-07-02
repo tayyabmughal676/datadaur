@@ -56,9 +56,9 @@ const SaveInGoldContent: React.FC = () => {
                 <div className="mb-8 sm:mb-12">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
                         <div className="space-y-6">
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl gradient-text leading-tight">
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl gradient-text leading-tight">
                                 Understand the Problem
-                            </h1>
+                            </h2>
 
                             <div className="space-y-6 text-black">
                                 <p className="text-base sm:text-lg lg:text-xl leading-relaxed">

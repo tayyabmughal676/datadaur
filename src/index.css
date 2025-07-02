@@ -991,7 +991,9 @@
     }
 }
 
-
+.card-gradient {
+    background: linear-gradient(135deg, #604CC3, #2E245D);
+}
 
 
 

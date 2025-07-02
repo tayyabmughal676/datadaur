@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import phoneMockupsImg from '../assets/phone-mockups.svg';
 import saveingoldImg from '../assets/saveingold.png';
 import socialproImg from '../assets/socialpro.png';
+import allHypeImg from "../assets/all-hype.png";
 import arrowIcon from '../assets/arrow-1.svg';
 
 interface WorkItem {
@@ -42,15 +43,16 @@ const defaultWorkItems: WorkItem[] = [
     },
     {
         id: 3,
-        title: "Zarinaya - the Deal",
-        description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
-        backgroundImage: phoneMockupsImg,
+        title: "All Hype - the Deal",
+        description: "All Hype: A comprehensive travel planning app",
+        backgroundImage: allHypeImg,
         iconImage: arrowIcon,
-        iconAlt: "Icon"
+        iconAlt: "Icon",
+        link: "/all-hype-case-study"
     },
     {
         id: 4,
-        title: "Zarinaya - the Deal",
+        title: "Zarinaya - Case Study",
         description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
         backgroundImage: phoneMockupsImg,
         iconImage: arrowIcon,
