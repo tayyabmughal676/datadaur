@@ -30,11 +30,11 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 
                     {/* First Row: Development & IT Consultations */}
                     {/* Image - Mobile/Tablet First, Desktop Right */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl p-4 lg:order-2">
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl p-4 lg:order-2 transition-transform duration-300 hover:scale-105">
                         <img
                             src={blendImg}
                             alt="Development & IT Consultations"
-                            className="w-full h-auto rounded-lg"
+                            className="w-full h-auto p-4"
                         />
                     </div>
 
@@ -61,11 +61,11 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 
                     {/* Second Row: AI Agent Development Package */}
                     {/* Image - Mobile/Tablet First, Desktop Left */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-3">
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-3 transition-transform duration-300 hover:scale-105">
                         <img
                             src={brainImg}
                             alt="AI Agent Development Package"
-                            className="w-full h-auto"
+                            className="w-full h-auto p-4"
                         />
                     </div>
 
@@ -103,11 +103,11 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 
                     {/* Third Row: AI Model Context Protocol MCP Package */}
                     {/* Image - Mobile/Tablet First, Desktop Right */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-6">
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-6 transition-transform duration-300 hover:scale-105">
                         <img
                             src={pyramidImg}
                             alt="AI Model Context Protocol MCP Package"
-                            className="w-full h-full rounded-lg"
+                            className="w-full h-full p-4"
                         />
                     </div>
 
@@ -131,11 +131,11 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 
                     {/* Fourth Row: Mobile Application Development Package */}
                     {/* Image - Mobile/Tablet First, Desktop Left */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-7">
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-7 transition-transform duration-300 hover:scale-105">
                         <img
                             src={flowerImage}
                             alt="Mobile Application Development Package"
-                            className="w-full h-auto"
+                            className="w-full h-auto p-4"
                         />
                     </div>
 
@@ -159,11 +159,11 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 
                     {/* Fifth Row: Website Package */}
                     {/* Image - Mobile/Tablet First, Desktop Right */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-10">
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-10 transition-transform duration-300 hover:scale-105">
                         <img
                             src={spinnerImage}
                             alt="Website Package"
-                            className="w-full h-auto"
+                            className="w-full h-auto p-4"
                         />
                     </div>
 
@@ -187,11 +187,11 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
 
                     {/* Sixth Row: Maintenance Package */}
                     {/* Image - Mobile/Tablet First, Desktop Left */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-11">
+                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-11 transition-transform duration-300 hover:scale-105">
                         <img
                             src={wheelImage}
                             alt="Maintenance Package"
-                            className="w-full h-auto"
+                            className="w-full h-auto p-4"
                         />
                     </div>
 

@@ -2,10 +2,10 @@ import React from 'react';
 import { cn } from '../lib/utils';
 import { Link } from 'react-router-dom';
 
-import phoneMockupsImg from '../assets/phone-mockups.svg';
 import saveingoldImg from '../assets/saveingold.png';
 import socialproImg from '../assets/socialpro.png';
 import allHypeImg from "../assets/all-hype.png";
+import farooImg from "../assets/faroo.png";
 import arrowIcon from '../assets/arrow-1.svg';
 
 interface WorkItem {
@@ -52,11 +52,12 @@ const defaultWorkItems: WorkItem[] = [
     },
     {
         id: 4,
-        title: "Zarinaya - Case Study",
+        title: "Faroo - Case Study",
         description: "Built with a minimalist design to make shopping intuitive and enjoyable.",
-        backgroundImage: phoneMockupsImg,
+        backgroundImage: farooImg,
         iconImage: arrowIcon,
-        iconAlt: "Icon"
+        iconAlt: "Icon",
+        link: "/faroo-case-study"
     },
 ];
 

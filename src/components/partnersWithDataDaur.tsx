@@ -95,15 +95,6 @@ const PartnersWith: React.FC = () => {
                         onClick={() => handleLearnMore('B2B-1')}
                     />
 
-                    {/* B2B Card 2 */}
-                    <PartnerCard
-                        title="Business to Business (B2B)"
-                        description="Enhance your business with our tailored data strategies and scalable solutions."
-                        features={b2bFeatures}
-                        buttonText="Learn More"
-                        onClick={() => handleLearnMore('B2B-2')}
-                    />
-
                     {/* B2C Card - Full Width on Large Screens */}
                     <PartnerCard
                         title="Business to Customer (B2C)"

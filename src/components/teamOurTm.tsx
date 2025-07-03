@@ -75,7 +75,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                         {/* CEO Column */}
                         <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
                             <div className="team-profile-image-container">
-                                <div className="team-profile-image-inner">
+                                <div className="team-profile-image-inner transition-transform duration-300 hover:scale-105">
                                     <img
                                         src={avatarImage}
                                         alt="CEO Tayyab Mughal"
@@ -91,7 +91,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
 
                         {/* Co-Founder Column */}
                         <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
-                            <div className="team-profile-image-container">
+                            <div className="team-profile-image-container transition-transform duration-300 hover:scale-105">
                                 <img
                                     src={avatarImage}
                                     alt="Co-Founder Asim Qamar"
@@ -108,7 +108,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-12">
                         {teamMembersIntro.map((member, index) => (
                             <div key={index} className="flex flex-col items-center space-y-4">
-                                <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                     <img
                                         src={member.image}
                                         alt={member.name}
@@ -133,11 +133,11 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                     <div key={member.name} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                         {/* Avatar */}
                         <div className={cn(
-                            'order-1 flex justify-center',
+                            'order-1 flex justify-center transition-transform duration-300 hover:scale-105',
                             // 3. For alternating rows (index 1, 3, etc.), the image is second on desktop.
                             index % 2 === 1 ? 'md:order-2 md:justify-end' : 'md:justify-start'
                         )}>
-                            <div className="w-72 h-72 rounded-full overflow-hidden bg-gray-100 border-4 border-white shadow-lg flex-shrink-0">
+                            <div className="w-72 h-72 rounded-full overflow-hidden  bg-gray-100 border-4 border-white shadow-lg flex-shrink-0">
                                 <img
                                     src={member.image}
                                     alt={member.name}
