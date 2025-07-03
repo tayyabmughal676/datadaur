@@ -73,7 +73,7 @@ const SocialProContent: React.FC = () => {
                                 <img
                                     src={socialproOutcomesImg}
                                     alt="Social Pro Outcomes"
-                                    className="w-full h-auto"
+                                    className="w-full h-auto transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                         </div>
@@ -123,7 +123,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={existinAppImg}
                                 alt="Team collaboration"
-                                className="w-full h-full rounded-2xl"
+                                className="w-full h-full rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -144,7 +144,7 @@ const SocialProContent: React.FC = () => {
                         <img
                             src={emojisImg}
                             alt="Team collaboration"
-                            className="w-full h-full rounded-2xl"
+                            className="w-full h-full rounded-2xl transition-transform duration-300 hover:scale-90"
                         />
                     </div>
                 </div>
@@ -165,21 +165,21 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={workflowImg}
                                 alt="Workflow Phase 1"
-                                className="w-full h-auto rounded-2xl"
+                                className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                         <div className="relative">
                             <img
                                 src={workflowIIImg}
                                 alt="Workflow Phase 2"
-                                className="w-full h-auto rounded-2xl"
+                                className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                         <div className="relative">
                             <img
                                 src={workflowIIIImg}
                                 alt="Workflow Phase 3"
-                                className="w-full h-auto rounded-2xl"
+                                className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -198,7 +198,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={projectDashImg}
                                 alt="Development & IT Consultations"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -217,7 +217,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={projectForecastImg}
                                 alt="AI Agent Development Package"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -236,7 +236,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={projReportImg}
                                 alt="AI Model Context Protocol MCP Package"
-                                className="w-full h-full"
+                                className="w-full h-full transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -254,7 +254,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={labourHourImg}
                                 alt="Mobile Application Development Package"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -272,7 +272,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={socialSpendImg}
                                 alt="Website Package"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -290,7 +290,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={localContentImg}
                                 alt="Maintenance Package"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -307,7 +307,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={socialSpendImg}
                                 alt="Website Package"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -338,21 +338,21 @@ const SocialProContent: React.FC = () => {
                                 <img
                                     src={setting1Img}
                                     alt="Development & IT Consultations"
-                                    className="w-full h-auto"
+                                    className="w-full h-auto transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                             <div className="">
                                 <img
                                     src={setting2Img}
                                     alt="AI Agent Development Package"
-                                    className="w-full h-auto"
+                                    className="w-full h-auto transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                             <div className="">
                                 <img
                                     src={setting3Img}
                                     alt="AI Model Context Protocol MCP Package"
-                                    className="w-full h-full"
+                                    className="w-full h-full transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
 
@@ -360,7 +360,7 @@ const SocialProContent: React.FC = () => {
                                 <img
                                     src={setting4Img}
                                     alt="Mobile Application Development Package"
-                                    className="w-full h-auto"
+                                    className="w-full h-auto transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                         </div>
@@ -376,7 +376,7 @@ const SocialProContent: React.FC = () => {
                     <div className="bg-gradient-note border-l-4 border-gradient-primary md:px-12 p-6 sm:p-8 rounded-lg">
                         <div className="flex flex-col md:flex-row gap-6">
                             <div className="flex gap-4 md:flex-col justify-center items-center">
-                                <img src={thinkImg} alt="Think Icons" className=""/>
+                                <img src={thinkImg} alt="Think Icons" className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
 
                             <div className="flex-1">

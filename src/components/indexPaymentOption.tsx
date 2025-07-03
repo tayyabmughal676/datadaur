@@ -110,7 +110,7 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
                             {paymentOptions.slice(0, 4).map((option) => (
                                 <div
                                     key={option.name}
-                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24'
+                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-transform duration-300 hover:scale-105 flex items-center justify-center h-24'
                                 >
                                     <img
                                         src={option.src}
@@ -125,7 +125,7 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
                             {paymentOptions.find(option => option.name === 'stripe') && (
                                 <div
                                     key="stripe"
-                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24 w-full max-w-[calc(50%-0.75rem)]'
+                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-transform duration-300 hover:scale-105 flex items-center justify-center h-24 w-full max-w-[calc(50%-0.75rem)]'
                                 >
                                     <img
                                         src={stripeLogo}

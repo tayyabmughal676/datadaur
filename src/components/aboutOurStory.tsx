@@ -54,7 +54,7 @@ const AboutOurStory: React.FC = () => {
                 {missionItems.map((item, index) => (
                     <div
                         key={index}
-                        className="bg-white text-center rounded-2xl p-8 lg:p-10 shadow-lg flex flex-col h-full"
+                        className="bg-white text-center rounded-2xl p-8 lg:p-10 shadow-lg flex flex-col h-full transition-transform duration-300 hover:scale-105"
                     >
                         <div className="flex items-center justify-center mb-6">
                             <div className="w-12 h-12 bg-gradient-to-r from-[#604CC3] to-[#2E245D] rounded-full flex items-center justify-center mr-4">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
 import logoImg from '../assets/logo-white.svg';
 import instagramIcon from '../assets/insta-p.svg';
@@ -15,7 +15,7 @@ interface SocialLink {
 }
 
 interface FooterLink {
-    href: string;
+    href?: string;
     label: string;
 }
 
@@ -51,25 +51,25 @@ const FooterCompo: React.FC = () => {
         {
             title: 'Service',
             links: [
-                { href: '#', label: 'AI Service & Development' },
-                { href: '#', label: 'Web App Development' },
-                { href: '#', label: 'Ecommerce Development' },
-                { href: '#', label: 'Mobile Application Development' },
-                { href: '#', label: 'Digital Marketing' },
-                { href: '#', label: 'SaaS Development' },
-                { href: '#', label: 'Website Design Development' },
-                { href: '#', label: 'Search Engine Optimization' },
+                { label: 'AI Service & Development' },
+                { label: 'Web App Development' },
+                { label: 'Ecommerce Development' },
+                { label: 'Mobile Application Development' },
+                { label: 'Digital Marketing' },
+                { label: 'SaaS Development' },
+                { label: 'Website Design Development' },
+                { label: 'Search Engine Optimization' },
             ],
         },
         {
             title: 'Industries We Serve',
             links: [
-                { href: '#', label: 'Artificial Intelligence' },
-                { href: '#', label: 'Cybersecurity' },
-                { href: '#', label: 'Education Technology (Edutech)' },
-                { href: '#', label: 'Health Technology (Healthtech)' },
-                { href: '#', label: 'Finance Technology (Fintech)' },
-                { href: '#', label: 'e-Government' },
+                { label: 'Artificial Intelligence' },
+                { label: 'Cybersecurity' },
+                { label: 'Education Technology (Edutech)' },
+                { label: 'Health Technology (Healthtech)' },
+                { label: 'Finance Technology (Fintech)' },
+                { label: 'e-Government' },
             ],
         },
     ];
@@ -86,14 +86,41 @@ const FooterCompo: React.FC = () => {
         { href: '#', label: 'Sitemap' },
     ];
 
+    const [uaeTime, setUaeTime] = useState('');
+    const [pakistanTime, setPakistanTime] = useState('');
+
+    useEffect(() => {
+        const getTime = () => {
+            const options: Intl.DateTimeFormatOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true,
+            };
+
+            // Set UAE time (Timezone: Asia/Dubai)
+            setUaeTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Dubai' }));
+
+            // Set Pakistan time (Timezone: Asia/Karachi)
+            setPakistanTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Karachi' }));
+        };
+
+        // Get the time immediately when the component loads
+        getTime();
+
+        // Set up an interval to update the time every second
+        const intervalId = setInterval(getTime, 1000);
+
+        // Clean up the interval when the component is unmounted to prevent memory leaks
+        return () => clearInterval(intervalId);
+    }, []); // The empty array ensures this effect runs only once on mount
+
     return (
         <footer className="footer-gradient text-white">
-            <div className="px-8 py-16 lg:px-20 lg:py-16">
-                <div className="max-w-7xl mx-auto">
-                    {/* Main Footer Content */}
+            <div className="px-8 py-16 lg:px-20 lg:py-12">
+                {/* --- CODE QUALITY: Corrected max-width for site-wide consistency --- */}
+                <div className="max-w-8xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-8 lg:grid-cols-5 mb-8">
 
-                        {/* Logo and Social Media */}
                         <div className="space-y-6 items-center justify-center">
                             {/* Logo */}
                             <div className="w-48 h-16 flex items-center">
@@ -108,7 +135,6 @@ const FooterCompo: React.FC = () => {
                             <div className="hidden sm:flex flex-wrap max-w-[214px] gap-4">
                                 {socialLinks.map(({ href, icon, label }) => (
                                     <a
-
                                         key={label}
                                         href={href}
                                         target="_blank"
@@ -136,12 +162,18 @@ const FooterCompo: React.FC = () => {
                                 <ul className="footer-list space-y-3">
                                     {links.map(({ href, label }) => (
                                         <li key={label}>
-                                            <a
-                                                href={href}
-                                                className="text-base font-normal hover:text-purple-200 transition-colors"
-                                            >
-                                                {label}
-                                            </a>
+                                            {href ? (
+                                                <a
+                                                    href={href}
+                                                    className="text-base font-normal hover:text-purple-200 transition-colors"
+                                                >
+                                                    {label}
+                                                </a>
+                                            ) : (
+                                                <span className="text-base font-normal cursor-default">
+                                                    {label}
+                                                </span>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
@@ -163,25 +195,27 @@ const FooterCompo: React.FC = () => {
                                     </li>
                                 ))}
                                 <li className="text-base font-normal">
-                                    <span className="block">Location Time:</span>
+                                    <span className="block"><strong>Location Time:</strong></span>
                                 </li>
                                 <li className="text-base font-normal">
-                                    <span className="block">UAE: 10:55 PM,</span>
+                                    <span className="block">UAE: {uaeTime}</span>
                                 </li>
                                 <li className="text-base font-normal">
-                                    <span className="block">Pakistan: 11:55 PM</span>
+                                    <span className="block">Pakistan: {pakistanTime}</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     {/* Copyright Section */}
-                    <div className="pt-8">
-                        <div className="text-center space-y-4">
+                    <div className="pt-8 mt-8 border-t border-white/20">
+                        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-y-4">
+                            {/* Copyright on the left for desktop */}
                             <div>
-                                <p className="text-base font-medium">© Copyright 2025 DataDaur</p>
+                                <p className="text-base font-medium text-center md:text-left">© Copyright 2025 DataDaur</p>
                             </div>
-                            <div className="flex flex-wrap justify-center gap-6">
+                            {/* Links on the right for desktop */}
+                            <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
                                 {footerLinks.map(({ href, label }) => (
                                     <a
                                         key={label}
@@ -201,4 +235,3 @@ const FooterCompo: React.FC = () => {
 };
 
 export default FooterCompo;
-

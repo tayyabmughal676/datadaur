@@ -70,7 +70,7 @@ const AllHypeContent: React.FC = () => {
                     <h2 className="text-4xl font-semibold gradient-text mb-12">Design Process</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
-                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col">
+                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col transition-transform duration-300 hover:scale-105">
                             <h2 className="text-2xl font-normal mb-6">Step 1: Requirement Analysis</h2>
                             <p className="text-lg leading-relaxed">
                                 I started by understanding user needs and gathering specific project requirements,
@@ -79,7 +79,7 @@ const AllHypeContent: React.FC = () => {
                             </p>
                         </div>
 
-                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col">
+                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col transition-transform duration-300 hover:scale-105">
                             <h2 className="text-2xl font-normal mb-6">Step 2: Ideation</h2>
                             <p className="text-lg leading-relaxed">
                                 Based on insights, I brainstormed the potential solutions and sketching out ideas that
@@ -88,7 +88,7 @@ const AllHypeContent: React.FC = () => {
                             </p>
                         </div>
 
-                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col">
+                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col transition-transform duration-300 hover:scale-105">
                             <h2 className="text-2xl font-normal mb-6">Step 3: Design</h2>
                             <p className="text-lg leading-relaxed">
                                 The next step was to create wireframes and mockups to visualize the app's layout and
@@ -97,7 +97,7 @@ const AllHypeContent: React.FC = () => {
                             </p>
                         </div>
 
-                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col">
+                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg flex flex-col transition-transform duration-300 hover:scale-105">
                             <h2 className="text-2xl font-normal mb-6">Step 4: Prototype</h2>
                             <p className="text-lg leading-relaxed">
                                 After designing the Hi-fi Design, I build an interactive prototype to demonstrate how
@@ -108,7 +108,7 @@ const AllHypeContent: React.FC = () => {
                     </div>
 
                     <div className="flex justify-center mt-8">
-                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg max-w-md w-full">
+                        <div className="card-gradient rounded-2xl text-center p-8 text-white shadow-lg max-w-md w-full transition-transform duration-300 hover:scale-105">
                             <h2 className="text-2xl font-normal mb-6 text-center">Step 5: Testing</h2>
                             <p className="text-lg leading-relaxed text-center">
                                 I conducted usability tests with potential users to gather feedback and refine the
@@ -136,12 +136,12 @@ const AllHypeContent: React.FC = () => {
                             <img
                                 src={jackPerterImg}
                                 alt="Jack Peterson"
-                                className="w-full h-auto mb-4"
+                                className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                             />
                             <img
                                 src={emmaJohnImg}
                                 alt="Emma Johnson"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -154,7 +154,7 @@ const AllHypeContent: React.FC = () => {
                             <img
                                 src={userFlowChartImg}
                                 alt="Jack Peterson"
-                                className="w-full h-auto mb-4"
+                                className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -167,7 +167,7 @@ const AllHypeContent: React.FC = () => {
                             <img
                                 src={wireFramesImg}
                                 alt="Jack Peterson"
-                                className="w-full h-auto mb-4"
+                                className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -194,7 +194,7 @@ const AllHypeContent: React.FC = () => {
                             <img
                                 src={allHypeAuthenticationImg}
                                 alt="All Hype Authentication"
-                                className="w-full h-auto mb-4"
+                                className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -224,7 +224,7 @@ const AllHypeContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={myTripCalenderImg}
-                                    alt="My Trip Calender" className=""/>
+                                    alt="My Trip Calender" className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
                         </div>
                     </div>
@@ -245,7 +245,7 @@ const AllHypeContent: React.FC = () => {
                     <div className="relative">
                         <img
                             src={travelModeImg}
-                            alt="Travel Mode" className="mb-12"/>
+                            alt="Travel Mode" className="mb-12 transition-transform duration-300 hover:scale-90"/>
                     </div>
 
                     <div className="mb-12">
@@ -264,7 +264,7 @@ const AllHypeContent: React.FC = () => {
                         <img
                             src={allHypeSelectLocationImg}
                             alt="All Hype Select Location"
-                            className="w-full h-auto mb-12"
+                            className="w-full h-auto mb-12 transition-transform duration-300 hover:scale-90"
                         />
                     </div>
 
@@ -274,7 +274,7 @@ const AllHypeContent: React.FC = () => {
                             <img
                                 src={allHypeFriendsImg}
                                 alt="All Hype Friends"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 
@@ -296,7 +296,7 @@ const AllHypeContent: React.FC = () => {
                         Thank You for Visiting this Case Study
                     </h2>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                        I would love to bring my creativity and skills to your team. To see more of my work or discuss opportunities, please visit my portfolio at Behance and Dribbble, or contact me directly.
+                        I would love to bring my creativity and skills to your team. To see more of my work or discuss opportunities, please visit my portfolio at Behance and Dribble, or contact me directly.
                     </p>
                 </div>
 

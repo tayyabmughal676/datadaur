@@ -63,7 +63,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                                 </div>
                             </div>
                             <div className="team-profile-image-container mb-4">
-                                <div className="team-profile-image-inner">
+                                <div className="team-profile-image-inner transition-transform duration-300 hover:scale-105">
                                     <img
                                         src={ceoImage}
                                         alt="CEO Tayyab Mughal"
@@ -74,7 +74,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         </div>
 
                         <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
-                            <div className="team-profile-image-container">
+                            <div className="team-profile-image-container transition-transform duration-300 hover:scale-105">
                                 <img
                                     src={coFounderImage}
                                     alt="Co-Founder Asim Qamar"
@@ -100,7 +100,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         {teamMembers.map((member, index) => (
                             <div key={index} className="flex flex-col items-center space-y-2">
                                 {/* Card now only contains the avatar */}
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] overflow-hidden team-member-card">
+                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 overflow-hidden team-member-card">
                                         <img
                                             src={member.image}
                                             alt={member.name}

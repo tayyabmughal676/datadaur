@@ -95,7 +95,7 @@ const SaveInGoldContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={shuftiproImg}
-                                    alt="" className=""/>
+                                    alt="" className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@ const SaveInGoldContent: React.FC = () => {
                             <img
                                 src={existinAppImg}
                                 alt="Team collaboration"
-                                className="w-full h-full rounded-2xl"
+                                className="w-full h-full rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -223,7 +223,7 @@ const SaveInGoldContent: React.FC = () => {
                                 <img
                                     src={mobilesGroupImages}
                                     alt="Old registration flow mobile screens"
-                                    className="w-full h-auto"
+                                    className="w-full h-auto transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                         </div>
@@ -244,7 +244,7 @@ const SaveInGoldContent: React.FC = () => {
                             <img
                                 src={fullAppImages}
                                 alt="Old registration flow mobile screens"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                     </div>
@@ -266,12 +266,12 @@ const SaveInGoldContent: React.FC = () => {
                             <img
                                 src={craditPartIImg}
                                 alt="Old registration flow mobile screens"
-                                className="w-full h-auto mb-12"
+                                className="w-full h-auto mb-12 transition-transform duration-300 hover:scale-90"
                             />
                             <img
                                 src={craditPartIIImg}
                                 alt="Old registration flow mobile screens"
-                                className="w-full h-auto"
+                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                         <div className="py-10 lg:py-12">
@@ -283,7 +283,7 @@ const SaveInGoldContent: React.FC = () => {
                                 <img
                                     src={craditPartIIIImg}
                                     alt="Old registration flow mobile screens"
-                                    className="w-full h-auto mb-12"
+                                    className="w-full h-auto mb-12 transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                         </div>
@@ -300,7 +300,7 @@ const SaveInGoldContent: React.FC = () => {
                     <div className="bg-gradient-note border-l-4 border-gradient-primary md:px-12 p-6 sm:p-8 rounded-lg">
                         <div className="flex flex-col md:flex-row gap-6">
                             <div className="flex gap-4 md:flex-col justify-center items-center">
-                                <img src={thinkImg} alt="Think Icons" className=""/>
+                                <img src={thinkImg} alt="Think Icons" className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
 
                             <div className="flex-1">
