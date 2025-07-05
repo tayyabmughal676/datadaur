@@ -8,6 +8,7 @@ import {Privacy} from "./pages/privacyPolicy.tsx";
 import {Terms} from "./pages/termsAndConditions.tsx";
 import {Partners} from "./pages/partners.tsx";
 import {Career} from "./pages/career.tsx";
+import {SitemapPage} from "./pages/sitemap.tsx";
 import {SaveInGoldCase} from "./pages/saveInGoldCS.tsx"
 import {SocialproCase} from "./pages/socialproCaseStudy.tsx";
 import {AllHypeCase} from "./pages/allHypeCaseStudy.tsx";
@@ -21,6 +22,7 @@ function App() {
     return (
         <>
             <BrowserRouter>
+
                 <Routes>
                     <Route index element={<Home />} />
                     <Route path="/portfolio" element={<Portfolio />} />
@@ -29,8 +31,9 @@ function App() {
                     <Route path="/contact-us" element={<Contact />} />
                     <Route path="/privacy-policy" element={<Privacy />} />
                     <Route path="/terms-and-conditions" element={<Terms />} />
-                    <Route path="/partners" element={<Partners />} />
-                    <Route path="/career" element={<Career />} />
+                    <Route path="/partnership" element={<Partners />} />
+                    <Route path="/careers" element={<Career />} />
+                    <Route path="/sitemap" element={<SitemapPage />} />
                     <Route path="/save-in-gold-case-study" element={<SaveInGoldCase />} />
                     <Route path="/socialpro-case-study" element={<SocialproCase />} />
                     <Route path="/all-hype-case-study" element={<AllHypeCase />} />

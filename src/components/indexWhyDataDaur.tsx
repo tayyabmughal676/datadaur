@@ -10,7 +10,7 @@ const WhyDatadaur: React.FC = () => {
                     Why Businesses Turn to Datadaur
                 </h1>
                 <p className="datadaur-subtitle max-w-3xl mx-auto">
-                    Explore Our Comprehensive Range of Services Tailored to Your Needs
+                    Discover our comprehensive range of services, expertly tailored to meet your unique business needs.
                 </p>
             </div>
 
@@ -22,7 +22,7 @@ const WhyDatadaur: React.FC = () => {
                         1. Proof of Quality
                     </h2>
                     <p className="datadaur-body-text">
-                        Experience excellence firsthand with our proof of quality work: rigorously tested, certified, and consistently exceeding expectations.
+                        Experience excellence firsthand through our rigorously tested and certified work—consistently exceeding expectations.
                     </p>
                 </div>
 
@@ -32,7 +32,7 @@ const WhyDatadaur: React.FC = () => {
                         2. Pay Half while Placing the Order
                     </h2>
                     <p className="datadaur-body-text">
-                        Secure your order today with our convenient 'Pay Half Now' option, providing flexibility and peace of mind.
+                        Secure your project with our flexible "Pay Half Now" option, giving you confidence and convenience from the start.
                     </p>
                 </div>
 
@@ -42,7 +42,7 @@ const WhyDatadaur: React.FC = () => {
                         3. Safe and Secure
                     </h2>
                     <p className="datadaur-body-text">
-                        Rest easy knowing your transactions are safe and secure with our robust encryption and protective measures.
+                        Your transactions are fully protected with robust encryption and industry-standard security measures.
                     </p>
                 </div>
 

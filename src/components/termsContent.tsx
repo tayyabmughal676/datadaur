@@ -152,8 +152,7 @@ const termsContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        We may update this policy to reflect changes in our practices, legal requirements, or technology. The
-                        updated version will be posted on this page with a new effective date.
+                        These Terms are governed by the laws of the United Arab Emirates. Any disputes shall be subject to the exclusive jurisdiction of the courts in Dubai.
                     </p>
                 </div>
 

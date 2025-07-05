@@ -22,7 +22,7 @@ const TermsHero = () => {
                             <span className="text-[#604CC3]/60 block">
                                     The
                                 <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent "> {/* Changed opacity here */}
-                                    Rules
+                                    Rules {''}
                                 </span>
                                 That
                             </span>

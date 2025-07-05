@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import { setPageTitle } from "../lib/utils";
 
 import Navbar from "../components/navBar.tsx";
-import PrivacyHero from "../components/privacyHero.tsx";
-import PrivacyContent from "../components/privacyContent.tsx";
+import SitemapHero from "../components/sitemapHero.tsx";
+import SitemapContent from "../components/sitemapContent.tsx";
 import FooterCompo from "../components/footer.tsx";
 
 
-export const Privacy = () => {
+export const SitemapPage = () => {
 
     useEffect(() => {
         setPageTitle("Privacy Policy");
@@ -16,8 +16,8 @@ export const Privacy = () => {
     return (
         <div>
             <Navbar />
-            <PrivacyHero />
-            <PrivacyContent />
+            <SitemapHero />
+            <SitemapContent />
             <FooterCompo />
         </div>
     );

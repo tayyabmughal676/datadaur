@@ -1,26 +1,36 @@
-import { useEffect } from "react";
-import { setPageTitle } from "../lib/utils";
+// import { useEffect } from "react";
+// import { setPageTitle } from "../lib/utils";
 
 import Navbar from "../components/navBar.tsx";
 import SocialProHero from "../components/socialproHero.tsx";
 import SocialProContent from "../components/socialProContent.tsx";
-import TeamContactForm from "../components/teamContactForm.tsx";
+import IndexContactForm from "../components/indexContactForm.tsx";
 import FooterCompo from "../components/footer.tsx";
+import {Helmet} from "react-helmet";
 
 
 export const SocialproCase = () => {
 
-    useEffect(() => {
-        setPageTitle("Socialpro | Case Study");
-    }, []);
+    // useEffect(() => {
+    //     setPageTitle("Socialpro | Case Study");
+    // }, []);
 
     return (
-        <div>
-            <Navbar />
-            <SocialProHero />
-            <SocialProContent />
-            <TeamContactForm />
-            <FooterCompo />
-        </div>
+        <>
+            <Helmet>
+                <title>SocialPro UX Case Study | Streamlining Social Procurement Reporting</title>
+                <meta
+                    name="description"
+                    content="Redesigned SocialPro’s reporting workflows to improve usability, reduce submission time, and boost platform adoption across $10B+ in projects."
+                />
+            </Helmet>
+            <div>
+                <Navbar />
+                <SocialProHero />
+                <SocialProContent />
+                <IndexContactForm />
+                <FooterCompo />
+            </div>
+        </>
     );
 };

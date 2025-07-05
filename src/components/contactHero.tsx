@@ -38,7 +38,7 @@ const ContactHero = () => {
                     {/* Subtitle */}
 
                     <p className="font-open-sans text-lg sm:text-xl text-[#604CC3CC] max-w-2xl leading-relaxed">
-                        We’re here to listen, collaborate, and help turn your ideas into reality—reach out anytime
+                        We’re here to listen, collaborate, and bring your ideas to life. Reach out anytime — we're ready when you are.
                     </p>
                 </div>
 
