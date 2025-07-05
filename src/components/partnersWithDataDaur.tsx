@@ -1,13 +1,13 @@
 import React from 'react';
 import { cn } from '../lib/utils';
+import { Link } from 'react-router-dom';
 
-//hello
 interface PartnerCardProps {
     title: string;
     description: string;
     features: string[];
     buttonText: string;
-    onClick?: () => void;
+    href: string; // Changed from onClick to href for navigation
     className?: string;
 }
 
@@ -16,7 +16,7 @@ const PartnerCard: React.FC<PartnerCardProps> = ({
                                                      description,
                                                      features,
                                                      buttonText,
-                                                     onClick,
+                                                     href,
                                                      className
                                                  }) => {
     return (
@@ -38,27 +38,17 @@ const PartnerCard: React.FC<PartnerCardProps> = ({
                     </li>
                 ))}
             </ul>
-            <button
-                onClick={onClick}
-                className="gradient-btn text-white font-normal px-6 py-3 rounded-lg hover:shadow-xl transition-all duration-300"
+            <Link
+                to={href}
+                className="gradient-btn text-white font-normal px-6 py-3 rounded-lg hover:shadow-xl transition-all duration-300 inline-block text-center no-underline"
             >
                 {buttonText}
-            </button>
+            </Link>
         </div>
     );
 };
 
 const PartnersWith: React.FC = () => {
-    const handleLearnMore = (type: string) => {
-        console.log(`Learn more about ${type}`);
-        // Add your navigation logic here
-    };
-
-    const handleContactUs = () => {
-        console.log('Contact us clicked');
-        // Add your contact logic here
-    };
-
     const b2bFeatures = [
         'Custom Data Analytics',
         'Scalable Cloud Solutions',
@@ -92,16 +82,16 @@ const PartnersWith: React.FC = () => {
                         description="Enhance your business with our tailored data strategies and scalable solutions."
                         features={b2bFeatures}
                         buttonText="Learn More"
-                        onClick={() => handleLearnMore('B2B-1')}
+                        href="/contact-us"
                     />
 
-                    {/* B2C Card - Full Width on Large Screens */}
+                    {/* B2C Card */}
                     <PartnerCard
                         title="Business to Customer (B2C)"
                         description="Rebrand our solutions as your own and offer them seamlessly to your customers."
                         features={b2cFeatures}
                         buttonText="Learn More"
-                        onClick={() => handleLearnMore('B2C')}
+                        href="/contact-us"
                         className="lg:col-span-1"
                     />
                 </div>
@@ -114,12 +104,12 @@ const PartnersWith: React.FC = () => {
                     <p className="font-normal text-base text-black mb-8 max-w-2xl mx-auto">
                         Explore unique projects, joint ventures, and more collaborative models.
                     </p>
-                    <button
-                        onClick={handleContactUs}
-                        className="gradient-btn text-white font-normal px-8 py-3 rounded-lg hover:shadow-xl transition-all duration-300"
+                    <Link
+                        to="/contact-us"
+                        className="gradient-btn text-white font-normal px-8 py-3 rounded-lg hover:shadow-xl transition-all duration-300 inline-block text-center no-underline"
                     >
                         Contact Us
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

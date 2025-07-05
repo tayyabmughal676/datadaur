@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '../lib/utils';
+import ResumeUploadModal from './ResumeUploadModal';
+import ComingSoonModal from './ComingSoonModal';
 
 interface IndusServeCardProps {
     title: string;
@@ -9,10 +11,10 @@ interface IndusServeCardProps {
 }
 
 const IndusServeCard: React.FC<IndusServeCardProps> = ({
-                                                       title,
-                                                       features,
-                                                       className
-                                                   }) => {
+                                                           title,
+                                                           features,
+                                                           className
+                                                       }) => {
     return (
         <div className={cn(
             "bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105",
@@ -29,14 +31,13 @@ const IndusServeCard: React.FC<IndusServeCardProps> = ({
                     </li>
                 ))}
             </ul>
-
         </div>
     );
 };
 
 const IndusWeServe: React.FC = () => {
-
-
+    const [showResumeModal, setShowResumeModal] = useState(false); // Add this state
+    const [showComingSoonModal, setShowComingSoonModal] = useState(false); // 2. Add state for the new modal
     const AIFeatures = [
         'AI-driven decision making for businesses',
         'Computer vision and NLP systems',
@@ -50,26 +51,24 @@ const IndusWeServe: React.FC = () => {
     ];
     const EdutechFeatures = [
         'Remote learning platforms & LMS',
-       ' Gamification and user engagement',
+        ' Gamification and user engagement',
         'Analytics tools for student performance'
-    ]
+    ];
     const HealthtechFeatures = [
         'Electronic Health Record (EHR) systems',
         'Appointment booking & telemedicine apps',
         'AI-powered diagnosis and analytics'
-    ]
+    ];
     const FintechFeatures = [
         'Digital wallets & payment processing',
         'KYC/AML integrations for compliance',
         'Real-time dashboards for finance data'
-    ]
+    ];
     const GovtFeatures = [
         'Citizen service portals & e-governance',
         'Secure data handling and workflow tools',
         'Smart city and infrastructure platforms'
-    ]
-
-
+    ];
 
     return (
         <section className="py-8 px-10 sm:px-12 lg:px-16 bg-white mb-8">
@@ -113,11 +112,10 @@ const IndusWeServe: React.FC = () => {
                         title="Government"
                         features={GovtFeatures}
                     />
-
                 </div>
 
                 {/* Additional Opportunities Section */}
-                <div className="text-center bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300">
+                <div className="text-center bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
                     <h2 className="font-medium text-3xl sm:text-[28px] text-black mb-4">
                         Work with me
                     </h2>
@@ -130,29 +128,39 @@ const IndusWeServe: React.FC = () => {
                     </h3>
 
                     <p className="font-normal text-base text-black mb-1 max-w-2xl mx-auto">
-                        Email: careers@datadaur.com
+                        Email: contact@datadaur.com
                     </p>
                     <p className="font-normal text-base text-black mb-8 max-w-2xl mx-auto">
                         Apply via: Name, Email, Role, CV upload
                     </p>
-                    <button type="button" className="px-3 py-2 bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white rounded-lg"> Upload Resume</button>
-
+                    <button
+                        type="button"
+                        onClick={() => setShowResumeModal(true)} // Add this onClick handler
+                        className="px-3 py-2 bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white rounded-lg hover:shadow-md transition-all"
+                    >
+                        Upload Resume
+                    </button>
                 </div>
-                <div className="text-center mt-24 bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300">
+                <div className="text-center mt-24 bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
                     <h3 className="font-medium text-2xl sm:text-[28px] text-black mb-4">
-                        Be a Part of DataDaur’s Next Innovation
+                        Be a Part of DataDaur's Next Innovation
                     </h3>
                     <p className="font-normal text-base text-black mb-8 max-w-2xl mx-auto">
-                        We're always on the lookout for creative minds, tech innovators, and problem solvers. Let’s build the future together.
+                        We're always on the lookout for creative minds, tech innovators, and problem solvers. Let's build the future together.
                     </p>
-                    <button type="button" className="px-3 py-2 bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white rounded-lg">Explore Job Openings</button>
-
+                    <button
+                        onClick={() => setShowComingSoonModal(true)}
+                        type="button" className="px-3 py-2 bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white rounded-lg hover:shadow-md transition-all">
+                        Explore Job Openings
+                    </button>
                 </div>
             </div>
+
+            {/* Add this modal component */}
+            {showResumeModal && <ResumeUploadModal onClose={() => setShowResumeModal(false)} />}
+            {showComingSoonModal && <ComingSoonModal onClose={() => setShowComingSoonModal(false)} />}
         </section>
     );
 };
 
 export default IndusWeServe;
-
-//hello

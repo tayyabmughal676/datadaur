@@ -70,7 +70,7 @@ const NavBar: React.FC = () => {
             <nav className="w-full fixed top-0 z-50">
                 {/* Desktop Navbar - visible on md and up */}
                 {/* Adjusted padding to be inside this div, and added ref */}
-                <div className="hidden md:block max-w-7xl mx-auto px-4 lg:px-8 lg:pt-6" ref={mobileMenuRef}>
+                <div className="hidden md:block max-w-7xl mx-auto px-4 lg:px-8 lg:pt-2" ref={mobileMenuRef}>
                     <div className="bg-[#F8FBFF] rounded-4xl px-6 py-4 shadow-xl border border-white/20">
                         <div className="flex items-center justify-between">
                             {/* Logo */}

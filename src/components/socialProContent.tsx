@@ -198,7 +198,7 @@ const SocialProContent: React.FC = () => {
                             <img
                                 src={projectDashImg}
                                 alt="Development & IT Consultations"
-                                className="w-full h-auto transition-transform duration-300 hover:scale-90"
+                                className="w-full h-auto border-6 border-[#604CC3]/40 rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
 

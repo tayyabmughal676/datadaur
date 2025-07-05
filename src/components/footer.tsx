@@ -34,20 +34,21 @@ const FooterCompo: React.FC = () => {
         { href: 'https://bsky.app/profile/datadaur.bsky.social', icon: butterflyIcon, label: 'Bsky' },
     ];
 
+    const quickLinks: FooterSection = {
+        title: 'Quick Links',
+        links: [
+            { href: '/', label: 'Home' },
+            { href: '/portfolio', label: 'Portfolio' },
+            { href: '/team', label: 'Team' },
+            { href: '/about', label: 'About' },
+            { href: '#', label: 'Case-Study' },
+            { href: '/partnership', label: 'Partnership' },
+            { href: '/careers', label: 'Careers' },
+            { href: '/contact-us', label: 'Contact' },
+        ],
+    };
+
     const footerSections: FooterSection[] = [
-        {
-            title: 'Quick Links',
-            links: [
-                { href: '/', label: 'Home' },
-                { href: '/portfolio', label: 'Portfolio' },
-                { href: '/team', label: 'Team' },
-                { href: '/about', label: 'About' },
-                { href: '#', label: 'Case-Study' },
-                { href: '/partners', label: 'Partnership' },
-                { href: '/career', label: 'Careers' },
-                { href: '/contact', label: 'Contact' },
-            ],
-        },
         {
             title: 'Service',
             links: [
@@ -83,7 +84,7 @@ const FooterCompo: React.FC = () => {
     const footerLinks = [
         { href: '/privacy-policy', label: 'Privacy Policy' },
         { href: '/terms-and-conditions', label: 'Terms & condition' },
-        { href: '#', label: 'Sitemap' },
+        { href: '/sitemap', label: 'Sitemap' },
     ];
 
     const [uaeTime, setUaeTime] = useState('');
@@ -97,41 +98,25 @@ const FooterCompo: React.FC = () => {
                 hour12: true,
             };
 
-            // Set UAE time (Timezone: Asia/Dubai)
             setUaeTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Dubai' }));
-
-            // Set Pakistan time (Timezone: Asia/Karachi)
             setPakistanTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Karachi' }));
         };
 
-        // Get the time immediately when the component loads
         getTime();
-
-        // Set up an interval to update the time every second
         const intervalId = setInterval(getTime, 1000);
-
-        // Clean up the interval when the component is unmounted to prevent memory leaks
         return () => clearInterval(intervalId);
-    }, []); // The empty array ensures this effect runs only once on mount
+    }, []);
 
     return (
         <footer className="footer-gradient text-white">
             <div className="px-8 py-16 lg:px-20 lg:py-12">
-                {/* --- CODE QUALITY: Corrected max-width for site-wide consistency --- */}
                 <div className="max-w-8xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-8 lg:grid-cols-5 mb-8">
-
+                        {/* Logo and Social */}
                         <div className="space-y-6 items-center justify-center">
-                            {/* Logo */}
                             <div className="w-48 h-16 flex items-center">
-                                <img
-                                    src={logoImg}
-                                    alt="DataDaur Logo"
-                                    className="w-48 h-16 object-contain"
-                                />
+                                <img src={logoImg} alt="DataDaur Logo" className="w-48 h-16 object-contain" />
                             </div>
-
-                            {/* Social Media Icons */}
                             <div className="hidden sm:flex flex-wrap max-w-[214px] gap-4">
                                 {socialLinks.map(({ href, icon, label }) => (
                                     <a
@@ -145,42 +130,13 @@ const FooterCompo: React.FC = () => {
                                         )}
                                         aria-label={label}
                                     >
-                                        <img
-                                            src={icon}
-                                            alt={label}
-                                            className="w-4 h-4"
-                                        />
+                                        <img src={icon} alt={label} className="w-4 h-4" />
                                     </a>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Footer Sections */}
-                        {footerSections.map(({ title, links }) => (
-                            <div key={title}>
-                                <h3 className="text-2xl font-bold mb-6">{title}</h3>
-                                <ul className="footer-list space-y-3">
-                                    {links.map(({ href, label }) => (
-                                        <li key={label}>
-                                            {href ? (
-                                                <a
-                                                    href={href}
-                                                    className="text-base font-normal hover:text-purple-200 transition-colors"
-                                                >
-                                                    {label}
-                                                </a>
-                                            ) : (
-                                                <span className="text-base font-normal cursor-default">
-                                                    {label}
-                                                </span>
-                                            )}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-
-                        {/* Contact */}
+                        {/* Contact section moved up */}
                         <div>
                             <h3 className="text-2xl font-bold mb-6">Contact</h3>
                             <ul className="footer-list space-y-4">
@@ -205,16 +161,62 @@ const FooterCompo: React.FC = () => {
                                 </li>
                             </ul>
                         </div>
+
+                        {/* Other footer sections */}
+                        {footerSections.map(({ title, links }) => (
+                            <div key={title}>
+                                <h3 className="text-2xl font-bold mb-6">{title}</h3>
+                                <ul className="footer-list space-y-3">
+                                    {links.map(({ href, label }) => (
+                                        <li key={label}>
+                                            {href ? (
+                                                <a
+                                                    href={href}
+                                                    className="text-base font-normal hover:text-purple-200 transition-colors"
+                                                >
+                                                    {label}
+                                                </a>
+                                            ) : (
+                                                <span className="text-base font-normal cursor-default">
+                                                    {label}
+                                                </span>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+
+                        {/* Quick Links moved down */}
+                        <div>
+                            <h3 className="text-2xl font-bold mb-6">{quickLinks.title}</h3>
+                            <ul className="footer-list space-y-3">
+                                {quickLinks.links.map(({ href, label }) => (
+                                    <li key={label}>
+                                        {href ? (
+                                            <a
+                                                href={href}
+                                                className="text-base font-normal hover:text-purple-200 transition-colors"
+                                            >
+                                                {label}
+                                            </a>
+                                        ) : (
+                                            <span className="text-base font-normal cursor-default">
+                                                {label}
+                                            </span>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    {/* Copyright Section */}
+                    {/* Footer bottom */}
                     <div className="pt-8 mt-8 border-t border-white/20">
                         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-y-4">
-                            {/* Copyright on the left for desktop */}
-                            <div>
-                                <p className="text-base font-medium text-center md:text-left">© Copyright 2025 DataDaur</p>
-                            </div>
-                            {/* Links on the right for desktop */}
+                            <p className="text-base font-medium text-center md:text-left">
+                                © Copyright 2025 DataDaur
+                            </p>
                             <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
                                 {footerLinks.map(({ href, label }) => (
                                     <a

@@ -39,7 +39,7 @@ const AboutHero = () => {
                     {/* Subtitle */}
 
                     <p className="font-open-sans text-lg sm:text-xl text-[#604CC3CC] max-w-2xl leading-relaxed">
-                        A skilled team dedicated to delivering innovation, precision, and impact.
+                        Helping brands transform ambition into design that works.
                     </p>
                 </div>
 

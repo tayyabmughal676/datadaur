@@ -1,5 +1,50 @@
 import React, { useState } from 'react';
+import { z } from 'zod';
 import { cn } from '../lib/utils';
+import axios from 'axios';
+import { countryData } from './countryData';
+
+// Zod validation schema
+const contactFormSchema = z.object({
+    fullName: z.string()
+        .min(2, 'Full name must be at least 2 characters')
+        .max(50, 'Full name must be less than 50 characters')
+        .regex(/^[a-zA-Z\s]+$/, 'Full name can only contain letters and spaces'),
+
+    company: z.string()
+        .max(100, 'Company name must be less than 100 characters')
+        .optional(),
+
+    email: z.string()
+        .email('Please enter a valid email address')
+        .min(1, 'Email is required'),
+
+    phone: z.string()
+        .min(7, 'Phone number must be at least 7 digits')
+        .max(15, 'Phone number must be less than 15 digits')
+        .regex(/^\d+$/, 'Phone number can only contain digits'),
+
+    countryCode: z.string()
+        .min(1, 'Country code is required'),
+
+    country: z.string()
+        .min(1, 'Please select a country'),
+
+    city: z.string()
+        .min(2, 'City must be at least 2 characters')
+        .max(50, 'City must be less than 50 characters')
+        .optional(),
+
+    interests: z.array(z.string())
+        .min(1, 'Please select at least one interest'),
+
+    budget: z.string()
+        .min(1, 'Please select a budget range'),
+
+    projectDescription: z.string()
+        .min(10, 'Project description must be at least 10 characters')
+        .max(1000, 'Project description must be less than 1000 characters')
+});
 
 interface FormData {
     fullName: string;
@@ -14,6 +59,47 @@ interface FormData {
     projectDescription: string;
 }
 
+interface FormErrors {
+    [key: string]: string;
+}
+
+// Define constants outside the component for better performance
+const interestOptions = [
+    'AI Agent Development',
+    'Software as a Service (SaaS) Development',
+    'MVP Development',
+    'AI MCP Development',
+    'No-code Software Development',
+    'Web Application Development',
+    'UX/UI Design',
+    'Branding',
+    'AI/ML'
+];
+
+const budgetOptions = [
+    '$10K - $20K',
+    '$30K - $40K',
+    '$50K - $60K',
+    '> $100K'
+];
+
+// Generate country options from countryData
+const countryOptions = [
+    { value: '', label: 'Select a country' },
+    ...countryData.map(country => ({
+        value: country.code.toLowerCase(),
+        label: `${country.name} (${country.code})`
+    }))
+];
+
+// Generate country codes from countryData
+const countryCodes = [
+    ...countryData.map(country => ({
+        value: country.dialCode,
+        label: `${country.dialCode} (${country.code})`
+    }))
+].sort((a, b) => a.label.localeCompare(b.label));
+
 const IndexContactForm: React.FC = () => {
     const [formData, setFormData] = useState<FormData>({
         fullName: '',
@@ -21,42 +107,16 @@ const IndexContactForm: React.FC = () => {
         email: '',
         phone: '',
         countryCode: '+971',
-        country: '',
+        country: 'United Arab Emirates',
         city: '',
         interests: [],
         budget: '',
         projectDescription: ''
     });
 
-    const interestOptions = [
-        'AI Agent Development',
-        'Software as a Service (SaaS) Development',
-        'MVP Development',
-        'AI MCP Development',
-        'No-code Software Development',
-        'Web Application Development',
-        'UX/UI Design',
-        'Branding',
-        'AI/ML'
-    ];
-
-    const budgetOptions = [
-        '$10K - $20K',
-        '$30K - $40K',
-        '$50K - $60K',
-        '> $100K'
-    ];
-
-    const countryOptions = [
-        { value: '', label: 'United Arab Emirates (UAE)' },
-        { value: 'us', label: 'United States' },
-        { value: 'uk', label: 'United Kingdom' },
-        { value: 'pk', label: 'Pakistan' }
-    ];
-
-    const countryCodes = [
-        { value: '+971', label: '+971' }
-    ];
+    const [errors, setErrors] = useState<FormErrors>({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [responseMessage, setResponseMessage] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -64,6 +124,14 @@ const IndexContactForm: React.FC = () => {
             ...prev,
             [name]: value
         }));
+
+        // Clear error for this field when user starts typing
+        if (errors[name]) {
+            setErrors(prev => ({
+                ...prev,
+                [name]: ''
+            }));
+        }
     };
 
     const toggleInterest = (interest: string) => {
@@ -73,6 +141,14 @@ const IndexContactForm: React.FC = () => {
                 ? prev.interests.filter(i => i !== interest)
                 : [...prev.interests, interest]
         }));
+
+        // Clear interests error when user selects an interest
+        if (errors.interests) {
+            setErrors(prev => ({
+                ...prev,
+                interests: ''
+            }));
+        }
     };
 
     const selectBudget = (budget: string) => {
@@ -80,12 +156,72 @@ const IndexContactForm: React.FC = () => {
             ...prev,
             budget
         }));
+
+        // Clear budget error when user selects a budget
+        if (errors.budget) {
+            setErrors(prev => ({
+                ...prev,
+                budget: ''
+            }));
+        }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const validateForm = (): boolean => {
+        try {
+            contactFormSchema.parse(formData);
+            setErrors({});
+            return true;
+        } catch (error) {
+            if (error instanceof z.ZodError) {
+                const formErrors: FormErrors = {};
+                error.errors.forEach(err => {
+                    if (err.path) {
+                        formErrors[err.path[0]] = err.message;
+                    }
+                });
+                setErrors(formErrors);
+            }
+            return false;
+        }
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Handle form submission here
+
+        // Validate form before submission
+        if (!validateForm()) {
+            return;
+        }
+
+        setIsSubmitting(true);
+        setResponseMessage(null);
+
+        const dataToSend = {
+            ...formData,
+            access_key: "7606fa07-b450-4219-b7bb-5e78bdfc5897",
+            subject: `New Contact Form Submission from ${formData.fullName}`,
+            from_name: "DataDaur",
+        };
+
+        try {
+            const response = await axios.post('https://api.web3forms.com/submit', dataToSend);
+
+            if (response.data.success) {
+                setResponseMessage({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+                // Reset the form
+                setFormData({
+                    fullName: '', company: '', email: '', phone: '', countryCode: '+971',
+                    country: '', city: '', interests: [], budget: '', projectDescription: ''
+                });
+                setErrors({});
+            } else {
+                setResponseMessage({ type: 'error', message: response.data.message || 'An error occurred. Please try again.' });
+            }
+        } catch (error) {
+            setResponseMessage({ type: 'error', message: 'An error occurred while sending the form. Please try again later.' });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -108,7 +244,7 @@ const IndexContactForm: React.FC = () => {
                             htmlFor="fullName"
                             className="block text-sm font-medium mb-2 font-outfit text-black"
                         >
-                            Full Name
+                            Full Name *
                         </label>
                         <input
                             type="text"
@@ -120,9 +256,13 @@ const IndexContactForm: React.FC = () => {
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
                                 "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                errors.fullName && "border-red-500 focus:ring-red-500"
                             )}
                         />
+                        {errors.fullName && (
+                            <p className="mt-1 text-sm text-red-600">{errors.fullName}</p>
+                        )}
                     </div>
 
                     {/* Company */}
@@ -143,9 +283,13 @@ const IndexContactForm: React.FC = () => {
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
                                 "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                errors.company && "border-red-500 focus:ring-red-500"
                             )}
                         />
+                        {errors.company && (
+                            <p className="mt-1 text-sm text-red-600">{errors.company}</p>
+                        )}
                     </div>
                 </div>
 
@@ -157,7 +301,7 @@ const IndexContactForm: React.FC = () => {
                             htmlFor="email"
                             className="block text-sm font-medium mb-2 font-outfit text-black"
                         >
-                            Email
+                            Email *
                         </label>
                         <input
                             type="email"
@@ -169,9 +313,13 @@ const IndexContactForm: React.FC = () => {
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
                                 "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                errors.email && "border-red-500 focus:ring-red-500"
                             )}
                         />
+                        {errors.email && (
+                            <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                        )}
                     </div>
 
                     {/* Phone Number */}
@@ -180,7 +328,7 @@ const IndexContactForm: React.FC = () => {
                             htmlFor="phone"
                             className="block text-sm font-medium mb-2 font-outfit text-black"
                         >
-                            Phone Number
+                            Phone Number *
                         </label>
                         <div className="flex">
                             <select
@@ -190,7 +338,8 @@ const IndexContactForm: React.FC = () => {
                                 className={cn(
                                     "px-3 py-3 rounded-l-lg border-r-0 border",
                                     "bg-gray-50 border-gray-300 text-gray-500 font-outfit",
-                                    "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                    "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                    errors.countryCode && "border-red-500 focus:ring-red-500"
                                 )}
                             >
                                 {countryCodes.map(code => (
@@ -209,10 +358,14 @@ const IndexContactForm: React.FC = () => {
                                 className={cn(
                                     "flex-1 px-4 py-3 rounded-r-lg border border-l-0 transition-colors duration-200",
                                     "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                                    "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                    "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                    errors.phone && "border-red-500 focus:ring-red-500"
                                 )}
                             />
                         </div>
+                        {(errors.phone || errors.countryCode) && (
+                            <p className="mt-1 text-sm text-red-600">{errors.phone || errors.countryCode}</p>
+                        )}
                     </div>
                 </div>
 
@@ -224,7 +377,7 @@ const IndexContactForm: React.FC = () => {
                             htmlFor="country"
                             className="block text-sm font-medium mb-2 font-outfit text-black"
                         >
-                            Country
+                            Country *
                         </label>
                         <select
                             id="country"
@@ -234,7 +387,8 @@ const IndexContactForm: React.FC = () => {
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
                                 "bg-gray-50 border-gray-300 font-outfit text-gray-500",
-                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                errors.country && "border-red-500 focus:ring-red-500"
                             )}
                         >
                             {countryOptions.map(country => (
@@ -243,6 +397,9 @@ const IndexContactForm: React.FC = () => {
                                 </option>
                             ))}
                         </select>
+                        {errors.country && (
+                            <p className="mt-1 text-sm text-red-600">{errors.country}</p>
+                        )}
                     </div>
 
                     {/* City */}
@@ -263,20 +420,24 @@ const IndexContactForm: React.FC = () => {
                             className={cn(
                                 "w-full px-4 py-3 rounded-lg border transition-colors duration-200",
                                 "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                                "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
+                                errors.city && "border-red-500 focus:ring-red-500"
                             )}
                         />
+                        {errors.city && (
+                            <p className="mt-1 text-sm text-red-600">{errors.city}</p>
+                        )}
                     </div>
                 </div>
 
                 {/* Interests */}
                 <div>
                     <label className="block text-sm font-medium mb-4 font-outfit text-black">
-                        I'm interested in...
+                        I'm interested in... *
                     </label>
-                    {/* Desktop version (1024px and above) - Keep existing grid layout */}
+
+                    {/* Desktop version */}
                     <div className="hidden lg:block space-y-2 mr-10">
-                        {/* First row - 4 buttons */}
                         <div className="grid grid-cols-4 gap-2">
                             {interestOptions.slice(0, 4).map(interest => (
                                 <button
@@ -288,14 +449,14 @@ const IndexContactForm: React.FC = () => {
                                         "font-outfit",
                                         formData.interests.includes(interest)
                                             ? "gradient-bg text-white border-transparent"
-                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400",
+                                        errors.interests && "border-red-500"
                                     )}
                                 >
                                     {interest}
                                 </button>
                             ))}
                         </div>
-                        {/* Second row - remaining 5 buttons */}
                         <div className="grid grid-cols-5 gap-2">
                             {interestOptions.slice(4).map(interest => (
                                 <button
@@ -307,7 +468,8 @@ const IndexContactForm: React.FC = () => {
                                         "font-outfit",
                                         formData.interests.includes(interest)
                                             ? "gradient-bg text-white border-transparent"
-                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400",
+                                        errors.interests && "border-red-500"
                                     )}
                                 >
                                     {interest}
@@ -316,7 +478,7 @@ const IndexContactForm: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Mobile/Tablet version (below 1024px) - Flexible wrapping layout */}
+                    {/* Mobile version */}
                     <div className="lg:hidden flex flex-wrap gap-2">
                         {interestOptions.map(interest => (
                             <button
@@ -328,22 +490,27 @@ const IndexContactForm: React.FC = () => {
                                     "font-outfit whitespace-nowrap flex-shrink-0",
                                     formData.interests.includes(interest)
                                         ? "gradient-bg text-white border-transparent"
-                                        : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                        : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400",
+                                    errors.interests && "border-red-500"
                                 )}
                             >
                                 {interest}
                             </button>
                         ))}
                     </div>
-                </div>
 
+                    {errors.interests && (
+                        <p className="mt-2 text-sm text-red-600">{errors.interests}</p>
+                    )}
+                </div>
 
                 {/* Budget */}
                 <div>
                     <label className="block text-sm font-medium mb-4 font-outfit text-black">
-                        Project Budget (USD)
+                        Project Budget (USD) *
                     </label>
-                    {/* Desktop version (1024px and above) - Single row layout */}
+
+                    {/* Desktop version */}
                     <div className="hidden lg:block">
                         <div className="grid grid-cols-4 gap-2 w-1/2">
                             {budgetOptions.map(budget => (
@@ -356,7 +523,8 @@ const IndexContactForm: React.FC = () => {
                                         "font-outfit",
                                         formData.budget === budget
                                             ? "gradient-bg text-white border-transparent"
-                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                            : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400",
+                                        errors.budget && "border-red-500"
                                     )}
                                 >
                                     {budget}
@@ -365,7 +533,7 @@ const IndexContactForm: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Mobile/Tablet version (below 1024px) - Flexible wrapping layout */}
+                    {/* Mobile version */}
                     <div className="lg:hidden flex flex-wrap gap-2">
                         {budgetOptions.map(budget => (
                             <button
@@ -377,7 +545,8 @@ const IndexContactForm: React.FC = () => {
                                     "font-outfit whitespace-nowrap flex-shrink-0",
                                     formData.budget === budget
                                         ? "gradient-bg text-white border-transparent"
-                                        : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400"
+                                        : "bg-gray-50 border-gray-300 text-gray-500 hover:border-gray-400",
+                                    errors.budget && "border-red-500"
                                 )}
                             >
                                 {budget}
@@ -385,9 +554,12 @@ const IndexContactForm: React.FC = () => {
                         ))}
                     </div>
 
+                    {errors.budget && (
+                        <p className="mt-2 text-sm text-red-600">{errors.budget}</p>
+                    )}
+
                     <p className="text-xs text-gray-500 mt-2 font-outfit">
-                        This is the minimum starting price for any project. The final price will be determined based on the
-                        project scope and timelines.
+                        This is the minimum starting price for any project. The final price will be determined based on the project scope and timelines
                     </p>
                 </div>
 
@@ -397,7 +569,7 @@ const IndexContactForm: React.FC = () => {
                         htmlFor="projectDescription"
                         className="block text-sm font-medium mb-2 font-outfit text-black"
                     >
-                        Tell us more about your project
+                        Tell us more about your project *
                     </label>
                     <textarea
                         id="projectDescription"
@@ -409,23 +581,38 @@ const IndexContactForm: React.FC = () => {
                         className={cn(
                             "w-full px-4 py-3 rounded-lg border transition-colors duration-200 resize-none",
                             "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent"
+                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent","custom-scrollbar",
+                            errors.projectDescription && "border-red-500 focus:ring-red-500"
                         )}
                     />
+                    {errors.projectDescription && (
+                        <p className="mt-1 text-sm text-red-600">{errors.projectDescription}</p>
+                    )}
                 </div>
 
-                {/* Submit Button */}
-                <div className="flex justify-start">
+                {/* Submit Button and Response Message */}
+                <div className="flex flex-col items-start gap-4">
                     <button
                         type="submit"
+                        disabled={isSubmitting}
                         className={cn(
                             "gradient-bg text-white px-8 py-3 rounded-lg font-medium",
-                            "hover:shadow-lg transition-shadow duration-200 font-outfit",
-                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:ring-offset-2"
+                            "hover:shadow-lg transition-all duration-200 font-outfit",
+                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:ring-offset-2",
+                            "disabled:opacity-50 disabled:cursor-not-allowed"
                         )}
                     >
-                        Submit the request
+                        {isSubmitting ? 'Submitting...' : 'Submit the request'}
                     </button>
+
+                    {responseMessage && (
+                        <p className={cn(
+                            "text-sm",
+                            responseMessage.type === 'success' ? 'text-green-600' : 'text-red-600'
+                        )}>
+                            {responseMessage.message}
+                        </p>
+                    )}
                 </div>
             </form>
         </section>
@@ -433,6 +620,3 @@ const IndexContactForm: React.FC = () => {
 };
 
 export default IndexContactForm;
-
-
-//hello

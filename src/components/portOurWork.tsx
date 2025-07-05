@@ -70,7 +70,7 @@ const OurWork: React.FC<OurWorkProps> = ({ workItems = defaultWorkItems }) => {
             </div>
 
             {/* Work Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                 {workItems.map((work) => (
                     <WorkCard key={work.id} work={work} />
                 ))}
@@ -90,7 +90,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
         <>
             <div className={cn(
                 "relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg mb-6",
-                "transition-transform duration-300 group-hover:scale-105"
+                "transition-transform duration-300 group-hover:scale-105 border-6 border-[#604CC3]/40"
             )}>
                 {/* Background Image */}
                 <div className="relative w-full h-full">

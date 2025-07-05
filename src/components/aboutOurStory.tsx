@@ -8,12 +8,15 @@ const missionItems = [
     {
         icon: archIcon,
         title: "Our Mission",
-        description: "To empower businesses with smart, scalable, and future-ready digital solutions. We focus on delivering high-quality development, AI integration, and expert IT consultations that drive real results and long-term growth."
+        description: "To empower businesses through smart, scalable, and future-ready digital solutions. " +
+            "We are committed to delivering high-quality development, seamless AI integration, and expert IT " +
+            "consultations that drive measurable results and long-term growth."
     },
     {
         icon: eyeIcon,
         title: "Our Vision",
-        description: "To become a trusted technology partner for forward-thinking companies by shaping intelligent digital experiences through innovation, precision, and reliability in every service we offer."
+        description: "To be the trusted technology partner for forward-thinking companies by shaping intelligent " +
+            "digital experiences—driven by innovation, precision, and unwavering reliability in every service we deliver."
     }
 ];
 
@@ -33,7 +36,15 @@ const AboutOurStory: React.FC = () => {
                         Our Story
                     </h3>
                     <p className="font-body font-normal text-base lg:text-lg text-black leading-relaxed">
-                        DataDaur is a UAE-based technology company with over five years of experience in delivering smart, scalable, and future-focused digital solutions. We specialize in a full suite of services including IT management, software engineering, AI agent development using our Model Context Protocol (MCP Package), mobile application development, website design and development, and comprehensive maintenance packages. Our mission is simple: To help businesses harness the power of technology and data to solve real-world challenges. At our core, we believe that data is more than information — it's a strategic asset. Through intelligent AI systems and thoughtfully engineered digital products, we empower organizations to make smarter decisions, automate complex processes, and scale with confidence. Whether you're a startup aiming to launch your first digital product or an enterprise looking to modernize operations, we bring the vision, expertise, and innovation needed to move you forward.
+                        DataDaur is a UAE-based technology company with over five years of experience delivering smart,
+                        scalable, and future-focused digital solutions. We offer a full suite of services, including IT management,
+                        software engineering, AI agent development using our Model Context Protocol (MCP Package), mobile app development,
+                        website design, and comprehensive maintenance packages. Our mission is simple: to help businesses
+                        harness the power of technology and data to solve real-world challenges. At our core, we believe data
+                        is more than information—it’s a strategic asset. Through intelligent AI systems and thoughtfully engineered
+                        digital products, we empower organizations to make smarter decisions, automate complex processes, and scale
+                        with confidence. Whether you're a startup launching your first product or an enterprise modernizing operations,
+                        we bring the vision, expertise, and innovation to help you move forward.
                     </p>
                 </div>
 

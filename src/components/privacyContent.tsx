@@ -22,9 +22,7 @@ const PrivacyPolicyContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                        <strong>DataDaur</strong> is a UAE-based technology firm specializing in IT management, AI engineering,
-                        web/mobile development, and cloud solutions. With over 5 years of trusted experience, our mission is to
-                        deliver secure, scalable, and user-centric solutions to clients worldwide.
+                        <strong>DataDaur</strong> is a technology company based in the UAE, specializing in IT management, artificial intelligence engineering, web and mobile application development, and cloud-based solutions. With over five years of proven experience, we are committed to delivering secure, scalable, and user-focused technologies to clients around the world.
                     </p>
                 </div>
 
@@ -37,13 +35,12 @@ const PrivacyPolicyContent: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-black leading-relaxed mb-4 text-base sm:text-lg lg:text-xl">
-                            We collect personal and technical information for communication, service delivery, and analytics.
-                            This includes:
+                            We collect personal and technical information to support communication, service delivery, and analytics. This includes:
                         </p>
                         <ul className="space-y-2 ml-2 sm:ml-4 mb-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Contact information (Name, Email, Phone, Company)
+                                Contact information (name, email, phone number, company)
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -55,7 +52,7 @@ const PrivacyPolicyContent: React.FC = () => {
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Interaction data through cookies and analytics tools
+                                Interaction data collected through cookies and analytics tools
                             </li>
                         </ul>
                         <div className="bg-gradient-note border-l-4 border-gradient-primary p-3 sm:p-4 rounded-lg">
@@ -81,11 +78,11 @@ const PrivacyPolicyContent: React.FC = () => {
                         <ul className="space-y-2 ml-2 sm:ml-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Understand project requirements and deliver estimates
+                                Understand project requirements and provide accurate estimates
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Offer personalized tech solutions and demos
+                                Offer personalized technology solutions and demonstrations
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -93,11 +90,11 @@ const PrivacyPolicyContent: React.FC = () => {
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Send updates or offers (with your consent)
+                                Send updates and promotional offers (with your consent)
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Comply with legal or compliance frameworks
+                                Comply with legal and regulatory requirements
                             </li>
                         </ul>
                     </div>
@@ -117,15 +114,15 @@ const PrivacyPolicyContent: React.FC = () => {
                         <ul className="space-y-2 ml-2 sm:ml-4 mb-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Essential cookies for basic site functionality
+                                <strong>Essential cookies</strong> for basic site functionality
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Analytics cookies (Google Analytics, Hotjar)
+                                <strong>Analytics cookies</strong> (e.g., Google Analytics, Hotjar)
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Preference cookies to remember settings
+                                <strong>Preference cookies</strong> to remember settings
                             </li>
                         </ul>
                         <div className="bg-gradient-note border-l-4 border-gradient-primary p-3 sm:p-4 rounded-lg">
@@ -151,19 +148,19 @@ const PrivacyPolicyContent: React.FC = () => {
                         <ul className="space-y-2 ml-2 sm:ml-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Secure HTTPS connections for all communication
+                                <strong>Secure HTTPS connections</strong> for all communication
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Cloud firewalls and access control policies
+                                <strong>Cloud firewalls</strong> and <strong>access control policies</strong>
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Data minimization and encryption protocols
+                                <strong>Data minimization</strong> and <strong>encryption protocols</strong>
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Internal training and role-based data access
+                                <strong>Internal training</strong> and <strong>role-based data access</strong>
                             </li>
                         </ul>
                     </div>
@@ -183,15 +180,15 @@ const PrivacyPolicyContent: React.FC = () => {
                         <ul className="space-y-2 ml-2 sm:ml-4 mb-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Trusted hosting or cloud infrastructure providers
+                                <strong>Trusted hosting or cloud infrastructure providers</strong>
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Analytics and communication platforms (under NDA)
+                                <strong>Analytics and communication platforms</strong> (under NDA)
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Government authorities (if legally required)
+                                <strong>Government authorities,</strong> (if legally required)
                             </li>
                         </ul>
                     </div>
@@ -237,8 +234,7 @@ const PrivacyPolicyContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        We retain personal data only as long as necessary to fulfill its purpose or comply with legal
-                        obligations. After this period, data is securely deleted or anonymized.
+                        We retain personal data only for as long as necessary to fulfill its purpose or comply with legal obligations. After this period, the data is securely deleted or anonymized.
                     </p>
                 </div>
 
@@ -250,8 +246,7 @@ const PrivacyPolicyContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        We may update this policy to reflect changes in our practices, legal requirements, or technology. The
-                        updated version will be posted on this page with a new effective date.
+                        We may update this policy to reflect changes in our practices, legal requirements, or technology. The updated version will be posted on this page with a revised effective date.
                     </p>
                 </div>
 
