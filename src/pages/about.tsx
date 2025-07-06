@@ -21,14 +21,14 @@ export const About = () => {
                     content="Learn how DataDaur delivers smart, scalable, AI-powered digital solutions. We turn data into strategy to help businesses grow with confidence."
                 />
             </Helmet>
-        <div>
-            <Navbar />
-            <AboutHero />
-            <AboutOurStory />
-            <IndexWhyDataDaur />
-            <IndexContactForm />
-            <FooterCompo />
-        </div>
+            <div>
+                <Navbar />
+                <AboutHero />
+                <AboutOurStory />
+                <IndexWhyDataDaur />
+                <IndexContactForm />
+                <FooterCompo />
+            </div>
     </>
     );
 };

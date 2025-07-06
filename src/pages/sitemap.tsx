@@ -1,24 +1,35 @@
-import { useEffect } from "react";
-import { setPageTitle } from "../lib/utils";
+// import { useEffect } from "react";
+// import { setPageTitle } from "../lib/utils";
 
 import Navbar from "../components/navBar.tsx";
 import SitemapHero from "../components/sitemapHero.tsx";
 import SitemapContent from "../components/sitemapContent.tsx";
 import FooterCompo from "../components/footer.tsx";
+import {Helmet} from "react-helmet";
 
 
 export const SitemapPage = () => {
 
-    useEffect(() => {
-        setPageTitle("Privacy Policy");
-    }, []);
+    // useEffect(() => {
+    //     setPageTitle("Privacy Policy");
+    // }, []);
 
     return (
-        <div>
-            <Navbar />
-            <SitemapHero />
-            <SitemapContent />
-            <FooterCompo />
-        </div>
+        <>
+            <Helmet>
+                <title>Sitemap - DataDaur | Navigate Our Digital Ecosystem with Ease</title>
+                <meta
+                    name="description"
+                    content="Discover all DataDaur has to offer — from innovative solutions to real-world case studies. Explore all pages across 4 categories and 5+ years of digital excellence."
+                />
+            </Helmet>
+            <div>
+                <Navbar />
+                <SitemapHero />
+                <SitemapContent />
+                <FooterCompo />
+            </div>
+        </>
+
     );
 };
