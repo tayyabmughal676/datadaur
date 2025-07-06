@@ -70,7 +70,14 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                 <div className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 mb-12 lg:mb-20">
                         {/* CEO */}
-                        <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8 mb-12 border-r-8 border-[#604CC3] lg:mb-0">
+                        <div
+                            className={cn(
+                                "relative flex flex-col items-center text-center space-y-6 lg:space-y-8 mb-12 lg:mb-0",
+                                "lg:border-r-4 border-[#604CC3]",
+                                "after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-[#604CC3] after:left-1/2 after:-translate-x-1/2 after:bottom-[-1.5rem]",
+                                "lg:after:hidden"
+                            )}
+                        >
                             <div className="team-profile-image-container transition-transform duration-300 hover:scale-105">
                                 <img
                                     src={ceoImage}
@@ -82,7 +89,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                                 <h2 className="team-role-heading mb-2">CEO/Chief AI Officer</h2>
                                 <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal.</h3>
                                 <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
-                                    <a href="https://www.linkedin.com/in/mrtayyabmughal">
+                                    <a href="https://www.linkedin.com/in/mrtayyabmughal" target="_blank" aria-label="Tayyab Mughal's LinkedIn Profile">
                                         <img src={linkedinImg} alt="CEO LinkedIn" className="w-8 h-8 object-cover transition-transform duration-300 hover:scale-105" />
                                     </a>
                                 </div>
@@ -102,7 +109,10 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                                 <h2 className="team-role-heading mb-2">Co-Founder</h2>
                                 <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar.</h3>
                                 <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
-                                    <img src={linkedinImg} alt="Co-Founder LinkedIn" className="w-8 h-8 object-cover" />
+                                    {/* FIX: Wrapped the icon in a link to make it clickable */}
+                                    <a href="https://www.linkedin.com/in/asim-qamar-javed/" target="_blank" aria-label="Asim Qamar's LinkedIn Profile">
+                                        <img src={linkedinImg} alt="Co-Founder LinkedIn" className="w-8 h-8 object-cover transition-transform duration-300 hover:scale-105" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +123,6 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         <h2 className="team-members-heading">Our Team Members</h2>
                     </div>
 
-                    {/* --- FIX: Responsive grid for team members --- */}
 
                     {/* Mobile & Tablet Layout (up to lg) */}
                     <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:hidden">

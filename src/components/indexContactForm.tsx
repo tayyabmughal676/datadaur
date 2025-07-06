@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { z } from 'zod';
 import { cn } from '../lib/utils';
 import axios from 'axios';
 import { countryData } from './countryData';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
 // Zod validation schema
 const contactFormSchema = z.object({
@@ -118,6 +120,63 @@ const IndexContactForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [responseMessage, setResponseMessage] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+    // Function to show SweetAlert2 errors
+    const showErrorAlert = (errors: FormErrors) => {
+        const errorMessages = Object.values(errors).filter(Boolean);
+        if (errorMessages.length > 0) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Validation Error',
+                html: errorMessages.map(error => `• ${error}`).join('<br>'),
+                position: 'top-end',
+                toast: true,
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: true,
+                customClass: {
+                    popup: 'colored-toast'
+                }
+            });
+        }
+    };
+
+    // Function to show success alert
+    const showSuccessAlert = (message: string) => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: message,
+            position: 'top-end',
+            toast: true,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'colored-toast'
+            }
+        });
+    };
+
+    // Function to show error alert
+    const showErrorMessage = (message: string) => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: message,
+            position: 'top-end',
+            toast: true,
+            showConfirmButton: false,
+            timer: 4000,
+            timerProgressBar: true,
+            customClass: {
+                popup: 'colored-toast'
+            }
+        });
+    };
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -180,6 +239,8 @@ const IndexContactForm: React.FC = () => {
                     }
                 });
                 setErrors(formErrors);
+                // Show validation errors using SweetAlert2
+                showErrorAlert(formErrors);
             }
             return false;
         }
@@ -193,12 +254,19 @@ const IndexContactForm: React.FC = () => {
             return;
         }
 
+        if (!recaptchaToken) {
+            const recaptchaError = { recaptcha: 'Please complete the ReCAPTCHA challenge.' };
+            setErrors(prev => ({ ...prev, ...recaptchaError }));
+            showErrorAlert(recaptchaError);
+            return;
+        }
+
         setIsSubmitting(true);
         setResponseMessage(null);
 
         const dataToSend = {
             ...formData,
-            access_key: "7606fa07-b450-4219-b7bb-5e78bdfc5897",
+            access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "7606fa07-b450-4219-b7bb-5e78bdfc5897", // Use environment variable
             subject: `New Contact Form Submission from ${formData.fullName}`,
             from_name: "DataDaur",
         };
@@ -207,18 +275,28 @@ const IndexContactForm: React.FC = () => {
             const response = await axios.post('https://api.web3forms.com/submit', dataToSend);
 
             if (response.data.success) {
-                setResponseMessage({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+                const successMessage = 'Thank you! Your message has been sent successfully.';
+                setResponseMessage({ type: 'success', message: successMessage });
+                showSuccessAlert(successMessage);
+
                 // Reset the form
                 setFormData({
                     fullName: '', company: '', email: '', phone: '', countryCode: '+971',
                     country: '', city: '', interests: [], budget: '', projectDescription: ''
                 });
                 setErrors({});
+                recaptchaRef.current?.reset();
+                setRecaptchaToken(null);
             } else {
-                setResponseMessage({ type: 'error', message: response.data.message || 'An error occurred. Please try again.' });
+                const errorMessage = response.data.message || 'An error occurred. Please try again.';
+                setResponseMessage({ type: 'error', message: errorMessage });
+                showErrorMessage(errorMessage);
             }
         } catch (error) {
-            setResponseMessage({ type: 'error', message: 'An error occurred while sending the form. Please try again later.' });
+            console.error("Form submission error:", error);
+            const errorMessage = 'An error occurred while sending the form. Please try again later.';
+            setResponseMessage({ type: 'error', message: errorMessage });
+            showErrorMessage(errorMessage);
         } finally {
             setIsSubmitting(false);
         }
@@ -330,14 +408,14 @@ const IndexContactForm: React.FC = () => {
                         >
                             Phone Number *
                         </label>
-                        <div className="flex">
+                        <div className="flex min-w-0">
                             <select
                                 name="countryCode"
                                 value={formData.countryCode}
                                 onChange={handleInputChange}
                                 className={cn(
-                                    "px-3 py-3 rounded-l-lg border-r-0 border",
-                                    "bg-gray-50 border-gray-300 text-gray-500 font-outfit",
+                                    "px-2 sm:px-3 py-3 rounded-l-lg border-r-0 border min-w-0 flex-shrink-0",
+                                    "bg-gray-50 border-gray-300 text-gray-500 font-outfit text-xs sm:text-sm",
                                     "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
                                     errors.countryCode && "border-red-500 focus:ring-red-500"
                                 )}
@@ -356,8 +434,8 @@ const IndexContactForm: React.FC = () => {
                                 onChange={handleInputChange}
                                 placeholder="Phone Number"
                                 className={cn(
-                                    "flex-1 px-4 py-3 rounded-r-lg border border-l-0 transition-colors duration-200",
-                                    "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
+                                    "flex-1 min-w-0 px-2 sm:px-4 py-3 rounded-r-lg border border-l-0 transition-colors duration-200",
+                                    "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575] text-sm",
                                     "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent",
                                     errors.phone && "border-red-500 focus:ring-red-500"
                                 )}
@@ -587,6 +665,24 @@ const IndexContactForm: React.FC = () => {
                     />
                     {errors.projectDescription && (
                         <p className="mt-1 text-sm text-red-600">{errors.projectDescription}</p>
+                    )}
+                </div>
+
+                {/* ReCAPTCHA component */}
+                <div className="pt-2">
+                    <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_FALLBACK_SITE_KEY"}
+                        onChange={(token) => {
+                            setRecaptchaToken(token);
+                            if (errors.recaptcha) {
+                                setErrors(prev => ({ ...prev, recaptcha: '' }));
+                            }
+                        }}
+                        onExpired={() => setRecaptchaToken(null)}
+                    />
+                    {errors.recaptcha && (
+                        <p className="mt-1 text-sm text-red-600">{errors.recaptcha}</p>
                     )}
                 </div>
 
