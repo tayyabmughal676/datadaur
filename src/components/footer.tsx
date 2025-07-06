@@ -29,7 +29,7 @@ const FooterCompo: React.FC = () => {
         // { href: '#', icon: instagramIcon, label: 'Instagram' },
         // { href: '#', icon: facebookIcon, label: 'Facebook' },
         { href: 'https://x.com/DataDaur/', icon: twitterIcon, label: 'Twitter' },
-        { href: 'https://www.linkedin.com/in/mrtayyabmughal/', icon: linkedinIcon, label: 'LinkedIn' },
+        { href: 'https://www.linkedin.com/company/datadaur/?viewAsMember=true', icon: linkedinIcon, label: 'LinkedIn' },
         { href: 'https://www.youtube.com/@DataDaurAISchool', icon: youtubeIcon, label: 'YouTube' },
         { href: 'https://bsky.app/profile/datadaur.bsky.social', icon: butterflyIcon, label: 'Bsky' },
     ];

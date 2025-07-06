@@ -37,7 +37,7 @@ const DataDaurLogoImg: React.FC = () => {
         //     label: 'Facebook'
         // },
         {
-            href: 'https://www.linkedin.com/in/mrtayyabmughal',
+            href: 'https://www.linkedin.com/company/datadaur/?viewAsMember=true',
             icon: linkedinIcon,
             label: 'LinkedIn'
         },
