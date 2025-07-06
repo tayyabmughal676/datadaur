@@ -114,6 +114,13 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                     title: 'Your order has been submitted!'
                 });
 
+                if (window.gtag) {
+                    window.gtag('event', 'generate_lead', {
+                        'event_category': 'Contact Form',
+                        'event_label': 'Main Contact Form Submission'
+                    });
+                }
+
                 // 4. Reset ReCAPTCHA on success
                 recaptchaRef.current?.reset();
                 setRecaptchaToken(null);

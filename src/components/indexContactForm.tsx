@@ -1,3 +1,9 @@
+declare global {
+    interface Window {
+        gtag: (...args: any[]) => void;
+    }
+}
+//hello
 import React, { useState, useRef } from 'react';
 import { z } from 'zod';
 import { cn } from '../lib/utils';
@@ -279,6 +285,12 @@ const IndexContactForm: React.FC = () => {
                 setResponseMessage({ type: 'success', message: successMessage });
                 showSuccessAlert(successMessage);
 
+                if (window.gtag) {
+                    window.gtag('event', 'generate_lead', {
+                        'event_category': 'Contact Form',
+                        'event_label': 'Main Contact Form Submission'
+                    });
+                }
                 // Reset the form
                 setFormData({
                     fullName: '', company: '', email: '', phone: '', countryCode: '+971',
