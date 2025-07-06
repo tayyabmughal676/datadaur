@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '../lib/utils';
 import logoImg from '../assets/logo-white.svg';
-import instagramIcon from '../assets/insta-p.svg';
-import facebookIcon from '../assets/face-p.svg';
+// import instagramIcon from '../assets/insta-p.svg';
+// import facebookIcon from '../assets/face-p.svg';
 import twitterIcon from '../assets/x-p.svg';
 import linkedinIcon from '../assets/link-p.svg';
 import youtubeIcon from '../assets/you-p.svg';
@@ -26,11 +26,11 @@ interface FooterSection {
 
 const FooterCompo: React.FC = () => {
     const socialLinks: SocialLink[] = [
-        { href: '#', icon: instagramIcon, label: 'Instagram' },
-        { href: '#', icon: facebookIcon, label: 'Facebook' },
+        // { href: '#', icon: instagramIcon, label: 'Instagram' },
+        // { href: '#', icon: facebookIcon, label: 'Facebook' },
         { href: 'https://x.com/DataDaur/', icon: twitterIcon, label: 'Twitter' },
         { href: 'https://www.linkedin.com/in/mrtayyabmughal/', icon: linkedinIcon, label: 'LinkedIn' },
-        { href: '#', icon: youtubeIcon, label: 'YouTube' },
+        { href: 'https://www.youtube.com/@DataDaurAISchool', icon: youtubeIcon, label: 'YouTube' },
         { href: 'https://bsky.app/profile/datadaur.bsky.social', icon: butterflyIcon, label: 'Bsky' },
     ];
 

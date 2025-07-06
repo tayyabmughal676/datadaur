@@ -2,9 +2,9 @@ import React from 'react';
 import { cn } from '../lib/utils';
 import backImg from '../assets/datadaur-p.svg';
 import youtubeIcon from '../assets/you-p.svg';
-import instagramIcon from '../assets/insta-p.svg';
+// import instagramIcon from '../assets/insta-p.svg';
 import twitterIcon from '../assets/x-p.svg';
-import facebookIcon from '../assets/face-p.svg';
+// import facebookIcon from '../assets/face-p.svg';
 import linkedinIcon from '../assets/link-p.svg';
 import butterflyImg from '../assets/butter-p.svg';
 
@@ -17,25 +17,25 @@ interface SocialLink {
 const DataDaurLogoImg: React.FC = () => {
     const socialLinks: SocialLink[] = [
         {
-            href: 'https://bsky.app/profile/datadaur.bsky.social',
+            href: 'https://www.youtube.com/@DataDaurAISchool',
             icon: youtubeIcon,
             label: 'YouTube'
         },
-        {
-            href: '#',
-            icon: instagramIcon,
-            label: 'Instagram'
-        },
+        // {
+        //     href: '#',
+        //     icon: instagramIcon,
+        //     label: 'Instagram'
+        // },
         {
             href: 'https://bsky.app/profile/datadaur.bsky.social/',
             icon: butterflyImg,
             label: 'Bsky'
         },
-        {
-            href: '#',
-            icon: facebookIcon,
-            label: 'Facebook'
-        },
+        // {
+        //     href: '#',
+        //     icon: facebookIcon,
+        //     label: 'Facebook'
+        // },
         {
             href: 'https://www.linkedin.com/in/mrtayyabmughal',
             icon: linkedinIcon,
