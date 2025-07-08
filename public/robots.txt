@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://datadaur.vercel.app/sitemap.xml
+Sitemap: https://datadaur.com/sitemap.xml
