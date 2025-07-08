@@ -2,13 +2,13 @@ import React from 'react';
 import { cn } from '../lib/utils';
 
 // Import your images
-import ceoImage from '../assets/dummy-image.svg';
+import ceoImage from '../assets/tayyab-mughal.svg';
 import coFounderImage from '../assets/dummy-image.svg';
 import linkedinImg from '../assets/linkedin-logo.svg';
-import haiderImage from '../assets/dummy-image.svg';
-import moazamImage from '../assets/dummy-image.svg';
-import ahmedImage from '../assets/dummy-image.svg';
-import hussainImage from '../assets/dummy-image.svg';
+import haiderImage from '../assets/haider-ali.svg';
+import moazamImage from '../assets/moazam_mughal.svg';
+import ahmedImage from '../assets/ahmad.svg';
+import hussainImage from '../assets/hussain-shahid.svg';
 import signatureImg from '../assets/signature.svg';
 
 interface TeamSectionProps {
@@ -19,42 +19,42 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
     const teamMembers = [
         {
             name: "Haider Ali",
-            role: "Senior Technical Lead",
+            title: "Senior Technical Lead",
             image: haiderImage
         },
         {
             name: "Madeeh Mehmood",
-            role: "Senior Technical ERP Lead",
-            image: hussainImage
+            title: "Senior Technical ERP Lead",
+            image: coFounderImage
         },
         {
             name: "Usman Mushtaq",
-            role: "Senior Mobile App Engineer",
-            image: hussainImage
+            title: "Senior Mobile App Engineer",
+            image: coFounderImage
         },
         {
             name: "Asmat Wazir",
-            role: "Senior Mobile App Engineer",
-            image: hussainImage
+            title: "Senior Mobile App Engineer",
+            image: coFounderImage
         },
         {
             name: "Usman Nazir",
-            role: "Business Development Manager",
-            image: hussainImage
+            title: "Business Development Manager",
+            image: coFounderImage
         },
         {
             name: "Moazam Mughal",
-            role: "Business Manager / Client Support",
+            title: "Business Manager / Client Support",
             image: moazamImage
         },
         {
             name: "Ahmed Amir",
-            role: "UX UI Design Lead",
+            title: "UX UI Design Lead",
             image: ahmedImage
         },
         {
             name: "Hussain Mughal",
-            role: "Full Stack Developer",
+            title: "Full Stack Developer",
             image: hussainImage
         }
     ];
@@ -70,32 +70,33 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                 </p>
             </div>
 
-            {/* Team Section */}
             <div className="py-10 px-4 bg-[#E6F0FF] sm:mx-8 md:mx-20 lg:mx-24 sm:rounded-3xl">
                 <div className="max-w-5xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 mb-12 lg:mb-20">
+                    {/* --- FIX: Restored original grid layout for proper spacing --- */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 mb-12 lg:mb-20">
                         {/* CEO */}
                         <div
                             className={cn(
-                                "relative flex flex-col items-center text-center space-y-6 lg:space-y-8 mb-12 lg:mb-0",
-                                "lg:border-r-4 border-[#604CC3]",
-                                "after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-[#604CC3] after:left-1/2 after:-translate-x-1/2 after:bottom-[-1.5rem]",
-                                "lg:after:hidden"
+                                "relative flex flex-col items-center text-center space-y-6 lg:space-y-8",
+                                "mb-16 lg:mb-0 lg:pr-8", // Adds space below on mobile and padding on desktop
+                                "lg:border-r-4 border-[#604CC3]", // The vertical border for desktop
+                                "after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-[#604CC3] after:left-1/2 after:-translate-x-1/2 after:bottom-[-2rem]", // The horizontal line for mobile
+                                "lg:after:hidden" // Hides the horizontal line on desktop
                             )}
                         >
-                            <div className="team-profile-image-container transition-transform duration-300 hover:scale-105">
+                            <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                 <img
                                     src={ceoImage}
-                                    alt="CEO Tayyab Mughal"
-                                    className="team-profile-image"
+                                    alt="Tayyab Mughal - CEO/Chief AI Officer"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                             <div>
                                 <h2 className="team-role-heading mb-2">CEO/Chief AI Officer</h2>
-                                <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal</h3>
-                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
+                                <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal.</h3>
+                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center shadow-sm">
                                     <a href="https://www.linkedin.com/in/mrtayyabmughal" target="_blank" rel="noopener noreferrer" aria-label="Tayyab Mughal's LinkedIn Profile">
-                                        <img src={linkedinImg} alt="CEO LinkedIn" className="w-8 h-8 object-cover transition-transform duration-300 hover:scale-105" />
+                                        <img src={linkedinImg} alt="LinkedIn Profile" className="w-8 h-8 object-contain transition-transform duration-300 hover:scale-105" />
                                     </a>
                                 </div>
                             </div>
@@ -103,19 +104,19 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
 
                         {/* Co-Founder */}
                         <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
-                            <div className="team-profile-image-container transition-transform duration-300 hover:scale-105">
+                            <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                 <img
                                     src={coFounderImage}
-                                    alt="Co-Founder Asim Qamar"
-                                    className="team-profile-image"
+                                    alt="Asim Qamar - Co-Founder"
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                             <div>
                                 <h2 className="team-role-heading mb-2">Co-Founder</h2>
-                                <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar</h3>
-                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
+                                <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar.</h3>
+                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center shadow-sm">
                                     <a href="https://www.linkedin.com/in/asim-qamar-javed/" target="_blank" rel="noopener noreferrer" aria-label="Asim Qamar's LinkedIn Profile">
-                                        <img src={linkedinImg} alt="Co-Founder LinkedIn" className="w-8 h-8 object-cover transition-transform duration-300 hover:scale-105" />
+                                        <img src={linkedinImg} alt="LinkedIn Profile" className="w-8 h-8 object-contain transition-transform duration-300 hover:scale-105" />
                                     </a>
                                 </div>
                             </div>
@@ -127,49 +128,41 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         <h2 className="team-members-heading">Our Team Members</h2>
                     </div>
 
-
                     {/* Mobile & Tablet Layout (up to lg) */}
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-8 lg:hidden">
-                        {teamMembers.map((member, index) => (
-                            <div
-                                key={member.name}
-                                className={cn(
-                                    "flex flex-col items-center space-y-2",
-                                    // This logic is now correct for an even number of members
-                                    teamMembers.length % 2 !== 0 && index === teamMembers.length - 1 && "col-span-2"
-                                )}
-                            >
-                                <div className="w-24 h-24 sm:w-40 sm:h-40 transition-transform duration-300 hover:scale-105 overflow-hidden team-member-card">
+                    <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-12 lg:hidden">
+                        {teamMembers.map((member) => (
+                            <div key={member.name} className="flex flex-col items-center space-y-4">
+                                <div className="w-24 h-24 sm:w-40 sm:h-40 transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                     <img
                                         src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover rounded-full"
+                                        alt={`${member.name} - ${member.title}`}
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
-                                <div className="text-center mt-4">
+                                <div className="text-center">
                                     <h3 className="team-member-name">{member.name}</h3>
-                                    <p className="team-member-role">{member.role}</p>
+                                    <p className="team-member-role">{member.title}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     {/* Desktop Layout (lg and up) */}
-                    <div className="hidden lg:flex lg:flex-col lg:gap-y-8">
+                    <div className="hidden lg:flex lg:flex-col lg:gap-y-12">
                         {/* First Row: 4 members */}
                         <div className="grid grid-cols-4 gap-x-8">
                             {teamMembers.slice(0, 4).map((member) => (
-                                <div key={member.name} className="flex flex-col items-center space-y-2">
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 overflow-hidden team-member-card">
+                                <div key={member.name} className="flex flex-col items-center space-y-4">
+                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                         <img
                                             src={member.image}
-                                            alt={member.name}
-                                            className="w-full h-full object-cover rounded-full"
+                                            alt={`${member.name} - ${member.title}`}
+                                            className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <div className="text-center mt-4">
+                                    <div className="text-center">
                                         <h3 className="team-member-name">{member.name}</h3>
-                                        <p className="team-member-role">{member.role}</p>
+                                        <p className="team-member-role">{member.title}</p>
                                     </div>
                                 </div>
                             ))}
@@ -177,17 +170,17 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         {/* Second Row: 4 members */}
                         <div className="grid grid-cols-4 gap-x-8">
                             {teamMembers.slice(4, 8).map((member) => (
-                                <div key={member.name} className="flex flex-col items-center space-y-2">
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 overflow-hidden team-member-card">
+                                <div key={member.name} className="flex flex-col items-center space-y-4">
+                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                         <img
                                             src={member.image}
-                                            alt={member.name}
-                                            className="w-full h-full object-cover rounded-full"
+                                            alt={`${member.name} - ${member.title}`}
+                                            className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <div className="text-center mt-4">
+                                    <div className="text-center">
                                         <h3 className="team-member-name">{member.name}</h3>
-                                        <p className="team-member-role">{member.role}</p>
+                                        <p className="team-member-role">{member.title}</p>
                                     </div>
                                 </div>
                             ))}
@@ -208,7 +201,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         <div className="w-32 h-12 sm:w-40 sm:h-14 md:w-48 md:h-16 flex items-center justify-center">
                             <img
                                 src={signatureImg}
-                                alt="Bottom decoration"
+                                alt="DataDaur Signature"
                                 className="w-full h-full"
                             />
                         </div>
