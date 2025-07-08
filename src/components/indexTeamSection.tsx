@@ -34,7 +34,12 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
         },
         {
             name: "Asmat Wazir",
-            role: "Senior Mobile App Engineer",
+            role: "Senior Mobile App Engineer",
+            image: hussainImage
+        },
+        {
+            name: "Usman Nazir",
+            role: "Business Development Manager",
             image: hussainImage
         },
         {
@@ -87,9 +92,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                             </div>
                             <div>
                                 <h2 className="team-role-heading mb-2">CEO/Chief AI Officer</h2>
-                                <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal.</h3>
+                                <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal</h3>
                                 <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
-                                    <a href="https://www.linkedin.com/in/mrtayyabmughal" target="_blank" aria-label="Tayyab Mughal's LinkedIn Profile">
+                                    <a href="https://www.linkedin.com/in/mrtayyabmughal" target="_blank" rel="noopener noreferrer" aria-label="Tayyab Mughal's LinkedIn Profile">
                                         <img src={linkedinImg} alt="CEO LinkedIn" className="w-8 h-8 object-cover transition-transform duration-300 hover:scale-105" />
                                     </a>
                                 </div>
@@ -107,10 +112,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                             </div>
                             <div>
                                 <h2 className="team-role-heading mb-2">Co-Founder</h2>
-                                <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar.</h3>
+                                <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar</h3>
                                 <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
-                                    {/* FIX: Wrapped the icon in a link to make it clickable */}
-                                    <a href="https://www.linkedin.com/in/asim-qamar-javed/" target="_blank" aria-label="Asim Qamar's LinkedIn Profile">
+                                    <a href="https://www.linkedin.com/in/asim-qamar-javed/" target="_blank" rel="noopener noreferrer" aria-label="Asim Qamar's LinkedIn Profile">
                                         <img src={linkedinImg} alt="Co-Founder LinkedIn" className="w-8 h-8 object-cover transition-transform duration-300 hover:scale-105" />
                                     </a>
                                 </div>
@@ -131,7 +135,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                                 key={member.name}
                                 className={cn(
                                     "flex flex-col items-center space-y-2",
-                                    // If it's the last item and the total is odd, make it span both columns to center it
+                                    // This logic is now correct for an even number of members
                                     teamMembers.length % 2 !== 0 && index === teamMembers.length - 1 && "col-span-2"
                                 )}
                             >
@@ -150,7 +154,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         ))}
                     </div>
 
-                    {/* Desktop Layout (lg and up) for centered last row */}
+                    {/* Desktop Layout (lg and up) */}
                     <div className="hidden lg:flex lg:flex-col lg:gap-y-8">
                         {/* First Row: 4 members */}
                         <div className="grid grid-cols-4 gap-x-8">
@@ -170,9 +174,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                                 </div>
                             ))}
                         </div>
-                        {/* Second Row: 3 members, centered */}
-                        <div className="flex justify-center gap-x-8">
-                            {teamMembers.slice(4).map((member) => (
+                        {/* Second Row: 4 members */}
+                        <div className="grid grid-cols-4 gap-x-8">
+                            {teamMembers.slice(4, 8).map((member) => (
                                 <div key={member.name} className="flex flex-col items-center space-y-2">
                                     <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 overflow-hidden team-member-card">
                                         <img

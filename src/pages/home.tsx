@@ -6,7 +6,7 @@ import PaymentOption from "../components/indexPaymentOption.tsx";
 import TeamSection from "../components/indexTeamSection.tsx";
 import ContactForm from "../components/indexContactForm.tsx";
 import WhyDatadaur from "../components/indexWhyDataDaur.tsx";
-import DataDaurLogoImg from "../components/indexDataDaurImg.tsx";
+// import DataDaurLogoImg from "../components/indexDataDaurImg.tsx";
 import FooterCompo from "../components/footer.tsx";
 
 
@@ -21,7 +21,7 @@ export const Home = () => {
             <WhyDatadaur />
             <TeamSection />
             <ContactForm />
-            <DataDaurLogoImg />
+            {/*<DataDaurLogoImg />*/}
             <FooterCompo />
         </div>
     );

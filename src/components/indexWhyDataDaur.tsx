@@ -32,7 +32,7 @@ const WhyDatadaur: React.FC = () => {
                         2. Pay Half while Placing the Order
                     </h2>
                     <p className="datadaur-body-text">
-                        Secure your project with our flexible "Pay Half Now" option, giving you confidence and
+                        Secure your project today with our flexible "Pay Half Now" option, giving you confidence and
                         convenience from the start.
                     </p>
                 </div>

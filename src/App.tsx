@@ -14,6 +14,7 @@ import {SocialproCase} from "./pages/socialproCaseStudy.tsx";
 import {AllHypeCase} from "./pages/allHypeCaseStudy.tsx";
 import {FarooCase} from "./pages/farooCaseStudy.tsx";
 import {NotFound} from "./pages/notFound.tsx";
+import WhatsAppSticky from './components/WhatsAppSticky';
 
 
 
@@ -41,6 +42,7 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
+            <WhatsAppSticky />
             {/*<div>*/}
             {/*  <a href="https://vite.dev" target="_blank">*/}
             {/*    <img src={viteLogo} className="logo" alt="Vite logo" />*/}

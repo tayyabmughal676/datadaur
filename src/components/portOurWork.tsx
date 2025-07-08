@@ -89,8 +89,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
     const cardBody = (
         <>
             <div className={cn(
-                "relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg mb-6",
-                "transition-transform duration-300 group-hover:scale-105 border-6 border-[#604CC3]/40"
+                "relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl mb-6",
+                "transition-transform duration-300 group-hover:scale-105"
             )}>
                 {/* Background Image */}
                 <div className="relative w-full h-full">

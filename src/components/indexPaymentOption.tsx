@@ -105,7 +105,8 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
                 </div>
 
                 <div className="mb-16">
-                    <div className="sm:hidden"> {/* Only visible on screens < 640px */}
+                    {/* Mobile Layout (< 640px) */}
+                    <div className="sm:hidden">
                         <div className="grid grid-cols-2 gap-6">
                             {paymentOptions.slice(0, 4).map((option) => (
                                 <div
@@ -120,34 +121,62 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
                                 </div>
                             ))}
                         </div>
-
                         <div className="flex justify-center mt-6">
-                            {paymentOptions.find(option => option.name === 'stripe') && (
+                            {paymentOptions.slice(4, 5).map((option) => (
                                 <div
-                                    key="stripe"
+                                    key={option.name}
                                     className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-transform duration-300 hover:scale-105 flex items-center justify-center h-24 w-full max-w-[calc(50%-0.75rem)]'
                                 >
                                     <img
-                                        src={stripeLogo}
-                                        alt="Stripe"
+                                        src={option.src}
+                                        alt={option.alt}
                                         className="max-w-full max-h-full object-contain"
                                     />
                                 </div>
-                            )}
+                            ))}
                         </div>
                     </div>
 
-                    <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-6">
-                        {paymentOptions.map((option, index) => (
+                    {/* Tablet Layout (640px to 1024px) */}
+                    <div className="hidden sm:block lg:hidden">
+                        {/* First row: 3 items */}
+                        <div className="grid grid-cols-3 gap-6 mb-6">
+                            {paymentOptions.slice(0, 3).map((option) => (
+                                <div
+                                    key={option.name}
+                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24'
+                                >
+                                    <img
+                                        src={option.src}
+                                        alt={option.alt}
+                                        className="max-w-full max-h-full object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        {/* Second row: 2 items, centered */}
+                        <div className="flex justify-center gap-6">
+                            {paymentOptions.slice(3, 5).map((option) => (
+                                <div
+                                    key={option.name}
+                                    className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24 w-full sm:w-1/3'
+                                >
+                                    <img
+                                        src={option.src}
+                                        alt={option.alt}
+                                        className="max-w-full max-h-full object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Desktop Layout (>= 1024px) */}
+                    <div className="hidden lg:grid lg:grid-cols-5 gap-6">
+                        {paymentOptions.map((option) => (
                             <div
                                 key={option.name}
-                                className={cn(
-                                    'bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24',
-                                    index === paymentOptions.length - 1 && paymentOptions.length % 5 !== 0 && paymentOptions.length > 2 ? 'lg:col-span-1' : '',
-                                    index === paymentOptions.length - 1 && paymentOptions.length % 3 !== 0 && paymentOptions.length > 1 ? 'sm:col-span-1' : '',
-                                    index === 4 && paymentOptions.length >=5 ? 'lg:col-span-1' : '',
-                                    index === paymentOptions.length - 1 && paymentOptions.length === 4 ? 'sm:col-span-2 lg:col-span-1' : ''
-                                )}
+                                className='bg-white rounded-2xl p-8 drop-shadow-2xl hover:shadow-md transition-shadow duration-300 flex items-center justify-center h-24'
                             >
                                 <img
                                     src={option.src}

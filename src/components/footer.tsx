@@ -88,7 +88,7 @@ const FooterCompo: React.FC = () => {
     ];
 
     const [uaeTime, setUaeTime] = useState('');
-    const [pakistanTime, setPakistanTime] = useState('');
+    // const [pakistanTime, setPakistanTime] = useState('');
 
     useEffect(() => {
         const getTime = () => {
@@ -99,7 +99,7 @@ const FooterCompo: React.FC = () => {
             };
 
             setUaeTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Dubai' }));
-            setPakistanTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Karachi' }));
+            // setPakistanTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Karachi' }));
         };
 
         getTime();
@@ -156,9 +156,9 @@ const FooterCompo: React.FC = () => {
                                 <li className="text-base font-normal">
                                     <span className="block">UAE: {uaeTime}</span>
                                 </li>
-                                <li className="text-base font-normal">
-                                    <span className="block">Pakistan: {pakistanTime}</span>
-                                </li>
+                                {/*<li className="text-base font-normal">*/}
+                                {/*    <span className="block">Pakistan: {pakistanTime}</span>*/}
+                                {/*</li>*/}
                             </ul>
                         </div>
 
