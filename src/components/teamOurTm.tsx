@@ -1,13 +1,17 @@
 import React from 'react';
 import { cn } from '../lib/utils';
 
-import avatarImage from '../assets/dummy-image.svg';
 import signatureImg from '../assets/signature.svg';
 import ceoImage from '../assets/tayyab-mughal.svg';
 import haiderImage from '../assets/haider-ali.svg';
 import moazamImage from '../assets/moazam_mughal.svg';
 import ahmedImage from '../assets/ahmad.svg';
 import hussainImage from '../assets/hussain-shahid.svg';
+import madeehMehmoodImage from "../assets/madeeh-mehmood.svg";
+import usmanMustaqImage from "../assets/usman-mushtaq.svg";
+import asmatWazirImage from "../assets/azmat-wazir.svg";
+import usmanNazirImage from "../assets/usman-nazir.svg";
+import coFounderImage from "../assets/asim-qamar.svg";
 
 interface OurTeamSectionProps {
     className?: string;
@@ -23,7 +27,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
         {
             name: "Asim Qamar",
             title: "Co-Founder",
-            image: avatarImage,
+            image: coFounderImage,
         }
     ];
 
@@ -36,23 +40,22 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
         {
             name: "Madeeh Mehmood",
             title: "Senior Technical ERP Lead",
-            image: avatarImage,
+            image: madeehMehmoodImage,
         },
         {
             name: "Usman Mushtaq",
             title: "Senior Mobile App Engineer",
-            image: avatarImage,
+            image: usmanMustaqImage,
         },
         {
             name: "Asmat Wazir",
             title: "Senior Mobile App Engineer",
-            image: avatarImage,
+            image: asmatWazirImage,
         },
         {
             name: "Usman Nazir",
-            // --- CODE QUALITY: Changed 'role' to 'title' for consistency ---
             title: "Business Development Manager",
-            image: avatarImage
+            image: usmanNazirImage
         },
         {
             name: "Moazam Mughal",
