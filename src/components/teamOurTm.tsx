@@ -30,7 +30,7 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
             image: coFounderImage,
         }
     ];
-
+//heloo
     const team = [
         {
             name: "Haider Ali",
