@@ -41,7 +41,7 @@ const FooterCompo: React.FC = () => {
             { href: '/portfolio', label: 'Portfolio' },
             { href: '/team', label: 'Team' },
             { href: '/about', label: 'About' },
-            { href: '#', label: 'Case-Study' },
+            // { href: '#', label: 'Case-Study' },
             { href: '/partnership', label: 'Partnership' },
             { href: '/careers', label: 'Careers' },
             { href: '/contact-us', label: 'Contact' },

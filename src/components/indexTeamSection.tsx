@@ -3,8 +3,12 @@ import { cn } from '../lib/utils';
 
 // Import your images
 import ceoImage from '../assets/tayyab-mughal.svg';
-import coFounderImage from '../assets/dummy-image.svg';
+import coFounderImage from '../assets/asim-qamar.svg';
 import linkedinImg from '../assets/linkedin-logo.svg';
+import usmanMustaqImage from '../assets/usman-mushtaq.svg';
+import asmatWazirImage from '../assets/azmat-wazir.svg';
+import usmanNazirImage from '../assets/usman-nazir.svg';
+import madeehMehmoodImage from '../assets/madeeh-mehmood.svg';
 import haiderImage from '../assets/haider-ali.svg';
 import moazamImage from '../assets/moazam_mughal.svg';
 import ahmedImage from '../assets/ahmad.svg';
@@ -25,22 +29,22 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
         {
             name: "Madeeh Mehmood",
             title: "Senior Technical ERP Lead",
-            image: coFounderImage
+            image: madeehMehmoodImage
         },
         {
             name: "Usman Mushtaq",
             title: "Senior Mobile App Engineer",
-            image: coFounderImage
+            image: usmanMustaqImage
         },
         {
             name: "Asmat Wazir",
             title: "Senior Mobile App Engineer",
-            image: coFounderImage
+            image: asmatWazirImage
         },
         {
             name: "Usman Nazir",
             title: "Business Development Manager",
-            image: coFounderImage
+            image: usmanNazirImage
         },
         {
             name: "Moazam Mughal",

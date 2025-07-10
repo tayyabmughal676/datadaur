@@ -681,7 +681,7 @@ const IndexContactForm: React.FC = () => {
                 </div>
 
                 {/* ReCAPTCHA component */}
-                <div className="pt-2">
+                <div className="pt-2 flex flex-col items-center">
                     <ReCAPTCHA
                         ref={recaptchaRef}
                         sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_FALLBACK_SITE_KEY"}
@@ -699,7 +699,7 @@ const IndexContactForm: React.FC = () => {
                 </div>
 
                 {/* Submit Button and Response Message */}
-                <div className="flex flex-col items-start gap-4">
+                <div className="flex flex-col items-center gap-4">
                     <button
                         type="submit"
                         disabled={isSubmitting}
