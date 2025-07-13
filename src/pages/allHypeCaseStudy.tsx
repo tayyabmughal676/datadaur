@@ -25,11 +25,11 @@ export const AllHypeCase = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <AllHypeCaseStudyHero />
-                <AllHypeContent />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <AllHypeCaseStudyHero/>
+                <AllHypeContent/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
         </>
     );

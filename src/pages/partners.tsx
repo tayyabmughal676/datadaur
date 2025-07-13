@@ -8,7 +8,6 @@ import FooterCompo from "../components/footer.tsx";
 import {Helmet} from "react-helmet";
 
 
-
 export const Partners = () => {
 
     // useEffect(() => {
@@ -25,10 +24,10 @@ export const Partners = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <PartnersHero />
-                <PartnersWith />
-                <FooterCompo />
+                <Navbar/>
+                <PartnersHero/>
+                <PartnersWith/>
+                <FooterCompo/>
             </div>
         </>
     );

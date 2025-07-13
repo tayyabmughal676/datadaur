@@ -1,6 +1,6 @@
 import React from 'react';
-import { cn } from '../lib/utils';
-import { Link } from 'react-router-dom';
+import {cn} from '../lib/utils';
+import {Link} from 'react-router-dom';
 
 interface PartnerCardProps {
     title: string;
@@ -70,7 +70,8 @@ const PartnersWith: React.FC = () => {
                         Partner with DataDaur
                     </h2>
                     <p className="font-normal text-base sm:text-lg text-black max-w-xl mx-auto">
-                        Join us to unlock limitless opportunities in data-driven transformations. Let's innovate together.
+                        Join us to unlock limitless opportunities in data-driven transformations. Let's innovate
+                        together.
                     </p>
                 </div>
 
@@ -97,7 +98,8 @@ const PartnersWith: React.FC = () => {
                 </div>
 
                 {/* Additional Opportunities Section */}
-                <div className="text-center bg-white rounded-xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
+                <div
+                    className="text-center bg-white rounded-xl shadow-lg p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
                     <h3 className="font-medium text-2xl sm:text-[28px] text-black mb-4">
                         Additional Opportunities
                     </h3>

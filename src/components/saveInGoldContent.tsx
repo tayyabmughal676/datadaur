@@ -109,7 +109,8 @@ const SaveInGoldContent: React.FC = () => {
                     <ul className="w-full lg:w-[90%] ml-3">
                         <li className="flex items-start text-black text-base sm:text-lg lg:text-xl leading-relaxed">
                             <span className="w-2 h-2 bg-black rounded-full mt-2.5 mr-4 flex-shrink-0"></span>
-                            <span>Fully integrate the registration process within the app to <span className="font-semibold text-[#604CC3]">eliminate external redirects</span>.</span>
+                            <span>Fully integrate the registration process within the app to <span
+                                className="font-semibold text-[#604CC3]">eliminate external redirects</span>.</span>
                         </li>
                         <li className="flex items-start text-black text-base sm:text-lg lg:text-xl leading-relaxed">
                             <span className="w-2 h-2 bg-black rounded-full mt-2.5 mr-4 flex-shrink-0"></span>
@@ -300,7 +301,8 @@ const SaveInGoldContent: React.FC = () => {
                     <div className="bg-gradient-note border-l-4 border-gradient-primary md:px-12 p-6 sm:p-8 rounded-lg">
                         <div className="flex flex-col md:flex-row gap-6">
                             <div className="flex gap-4 md:flex-col justify-center items-center">
-                                <img src={thinkImg} alt="Think Icons" className=" transition-transform duration-300 hover:scale-90"/>
+                                <img src={thinkImg} alt="Think Icons"
+                                     className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
 
                             <div className="flex-1">

@@ -24,10 +24,10 @@ export const SitemapPage = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <SitemapHero />
-                <SitemapContent />
-                <FooterCompo />
+                <Navbar/>
+                <SitemapHero/>
+                <SitemapContent/>
+                <FooterCompo/>
             </div>
         </>
 

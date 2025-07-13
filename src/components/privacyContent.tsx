@@ -22,7 +22,10 @@ const PrivacyPolicyContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                        <strong>DataDaur</strong> is a technology company based in the UAE, specializing in IT management, artificial intelligence engineering, web and mobile application development, and cloud-based solutions. With over five years of proven experience, we are committed to delivering secure, scalable, and user-focused technologies to clients around the world.
+                        <strong>DataDaur</strong> is a technology company based in the UAE, specializing in IT
+                        management, artificial intelligence engineering, web and mobile application development, and
+                        cloud-based solutions. With over five years of proven experience, we are committed to delivering
+                        secure, scalable, and user-focused technologies to clients around the world.
                     </p>
                 </div>
 
@@ -35,7 +38,8 @@ const PrivacyPolicyContent: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-black leading-relaxed mb-4 text-base sm:text-lg lg:text-xl">
-                            We collect personal and technical information to support communication, service delivery, and analytics. This includes:
+                            We collect personal and technical information to support communication, service delivery,
+                            and analytics. This includes:
                         </p>
                         <ul className="space-y-2 ml-2 sm:ml-4 mb-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
@@ -57,7 +61,8 @@ const PrivacyPolicyContent: React.FC = () => {
                         </ul>
                         <div className="bg-gradient-note border-l-4 border-gradient-primary p-3 sm:p-4 rounded-lg">
                             <p className="text-black text-base sm:text-lg lg:text-xl">
-                                <strong>Note:</strong> You voluntarily provide most information through our contact or inquiry
+                                <strong>Note:</strong> You voluntarily provide most information through our contact or
+                                inquiry
                                 forms.
                             </p>
                         </div>
@@ -127,7 +132,8 @@ const PrivacyPolicyContent: React.FC = () => {
                         </ul>
                         <div className="bg-gradient-note border-l-4 border-gradient-primary p-3 sm:p-4 rounded-lg">
                             <p className="text-black text-base sm:text-lg lg:text-xl">
-                                <strong>Tip:</strong> You can disable cookies in your browser, but some features may not work as
+                                <strong>Tip:</strong> You can disable cookies in your browser, but some features may not
+                                work as
                                 expected.
                             </p>
                         </div>
@@ -234,7 +240,8 @@ const PrivacyPolicyContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        We retain personal data only for as long as necessary to fulfill its purpose or comply with legal obligations. After this period, the data is securely deleted or anonymized.
+                        We retain personal data only for as long as necessary to fulfill its purpose or comply with
+                        legal obligations. After this period, the data is securely deleted or anonymized.
                     </p>
                 </div>
 
@@ -246,7 +253,8 @@ const PrivacyPolicyContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        We may update this policy to reflect changes in our practices, legal requirements, or technology. The updated version will be posted on this page with a revised effective date.
+                        We may update this policy to reflect changes in our practices, legal requirements, or
+                        technology. The updated version will be posted on this page with a revised effective date.
                     </p>
                 </div>
 
@@ -266,7 +274,8 @@ const PrivacyPolicyContent: React.FC = () => {
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                 <span>
                                     <strong>Email: </strong>
-                                    <a className="hover:text-[#604CC3] underline" href="mailto:contact@datadaur.com">contact@datadaur.com</a>
+                                    <a className="hover:text-[#604CC3] underline"
+                                       href="mailto:contact@datadaur.com">contact@datadaur.com</a>
                                 </span>
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">

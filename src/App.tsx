@@ -10,13 +10,11 @@ import {Partners} from "./pages/partners.tsx";
 import {Career} from "./pages/career.tsx";
 import {SitemapPage} from "./pages/sitemap.tsx";
 import {SaveInGoldCase} from "./pages/saveInGoldCS.tsx"
-import {SocialproCase} from "./pages/socialproCaseStudy.tsx";
+import {SocialProCase} from "./pages/socialproCaseStudy.tsx";
 import {AllHypeCase} from "./pages/allHypeCaseStudy.tsx";
 import {FarooCase} from "./pages/farooCaseStudy.tsx";
 import {NotFound} from "./pages/notFound.tsx";
 import WhatsAppSticky from './components/WhatsAppSticky';
-
-
 
 
 function App() {
@@ -25,24 +23,24 @@ function App() {
             <BrowserRouter>
 
                 <Routes>
-                    <Route index element={<Home />} />
-                    <Route path="/portfolio" element={<Portfolio />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact-us" element={<Contact />} />
-                    <Route path="/privacy-policy" element={<Privacy />} />
-                    <Route path="/terms-and-conditions" element={<Terms />} />
-                    <Route path="/partnership" element={<Partners />} />
-                    <Route path="/careers" element={<Career />} />
-                    <Route path="/sitemap" element={<SitemapPage />} />
-                    <Route path="/save-in-gold-case-study" element={<SaveInGoldCase />} />
-                    <Route path="/socialpro-case-study" element={<SocialproCase />} />
-                    <Route path="/all-hype-case-study" element={<AllHypeCase />} />
-                    <Route path="/faroo-case-study" element={<FarooCase />} />
-                    <Route path="*" element={<NotFound />} />
+                    <Route index element={<Home/>}/>
+                    <Route path="/portfolio" element={<Portfolio/>}/>
+                    <Route path="/team" element={<Team/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/contact-us" element={<Contact/>}/>
+                    <Route path="/privacy-policy" element={<Privacy/>}/>
+                    <Route path="/terms-and-conditions" element={<Terms/>}/>
+                    <Route path="/partnership" element={<Partners/>}/>
+                    <Route path="/careers" element={<Career/>}/>
+                    <Route path="/sitemap" element={<SitemapPage/>}/>
+                    <Route path="/save-in-gold-case-study" element={<SaveInGoldCase/>}/>
+                    <Route path="/socialpro-case-study" element={<SocialProCase/>}/>
+                    <Route path="/all-hype-case-study" element={<AllHypeCase/>}/>
+                    <Route path="/faroo-case-study" element={<FarooCase/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
-            <WhatsAppSticky />
+            <WhatsAppSticky/>
             {/*<div>*/}
             {/*  <a href="https://vite.dev" target="_blank">*/}
             {/*    <img src={viteLogo} className="logo" alt="Vite logo" />*/}

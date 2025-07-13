@@ -24,10 +24,10 @@ export const Contact = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <ContactHero />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <ContactHero/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
         </>
     );

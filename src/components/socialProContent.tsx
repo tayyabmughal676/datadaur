@@ -38,13 +38,19 @@ const SocialProContent: React.FC = () => {
                             <strong className="text-[#604CC3]">Client:</strong> SocialPro
                         </p>
                         <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl mb-4">
-                            <strong className="text-[#604CC3]">Project:</strong> Designing a SaaS platform for social procurement reporting
+                            <strong className="text-[#604CC3]">Project:</strong> Designing a SaaS platform for social
+                            procurement reporting
                         </p>
                         <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl mb-4">
                             <strong className="text-[#604CC3]">My Role:</strong> Product Designer
                         </p>
                         <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl mb-4">
-                            <strong className="text-[#604CC3]">Summary:</strong> SocialPro is a cloud-based platform enabling construction companies and infrastructure projects to measure, manage, and report on social impact and sustainable procurement performance. As the UX/UI Designer, I was responsible for crafting intuitive interfaces that streamline complex reporting processes, ensuring compliance with national frameworks like Indigenous Procurement Policies and Local Jobs First initiatives.
+                            <strong className="text-[#604CC3]">Summary:</strong> SocialPro is a cloud-based platform
+                            enabling construction companies and infrastructure projects to measure, manage, and report
+                            on social impact and sustainable procurement performance. As the UX/UI Designer, I was
+                            responsible for crafting intuitive interfaces that streamline complex reporting processes,
+                            ensuring compliance with national frameworks like Indigenous Procurement Policies and Local
+                            Jobs First initiatives.
                         </p>
                     </div>
                 </div>
@@ -59,9 +65,11 @@ const SocialProContent: React.FC = () => {
 
                             <div className="space-y-4">
                                 <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                                    By implementing user-centered design principles, we enhanced the platform's usability,
+                                    By implementing user-centered design principles, we enhanced the platform's
+                                    usability,
                                     leading to increased user engagement and compliance rates.
-                                    The intuitive dashboards and reporting tools received positive feedback from stakeholders,
+                                    The intuitive dashboards and reporting tools received positive feedback from
+                                    stakeholders,
                                     contributing to SocialPro's adoption across over <span className="text-[#604CC3]">175 companies managing more than $10 billion in projects</span>.
                                 </p>
                             </div>
@@ -89,10 +97,12 @@ const SocialProContent: React.FC = () => {
                     </div>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
                         Contractors found the reporting tools cluttered and time-consuming, often struggling to
-                        track key metrics like <span className="text-[#604CC3]">Indigenous spend across multiple projects</span>. Subcontractors, especially
+                        track key metrics like <span className="text-[#604CC3]">Indigenous spend across multiple projects</span>.
+                        Subcontractors, especially
                         those new to digital systems, felt overwhelmed during onboarding and unsure about which
                         information was required. Meanwhile, compliance officers lacked real-time visibility and c
-                        ollaboration tools, leading to delays and miscommunication. Across the board, users faced friction that
+                        ollaboration tools, leading to delays and miscommunication. Across the board, users faced
+                        friction that
                         hindered efficiency and trust in the platform.
                     </p>
                 </div>
@@ -104,7 +114,12 @@ const SocialProContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                        I collaborated closely with the product manager and lead designer to deliver a user-friendly experience across key areas of the SocialPro platform. My responsibilities included contributing to user research, creating wireframes and interactive prototypes, and refining UI components based on user feedback. I played a key role in translating complex reporting workflows into intuitive design solutions, while ensuring consistency with the platform’s overall design system.
+                        I collaborated closely with the product manager and lead designer to deliver a user-friendly
+                        experience across key areas of the SocialPro platform. My responsibilities included contributing
+                        to user research, creating wireframes and interactive prototypes, and refining UI components
+                        based on user feedback. I played a key role in translating complex reporting workflows into
+                        intuitive design solutions, while ensuring consistency with the platform’s overall design
+                        system.
                     </p>
                 </div>
 
@@ -114,7 +129,10 @@ const SocialProContent: React.FC = () => {
                             Understanding User's Pain Points
                         </h2>
                         <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                            Through user interviews and usability testing, we identified pain points in the reporting workflow. Users expressed frustration with the complexity of data entry, spending across the multiple projects, and the lack of clarity in report generation. These insights guided our design decisions, focusing on simplifying interactions and enhancing clarity.                        </p>
+                            Through user interviews and usability testing, we identified pain points in the reporting
+                            workflow. Users expressed frustration with the complexity of data entry, spending across the
+                            multiple projects, and the lack of clarity in report generation. These insights guided our
+                            design decisions, focusing on simplifying interactions and enhancing clarity. </p>
                     </div>
 
                     {/* Image */}
@@ -208,7 +226,8 @@ const SocialProContent: React.FC = () => {
                             </h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    A detailed control center highlighting key metrics such as workforce, spend, and Local Content.
+                                    A detailed control center highlighting key metrics such as workforce, spend, and
+                                    Local Content.
                                 </p>
                             </div>
                         </div>
@@ -227,7 +246,8 @@ const SocialProContent: React.FC = () => {
                             </h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    Help users anticipate targets and monitor key metrics like labour hours, spend, and local content in real time.
+                                    Help users anticipate targets and monitor key metrics like labour hours, spend, and
+                                    local content in real time.
                                 </p>
                             </div>
                         </div>
@@ -244,7 +264,10 @@ const SocialProContent: React.FC = () => {
                             <h3 className="service-heading-3 mb-4 sm:mb-6">3. Project Reporting</h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    The redesigned Project Reporting module allows users to generate monthly reports for Labour Hours, Spend, and Local Content with ease. This was a key focus area in the redesign, as users consistently expressed frustration and confusion with the previous reporting experience.
+                                    The redesigned Project Reporting module allows users to generate monthly reports for
+                                    Labour Hours, Spend, and Local Content with ease. This was a key focus area in the
+                                    redesign, as users consistently expressed frustration and confusion with the
+                                    previous reporting experience.
                                 </p>
                             </div>
 
@@ -262,7 +285,8 @@ const SocialProContent: React.FC = () => {
                             <h3 className="service-heading-3 mb-4 sm:mb-6">3.1. Labour Hours</h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    Labour hours can now be managed directly through interactive tables, simplifying the submission process and removing the need for separate forms.
+                                    Labour hours can now be managed directly through interactive tables, simplifying the
+                                    submission process and removing the need for separate forms.
                                 </p>
                             </div>
 
@@ -280,7 +304,13 @@ const SocialProContent: React.FC = () => {
                             <h3 className="service-heading-3 mb-4 sm:mb-6">3.2. Social Spend</h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    Users can now seamlessly add and manage Social Spend records through a structured, guided form — eliminating confusion around data entry. The interface allows users to search for suppliers by ABN, select certifications, enter invoice details, and upload supporting documents all in one place. Spend entries appear instantly in a table for easy review, with the ability to filter, edit, or remove records before submission. This design simplifies compliance tracking and improves data accuracy, making monthly reporting faster and more reliable.
+                                    Users can now seamlessly add and manage Social Spend records through a structured,
+                                    guided form — eliminating confusion around data entry. The interface allows users to
+                                    search for suppliers by ABN, select certifications, enter invoice details, and
+                                    upload supporting documents all in one place. Spend entries appear instantly in a
+                                    table for easy review, with the ability to filter, edit, or remove records before
+                                    submission. This design simplifies compliance tracking and improves data accuracy,
+                                    making monthly reporting faster and more reliable.
                                 </p>
                             </div>
 
@@ -298,7 +328,10 @@ const SocialProContent: React.FC = () => {
                             <h3 className="service-heading-3 mb-4 sm:mb-6">3.3. Local Content</h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    A simplified interface lets users add and manage local content items with ease. Users can allocate contract values, assign suppliers, and track progress toward targets—all in one place. The new side panel allows quick item selection, improving clarity and reducing reporting errors.
+                                    A simplified interface lets users add and manage local content items with ease.
+                                    Users can allocate contract values, assign suppliers, and track progress toward
+                                    targets—all in one place. The new side panel allows quick item selection, improving
+                                    clarity and reducing reporting errors.
                                 </p>
                             </div>
                         </div>
@@ -315,7 +348,8 @@ const SocialProContent: React.FC = () => {
                             <h3 className="service-heading-3 mb-4 sm:mb-6">3.4. Report Confirmation</h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    And lastly, Users can confirm the report submission by agreeing to terms and conditions.
+                                    And lastly, Users can confirm the report submission by agreeing to terms and
+                                    conditions.
                                 </p>
                             </div>
 
@@ -328,7 +362,8 @@ const SocialProContent: React.FC = () => {
                             </h3>
                             <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                                 <p className="service-body-text">
-                                    And lastly, Users can confirm the report submission by agreeing to terms and conditions.
+                                    And lastly, Users can confirm the report submission by agreeing to terms and
+                                    conditions.
                                 </p>
                             </div>
                         </div>
@@ -376,12 +411,16 @@ const SocialProContent: React.FC = () => {
                     <div className="bg-gradient-note border-l-4 border-gradient-primary md:px-12 p-6 sm:p-8 rounded-lg">
                         <div className="flex flex-col md:flex-row gap-6">
                             <div className="flex gap-4 md:flex-col justify-center items-center">
-                                <img src={thinkImg} alt="Think Icons" className=" transition-transform duration-300 hover:scale-90"/>
+                                <img src={thinkImg} alt="Think Icons"
+                                     className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
 
                             <div className="flex-1">
                                 <p className="text-[#604CC3] leading-relaxed text-base sm:text-lg lg:text-xl mb-6">
-                                    "Managing multiple builders with diverse returnable systems used to be a challenge. SocialPro has transformed the process, ensuring clarity, efficiency, and seamless collaboration across all our projects. Their intuitive platform streamlines reporting, enabling better decision-making and improved outcomes at every stage."
+                                    "Managing multiple builders with diverse returnable systems used to be a challenge.
+                                    SocialPro has transformed the process, ensuring clarity, efficiency, and seamless
+                                    collaboration across all our projects. Their intuitive platform streamlines
+                                    reporting, enabling better decision-making and improved outcomes at every stage."
                                 </p>
 
                                 <div className="mt-6">
@@ -404,10 +443,13 @@ const SocialProContent: React.FC = () => {
 
                     <p className="font-normal text-lg lg:text-[28px] text-black">
                         Post-launch analytics revealed a <span className="text-[#604CC3]">30%</span> decrease in
-                        report submission time and a <span className="text-[#604CC3]">25%</span> increase in user satisfaction scores.
-                        The adoption rate surged, highlighting the effectiveness of user-centered design in driving business outcomes.
+                        report submission time and a <span className="text-[#604CC3]">25%</span> increase in user
+                        satisfaction scores.
+                        The adoption rate surged, highlighting the effectiveness of user-centered design in driving
+                        business outcomes.
                         Today, SocialPro supports over <span className="text-[#604CC3]">$10B+</span> worth of projects,
-                        with more than <span className="text-[#604CC3]">340,000</span> workforce entries and <span className="text-[#604CC3]">1,870</span> reports successfully submitted.
+                        with more than <span className="text-[#604CC3]">340,000</span> workforce entries and <span
+                        className="text-[#604CC3]">1,870</span> reports successfully submitted.
 
                     </p>
                 </div>

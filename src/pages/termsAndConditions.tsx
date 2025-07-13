@@ -24,10 +24,10 @@ export const Terms = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <TermsHero />
-                <TermsContent />
-                <FooterCompo />
+                <Navbar/>
+                <TermsHero/>
+                <TermsContent/>
+                <FooterCompo/>
             </div>
         </>
 

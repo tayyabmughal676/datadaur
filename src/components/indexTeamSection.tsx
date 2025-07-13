@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../lib/utils';
+import {cn} from '../lib/utils';
 
 // Import your images
 import ceoImage from '../assets/tayyab-mughal.svg';
@@ -19,7 +19,7 @@ interface TeamSectionProps {
     className?: string;
 }
 
-const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
+const TeamSection: React.FC<TeamSectionProps> = ({className}) => {
     const teamMembers = [
         {
             name: "Haider Ali",
@@ -88,7 +88,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                                 "lg:after:hidden" // Hides the horizontal line on desktop
                             )}
                         >
-                            <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                            <div
+                                className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                 <img
                                     src={ceoImage}
                                     alt="Tayyab Mughal - CEO/Chief AI Officer"
@@ -98,9 +99,12 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                             <div>
                                 <h2 className="team-role-heading mb-2">CEO/Chief AI Officer</h2>
                                 <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal.</h3>
-                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center shadow-sm">
-                                    <a href="https://www.linkedin.com/in/mrtayyabmughal" target="_blank" rel="noopener noreferrer" aria-label="Tayyab Mughal's LinkedIn Profile">
-                                        <img src={linkedinImg} alt="LinkedIn Profile" className="w-8 h-8 object-contain transition-transform duration-300 hover:scale-105" />
+                                <div
+                                    className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center shadow-sm">
+                                    <a href="https://www.linkedin.com/in/mrtayyabmughal" target="_blank"
+                                       rel="noopener noreferrer" aria-label="Tayyab Mughal's LinkedIn Profile">
+                                        <img src={linkedinImg} alt="LinkedIn Profile"
+                                             className="w-8 h-8 object-contain transition-transform duration-300 hover:scale-105"/>
                                     </a>
                                 </div>
                             </div>
@@ -108,7 +112,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
 
                         {/* Co-Founder */}
                         <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
-                            <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                            <div
+                                className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                 <img
                                     src={coFounderImage}
                                     alt="Asim Qamar - Co-Founder"
@@ -118,9 +123,12 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                             <div>
                                 <h2 className="team-role-heading mb-2">Co-Founder</h2>
                                 <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar.</h3>
-                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center shadow-sm">
-                                    <a href="https://www.linkedin.com/in/asim-qamar-javed/" target="_blank" rel="noopener noreferrer" aria-label="Asim Qamar's LinkedIn Profile">
-                                        <img src={linkedinImg} alt="LinkedIn Profile" className="w-8 h-8 object-contain transition-transform duration-300 hover:scale-105" />
+                                <div
+                                    className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center shadow-sm">
+                                    <a href="https://www.linkedin.com/in/asim-qamar-javed/" target="_blank"
+                                       rel="noopener noreferrer" aria-label="Asim Qamar's LinkedIn Profile">
+                                        <img src={linkedinImg} alt="LinkedIn Profile"
+                                             className="w-8 h-8 object-contain transition-transform duration-300 hover:scale-105"/>
                                     </a>
                                 </div>
                             </div>
@@ -136,7 +144,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                     <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-12 lg:hidden">
                         {teamMembers.map((member) => (
                             <div key={member.name} className="flex flex-col items-center space-y-4">
-                                <div className="w-24 h-24 sm:w-40 sm:h-40 transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                <div
+                                    className="w-24 h-24 sm:w-40 sm:h-40 transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                     <img
                                         src={member.image}
                                         alt={`${member.name} - ${member.title}`}
@@ -157,7 +166,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         <div className="grid grid-cols-4 gap-x-8">
                             {teamMembers.slice(0, 4).map((member) => (
                                 <div key={member.name} className="flex flex-col items-center space-y-4">
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                    <div
+                                        className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                         <img
                                             src={member.image}
                                             alt={`${member.name} - ${member.title}`}
@@ -175,7 +185,8 @@ const TeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                         <div className="grid grid-cols-4 gap-x-8">
                             {teamMembers.slice(4, 8).map((member) => (
                                 <div key={member.name} className="flex flex-col items-center space-y-4">
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                    <div
+                                        className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                         <img
                                             src={member.image}
                                             alt={`${member.name} - ${member.title}`}

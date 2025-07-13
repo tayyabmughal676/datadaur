@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { cn } from '../lib/utils';
+import React, {useState, useEffect} from 'react';
+import {cn} from '../lib/utils';
 import logoImg from '../assets/logo-white.svg';
 // import instagramIcon from '../assets/insta-p.svg';
 // import facebookIcon from '../assets/face-p.svg';
@@ -28,63 +28,63 @@ const FooterCompo: React.FC = () => {
     const socialLinks: SocialLink[] = [
         // { href: '#', icon: instagramIcon, label: 'Instagram' },
         // { href: '#', icon: facebookIcon, label: 'Facebook' },
-        { href: 'https://x.com/DataDaur/', icon: twitterIcon, label: 'Twitter' },
-        { href: 'https://www.linkedin.com/company/datadaur/?viewAsMember=true', icon: linkedinIcon, label: 'LinkedIn' },
-        { href: 'https://www.youtube.com/@DataDaurAISchool', icon: youtubeIcon, label: 'YouTube' },
-        { href: 'https://bsky.app/profile/datadaur.bsky.social', icon: butterflyIcon, label: 'Bsky' },
+        {href: 'https://x.com/DataDaur/', icon: twitterIcon, label: 'Twitter'},
+        {href: 'https://www.linkedin.com/company/datadaur/?viewAsMember=true', icon: linkedinIcon, label: 'LinkedIn'},
+        {href: 'https://www.youtube.com/@DataDaurAISchool', icon: youtubeIcon, label: 'YouTube'},
+        {href: 'https://bsky.app/profile/datadaur.bsky.social', icon: butterflyIcon, label: 'Bsky'},
     ];
 
     const quickLinks: FooterSection = {
         title: 'Quick Links',
         links: [
-            { href: '/', label: 'Home' },
-            { href: '/portfolio', label: 'Portfolio' },
-            { href: '/team', label: 'Team' },
-            { href: '/about', label: 'About' },
+            {href: '/', label: 'Home'},
+            {href: '/portfolio', label: 'Portfolio'},
+            {href: '/team', label: 'Team'},
+            {href: '/about', label: 'About'},
             // { href: '#', label: 'Case-Study' },
-            { href: '/partnership', label: 'Partnership' },
-            { href: '/careers', label: 'Careers' },
-            { href: '/contact-us', label: 'Contact' },
+            {href: '/partnership', label: 'Partnership'},
+            {href: '/careers', label: 'Careers'},
+            {href: '/contact-us', label: 'Contact'},
         ],
     };
 
     const footerSections: FooterSection[] = [
         {
-            title: 'Service',
+            title: 'Services',
             links: [
-                { label: 'AI Service & Development' },
-                { label: 'Web App Development' },
-                { label: 'Ecommerce Development' },
-                { label: 'Mobile Application Development' },
-                { label: 'Digital Marketing' },
-                { label: 'SaaS Development' },
-                { label: 'Website Design Development' },
-                { label: 'Search Engine Optimization' },
+                {label: 'AI Service & Development'},
+                {label: 'Web App Development'},
+                {label: 'Ecommerce Development'},
+                {label: 'Mobile Application Development'},
+                {label: 'Digital Marketing'},
+                {label: 'SaaS Development'},
+                {label: 'Website Design Development'},
+                {label: 'Search Engine Optimization'},
             ],
         },
         {
             title: 'Industries We Serve',
             links: [
-                { label: 'Artificial Intelligence' },
-                { label: 'Cybersecurity' },
-                { label: 'Education Technology (Edutech)' },
-                { label: 'Health Technology (Healthtech)' },
-                { label: 'Finance Technology (Fintech)' },
-                { label: 'e-Government' },
+                {label: 'Artificial Intelligence'},
+                {label: 'Cybersecurity'},
+                {label: 'Education Technology (Edutech)'},
+                {label: 'Health Technology (Healthtech)'},
+                {label: 'Finance Technology (Fintech)'},
+                {label: 'e-Government'},
             ],
         },
     ];
 
     const contactInfo = [
-        { href: 'mailto:contact@datadaur.com', label: 'contact@datadaur.com' },
-        { href: 'tel:+971552025311', label: '+971 55 202 5311 (UAE)' },
-        { href: 'tel:+923110776827', label: '+92 311 077 6827 (Pakistan)' },
+        {href: 'mailto:contact@datadaur.com', label: 'contact@datadaur.com'},
+        {href: 'tel:+971552025311', label: '+971 55 202 5311 (UAE)'},
+        {href: 'tel:+923110776827', label: '+92 311 077 6827 (Pakistan)'},
     ];
 
     const footerLinks = [
-        { href: '/privacy-policy', label: 'Privacy Policy' },
-        { href: '/terms-and-conditions', label: 'Terms & condition' },
-        { href: '/sitemap', label: 'Sitemap' },
+        {href: '/privacy-policy', label: 'Privacy Policy'},
+        {href: '/terms-and-conditions', label: 'Terms & condition'},
+        {href: '/sitemap', label: 'Sitemap'},
     ];
 
     const [uaeTime, setUaeTime] = useState('');
@@ -98,7 +98,7 @@ const FooterCompo: React.FC = () => {
                 hour12: true,
             };
 
-            setUaeTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Dubai' }));
+            setUaeTime(new Date().toLocaleTimeString('en-US', {...options, timeZone: 'Asia/Dubai'}));
             // setPakistanTime(new Date().toLocaleTimeString('en-US', { ...options, timeZone: 'Asia/Karachi' }));
         };
 
@@ -115,10 +115,10 @@ const FooterCompo: React.FC = () => {
                         {/* Logo and Social */}
                         <div className="space-y-6 items-center justify-center">
                             <div className="w-48 h-16 flex items-center">
-                                <img src={logoImg} alt="DataDaur Logo" className="w-48 h-16 object-contain" />
+                                <img src={logoImg} alt="DataDaur Logo" className="w-48 h-16 object-contain"/>
                             </div>
                             <div className="hidden sm:flex flex-wrap max-w-[214px] gap-4">
-                                {socialLinks.map(({ href, icon, label }) => (
+                                {socialLinks.map(({href, icon, label}) => (
                                     <a
                                         key={label}
                                         href={href}
@@ -130,7 +130,7 @@ const FooterCompo: React.FC = () => {
                                         )}
                                         aria-label={label}
                                     >
-                                        <img src={icon} alt={label} className="w-4 h-4" />
+                                        <img src={icon} alt={label} className="w-4 h-4"/>
                                     </a>
                                 ))}
                             </div>
@@ -140,7 +140,7 @@ const FooterCompo: React.FC = () => {
                         <div>
                             <h3 className="text-2xl font-bold mb-6">Contact</h3>
                             <ul className="footer-list space-y-4">
-                                {contactInfo.map(({ href, label }) => (
+                                {contactInfo.map(({href, label}) => (
                                     <li key={label}>
                                         <a
                                             href={href}
@@ -163,11 +163,11 @@ const FooterCompo: React.FC = () => {
                         </div>
 
                         {/* Other footer sections */}
-                        {footerSections.map(({ title, links }) => (
+                        {footerSections.map(({title, links}) => (
                             <div key={title}>
                                 <h3 className="text-2xl font-bold mb-6">{title}</h3>
                                 <ul className="footer-list space-y-3">
-                                    {links.map(({ href, label }) => (
+                                    {links.map(({href, label}) => (
                                         <li key={label}>
                                             {href ? (
                                                 <a
@@ -191,7 +191,7 @@ const FooterCompo: React.FC = () => {
                         <div>
                             <h3 className="text-2xl font-bold mb-6">{quickLinks.title}</h3>
                             <ul className="footer-list space-y-3">
-                                {quickLinks.links.map(({ href, label }) => (
+                                {quickLinks.links.map(({href, label}) => (
                                     <li key={label}>
                                         {href ? (
                                             <a
@@ -218,7 +218,7 @@ const FooterCompo: React.FC = () => {
                                 © Copyright 2025 DataDaur
                             </p>
                             <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
-                                {footerLinks.map(({ href, label }) => (
+                                {footerLinks.map(({href, label}) => (
                                     <a
                                         key={label}
                                         href={href}
@@ -232,6 +232,33 @@ const FooterCompo: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {/* SEO Keywords for Crawlers - Hidden for users, visible to bots */}
+            <div style={{display: 'none'}}>
+                <h1>AI Development, Web & Mobile App Services</h1>
+                <p>
+                    DataDaur specializes in AI services, SaaS development, web app development, ecommerce platforms,
+                    mobile application development, digital marketing, and custom software solutions.
+                    Our expertise spans across industries such as Fintech, Edutech, Healthtech, Cybersecurity, and
+                    e-Government.
+                    We provide end-to-end software design, development, SEO optimization, and data-driven growth
+                    consulting.
+                </p>
+                <ul>
+                    <li>AI Development & Automation Solutions</li>
+                    <li>Web App Development for Startups & Enterprises</li>
+                    <li>Mobile App Development (iOS, Android, Flutter)</li>
+                    <li>Ecommerce Website Development</li>
+                    <li>SaaS Platform Engineering</li>
+                    <li>Search Engine Optimization (SEO)</li>
+                    <li>Custom UI/UX Website Design</li>
+                    <li>Digital Marketing Services</li>
+                    <li>Fintech, Edutech, Healthtech, Cybersecurity Apps</li>
+                    <li>e-Government Digital Transformation</li>
+                </ul>
+            </div>
+
+
         </footer>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
-import { cn } from '../lib/utils';
+import {useState} from 'react';
+import {cn} from '../lib/utils';
 import pyramidImg from '../assets/pyramid.svg';
 import blendImg from '../assets/blend.svg';
 import brainImg from '../assets/brain.svg';
@@ -19,13 +19,13 @@ interface ServiceWeOfferProps {
     className?: string;
 }
 
-const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
+const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
     // Move state declarations inside the component
     const [showModal, setShowModal] = useState(false);
     const [selectedService, setSelectedService] = useState<ServiceModalData | null>(null);
 
     const handleServiceClick = (title: string, description: string[]) => {
-        setSelectedService({ title, description });
+        setSelectedService({title, description});
         setShowModal(true);
     };
     return (
@@ -45,7 +45,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 
                     {/* First Row: Development & IT Consultations */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl p-4 lg:order-2 transition-transform duration-300 hover:scale-105">
+                    <div
+                        className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl p-4 lg:order-2 transition-transform duration-300 hover:scale-105">
                         <img
                             src={blendImg}
                             alt="Development & IT Consultations"
@@ -80,7 +81,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                     </div>
 
                     {/* Second Row: AI Agent Development Package */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-3 transition-transform duration-300 hover:scale-105">
+                    <div
+                        className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-3 transition-transform duration-300 hover:scale-105">
                         <img
                             src={brainImg}
                             alt="AI Agent Development Package"
@@ -119,7 +121,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                     </div>
 
                     {/* Third Row: AI Model Context Protocol MCP Package */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-6 transition-transform duration-300 hover:scale-105">
+                    <div
+                        className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-6 transition-transform duration-300 hover:scale-105">
                         <img
                             src={pyramidImg}
                             alt="AI Model Context Protocol MCP Package"
@@ -129,10 +132,17 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                     <div className="mb-6 sm:mb-8 lg:mb-16 lg:order-5">
                         <h3 className="service-heading-3 mb-4 sm:mb-6">AI Model Context Protocol MCP Package</h3>
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                            <li className="service-body-text text-base sm:text-lg">1. Customized Model Context Protocol</li>
-                            <li className="service-body-text text-base sm:text-lg">2. Integration with any LLM model</li>
-                            <li className="service-body-text text-base sm:text-lg">3. Compatibility with existing or new business systems</li>
-                            <li className="service-body-text text-base sm:text-lg">4. Software development based on the MCP framework</li>
+                            <li className="service-body-text text-base sm:text-lg">1. Customized Model Context
+                                Protocol
+                            </li>
+                            <li className="service-body-text text-base sm:text-lg">2. Integration with any LLM model
+                            </li>
+                            <li className="service-body-text text-base sm:text-lg">3. Compatibility with existing or new
+                                business systems
+                            </li>
+                            <li className="service-body-text text-base sm:text-lg">4. Software development based on the
+                                MCP framework
+                            </li>
                         </ul>
                         <button
                             onClick={() => handleServiceClick("AI Model Context Protocol MCP Package", [
@@ -147,7 +157,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         </button>
                     </div>
 
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-7 transition-transform duration-300 hover:scale-105">
+                    <div
+                        className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-7 transition-transform duration-300 hover:scale-105">
                         <img
                             src={flowerImage}
                             alt="Mobile Application Development Package"
@@ -159,8 +170,12 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                             <li className="service-body-text text-base sm:text-lg">1. Mobile App UI UX Design</li>
                             <li className="service-body-text text-base sm:text-lg">2. Mobile App Development</li>
-                            <li className="service-body-text text-base sm:text-lg">3. Custom Backend Development & Deployment</li>
-                            <li className="service-body-text text-base sm:text-lg">4. Publish App to AppStore & Google Play</li>
+                            <li className="service-body-text text-base sm:text-lg">3. Custom Backend Development &
+                                Deployment
+                            </li>
+                            <li className="service-body-text text-base sm:text-lg">4. Publish App to AppStore & Google
+                                Play
+                            </li>
                         </ul>
                         <button
                             onClick={() => handleServiceClick("Mobile Application Development Package", [
@@ -175,7 +190,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         </button>
                     </div>
 
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-10 transition-transform duration-300 hover:scale-105">
+                    <div
+                        className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-10 transition-transform duration-300 hover:scale-105">
                         <img
                             src={spinnerImage}
                             alt="Website Package"
@@ -187,7 +203,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                         <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                             <li className="service-body-text text-base sm:text-lg">1. Website UX/UI Design</li>
                             <li className="service-body-text text-base sm:text-lg">2. Website Development</li>
-                            <li className="service-body-text text-base sm:text-lg">3. Search engine optimization (SEO)</li>
+                            <li className="service-body-text text-base sm:text-lg">3. Search engine optimization (SEO)
+                            </li>
                             <li className="service-body-text text-base sm:text-lg">4. Digital Marketing</li>
                         </ul>
                         <button
@@ -204,7 +221,8 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({ className }) => {
                     </div>
 
                     {/* Sixth Row: Maintenance Package */}
-                    <div className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-11 transition-transform duration-300 hover:scale-105">
+                    <div
+                        className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-11 transition-transform duration-300 hover:scale-105">
                         <img
                             src={wheelImage}
                             alt="Maintenance Package"

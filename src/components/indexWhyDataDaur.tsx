@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WhyDatadaur: React.FC = () => {
+const WhyDataDaur: React.FC = () => {
     return (
         <section className="py-16 px-8 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
             {/* Header */}
@@ -78,7 +78,7 @@ const WhyDatadaur: React.FC = () => {
                                 </h2>
 
                                 <div className="flex justify-center gap-1 sm:gap-2 mb-4 sm:mb-6">
-                                    {Array.from({ length: 5 }, (_, index) => (
+                                    {Array.from({length: 5}, (_, index) => (
                                         <svg
                                             key={index}
                                             width="40"
@@ -87,7 +87,8 @@ const WhyDatadaur: React.FC = () => {
                                             fill="#FFD900"
                                             className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                                         >
-                                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                            <path
+                                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                                         </svg>
                                     ))}
                                 </div>
@@ -112,4 +113,4 @@ const WhyDatadaur: React.FC = () => {
     );
 };
 
-    export default WhyDatadaur;
+export default WhyDataDaur;

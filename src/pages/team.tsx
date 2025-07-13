@@ -25,11 +25,11 @@ export const Team = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <TeamHero />
-                <OurTeamSection />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <TeamHero/>
+                <OurTeamSection/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
         </>
     );

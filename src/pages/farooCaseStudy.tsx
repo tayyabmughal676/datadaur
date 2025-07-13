@@ -25,11 +25,11 @@ export const FarooCase = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <FarooHero />
-                <FarooContent />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <FarooHero/>
+                <FarooContent/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
         </>
     );

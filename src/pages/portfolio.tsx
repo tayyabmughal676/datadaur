@@ -8,7 +8,6 @@ import FooterCompo from "../components/footer.tsx";
 import {Helmet} from "react-helmet";
 
 
-
 export const Portfolio = () => {
 
     // useEffect(() => {
@@ -25,10 +24,10 @@ export const Portfolio = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <PortHero />
-                <OurWork />
-                <FooterCompo />
+                <Navbar/>
+                <PortHero/>
+                <OurWork/>
+                <FooterCompo/>
             </div>
         </>
     );

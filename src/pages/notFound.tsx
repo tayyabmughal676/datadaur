@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { setPageTitle } from "../lib/utils";
+import {useEffect} from "react";
+import {setPageTitle} from "../lib/utils";
 
 import Navbar from "../components/navBar.tsx";
 import NotFoundSection from "../components/notFoundAll.tsx";
@@ -13,7 +13,7 @@ export const NotFound = () => {
     return (
         <div>
             <Navbar/>
-            <NotFoundSection />
+            <NotFoundSection/>
             <FooterCompo/>
         </div>
     );

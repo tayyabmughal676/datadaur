@@ -1,5 +1,3 @@
-
-
 import Navbar from "../components/navBar.tsx";
 import AboutHero from "../components/aboutHero.tsx";
 import AboutOurStory from "../components/aboutOurStory.tsx";
@@ -22,13 +20,13 @@ export const About = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <AboutHero />
-                <AboutOurStory />
-                <IndexWhyDataDaur />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <AboutHero/>
+                <AboutOurStory/>
+                <IndexWhyDataDaur/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
-    </>
+        </>
     );
 };

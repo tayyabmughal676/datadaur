@@ -26,7 +26,8 @@ const Hero = () => {
                                 <span className="text-[#604CC3]/60 block">
                                     Business with
                                 </span>
-                                <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent block">
+                                <span
+                                    className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent block">
                                     AI-Driven Solutions
                                 </span>
                             </h1>
@@ -42,7 +43,7 @@ const Hero = () => {
                     {/* Right Side (Dots Image): Hidden on mobile, visible on sm and up */}
                     <div className="hidden sm:flex relative items-center justify-center lg:justify-end">
                         <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
-                            <img src={dotsImg} alt="dots image" className="w-full h-full object-cover" />
+                            <img src={dotsImg} alt="dots image" className="w-full h-full object-cover"/>
                         </div>
                     </div>
                 </div>

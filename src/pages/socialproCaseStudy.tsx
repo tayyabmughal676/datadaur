@@ -9,7 +9,7 @@ import FooterCompo from "../components/footer.tsx";
 import {Helmet} from "react-helmet";
 
 
-export const SocialproCase = () => {
+export const SocialProCase = () => {
 
     // useEffect(() => {
     //     setPageTitle("Socialpro | Case Study");
@@ -25,11 +25,11 @@ export const SocialproCase = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <SocialProHero />
-                <SocialProContent />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <SocialProHero/>
+                <SocialProContent/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
         </>
     );

@@ -21,12 +21,12 @@ export const Career = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <CareerHero />
-                <CareerIntro />
-                <CoreServices />
-                <IndusWeServe />
-                <FooterCompo />
+                <Navbar/>
+                <CareerHero/>
+                <CareerIntro/>
+                <CoreServices/>
+                <IndusWeServe/>
+                <FooterCompo/>
             </div>
         </>
     );

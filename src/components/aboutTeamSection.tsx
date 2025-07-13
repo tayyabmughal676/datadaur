@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../lib/utils';
+import {cn} from '../lib/utils';
 
 // Import your images
 import ceoImage from '../assets/dummy-image.svg';
@@ -14,7 +14,7 @@ interface TeamSectionProps {
     className?: string;
 }
 
-const AboutTeamSection: React.FC<TeamSectionProps> = ({ className }) => {
+const AboutTeamSection: React.FC<TeamSectionProps> = ({className}) => {
     const teamMembers = [
         {
             name: "Haider Ali",
@@ -53,12 +53,14 @@ const AboutTeamSection: React.FC<TeamSectionProps> = ({ className }) => {
             <div className="py-10 px-4 bg-[#E6F0FF] sm:mx-8 md:mx-20 lg:mx-24 sm:rounded-3xl">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 lg:mb-20">
-                        <div className="flex flex-col-reverse sm:flex-col items-center text-center space-y-6 lg:space-y-8">
+                        <div
+                            className="flex flex-col-reverse sm:flex-col items-center text-center space-y-6 lg:space-y-8">
                             <div>
                                 <h2 className="team-role-heading mb-2">CEO/Chief AI Officer</h2>
                                 <h3 className="team-name-heading mb-4 lg:mb-6">Tayyab Mughal.</h3>
-                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
-                                    <img src={linkedinImg} alt="CEO Icon" className="w-8 h-8 object-cover" />
+                                <div
+                                    className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
+                                    <img src={linkedinImg} alt="CEO Icon" className="w-8 h-8 object-cover"/>
                                 </div>
                             </div>
                             <div className="team-profile-image-container mb-4">
@@ -83,8 +85,9 @@ const AboutTeamSection: React.FC<TeamSectionProps> = ({ className }) => {
                             <div>
                                 <h2 className="team-role-heading mb-2">Co-Founder</h2>
                                 <h3 className="team-name-heading mb-4 lg:mb-6">Asim Qamar.</h3>
-                                <div className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
-                                    <img src={linkedinImg} alt="Co-Founder Icon" className="w-8 h-8 object-cover" />
+                                <div
+                                    className="w-16 h-16 rounded-full bg-[#F8FBFF] mx-auto flex items-center justify-center">
+                                    <img src={linkedinImg} alt="Co-Founder Icon" className="w-8 h-8 object-cover"/>
                                 </div>
                             </div>
                         </div>

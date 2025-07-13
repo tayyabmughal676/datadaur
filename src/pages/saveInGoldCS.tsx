@@ -25,11 +25,11 @@ export const SaveInGoldCase = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <SaveInGoldHero />
-                <SaveInGoldContent />
-                <IndexContactForm />
-                <FooterCompo />
+                <Navbar/>
+                <SaveInGoldHero/>
+                <SaveInGoldContent/>
+                <IndexContactForm/>
+                <FooterCompo/>
             </div>
         </>
     );

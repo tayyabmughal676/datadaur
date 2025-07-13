@@ -24,10 +24,10 @@ export const Privacy = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <PrivacyHero />
-                <PrivacyContent />
-                <FooterCompo />
+                <Navbar/>
+                <PrivacyHero/>
+                <PrivacyContent/>
+                <FooterCompo/>
             </div>
         </>
     );
