@@ -1,15 +1,14 @@
 declare global {
     interface Window {
-        gtag: (...args: any[]) => void;
+        gtag: (...args: unknown[]) => void;
     }
 }
-//hello
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { z } from 'zod';
 import { cn } from '../lib/utils';
 import axios from 'axios';
 import { countryData } from './countryData';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import Swal from 'sweetalert2'; // Import SweetAlert2
 
 // Zod validation schema
@@ -126,8 +125,8 @@ const IndexContactForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [responseMessage, setResponseMessage] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
+    // Get the v3 execute function from the hook
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     // Function to show SweetAlert2 errors
     const showErrorAlert = (errors: FormErrors) => {
@@ -260,26 +259,34 @@ const IndexContactForm: React.FC = () => {
             return;
         }
 
-        if (!recaptchaToken) {
-            const recaptchaError = { recaptcha: 'Please complete the ReCAPTCHA challenge.' };
-            setErrors(prev => ({ ...prev, ...recaptchaError }));
-            showErrorAlert(recaptchaError);
+        if (!executeRecaptcha) {
+            console.error("reCAPTCHA has not loaded");
+            showErrorMessage("reCAPTCHA is not ready. Please try again.");
             return;
         }
 
         setIsSubmitting(true);
         setResponseMessage(null);
 
+        // Get the reCAPTCHA token just before submitting the form
+        const token = await executeRecaptcha('contactForm');
+
         const dataToSend = {
             ...formData,
-            access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "7606fa07-b450-4219-b7bb-5e78bdfc5897", // Use environment variable
+            recaptchaToken: token, // This token MUST be verified on your backend
+            // access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY, // This is for web3forms and not needed for your own backend
             subject: `New Contact Form Submission from ${formData.fullName}`,
             from_name: "DataDaur",
         };
 
         try {
-            const response = await axios.post('https://api.web3forms.com/submit', dataToSend);
+            // This now points to your backend server.
+            // During development, this will be proxied by Vite.
+            // In production, Vercel will route this to your serverless function.
+            const response = await axios.post('/api/contact', dataToSend);
 
+            // NOTE: The above request to web3forms will likely fail because it's not
+            // set up to verify a v3 token. The code below assumes you've switched
             if (response.data.success) {
                 const successMessage = 'Thank you! Your message has been sent successfully.';
                 setResponseMessage({ type: 'success', message: successMessage });
@@ -297,8 +304,6 @@ const IndexContactForm: React.FC = () => {
                     country: '', city: '', interests: [], budget: '', projectDescription: ''
                 });
                 setErrors({});
-                recaptchaRef.current?.reset();
-                setRecaptchaToken(null);
             } else {
                 const errorMessage = response.data.message || 'An error occurred. Please try again.';
                 setResponseMessage({ type: 'error', message: errorMessage });
@@ -680,23 +685,10 @@ const IndexContactForm: React.FC = () => {
                     )}
                 </div>
 
-                {/* ReCAPTCHA component */}
-                <div className="pt-2 flex flex-col items-center">
-                    <ReCAPTCHA
-                        ref={recaptchaRef}
-                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_FALLBACK_SITE_KEY"}
-                        onChange={(token) => {
-                            setRecaptchaToken(token);
-                            if (errors.recaptcha) {
-                                setErrors(prev => ({ ...prev, recaptcha: '' }));
-                            }
-                        }}
-                        onExpired={() => setRecaptchaToken(null)}
-                    />
-                    {errors.recaptcha && (
-                        <p className="mt-1 text-sm text-red-600">{errors.recaptcha}</p>
-                    )}
-                </div>
+                {/*
+                  With reCAPTCHA v3, there is no visible component to render.
+                  The reCAPTCHA badge will appear in the bottom-right corner automatically.
+                */}
 
                 {/* Submit Button and Response Message */}
                 <div className="flex flex-col items-center gap-4">

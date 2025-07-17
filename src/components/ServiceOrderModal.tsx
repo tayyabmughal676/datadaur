@@ -4,7 +4,7 @@ import axios from 'axios';
 import { cn } from '../lib/utils';
 import { countryData } from './countryData';
 import Swal from 'sweetalert2';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 // Zod schema and constants remain the same
 const serviceOrderSchema = z.object({
@@ -53,10 +53,8 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     useEffect(() => {
         const originalStyle = window.getComputedStyle(document.body).overflow;
@@ -94,23 +92,24 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
         e.preventDefault();
         if (!validateForm()) return;
 
-        if (!recaptchaToken) {
-            setErrors(prev => ({ ...prev, recaptcha: 'Please complete the ReCAPTCHA challenge.' }));
+        if (!executeRecaptcha) {
+            Toast.fire({ icon: 'error', title: 'reCAPTCHA is not ready. Please try again.' });
             return;
         }
 
         setIsSubmitting(true);
 
+        const token = await executeRecaptcha('serviceOrder');
+
         try {
             const dataToSend = {
                 ...formData,
+                recaptchaToken: token,
                 service: serviceTitle,
-                access_key: accessKey,
                 subject: `New Service Order: ${serviceTitle}`,
-                from_name: "DataDaur Services",
             };
 
-            const response = await axios.post('https://api.web3forms.com/submit', dataToSend);
+            const response = await axios.post('/api/service-order', dataToSend);
 
             if (response.data.success) {
                 Toast.fire({
@@ -124,9 +123,6 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                         'event_label': 'Main Contact Form Submission'
                     });
                 }
-
-                recaptchaRef.current?.reset();
-                setRecaptchaToken(null);
 
                 setTimeout(() => {
                     onClose();
@@ -283,25 +279,10 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                                 {errors.projectDetails && <p className="mt-1 text-sm text-red-600">{errors.projectDetails}</p>}
                             </div>
 
-                            {/* --- REFACTOR: Moved ReCAPTCHA to the scrollable body --- */}
-                            <div className="flex justify-center pt-4">
-                                <div>
-                                    <ReCAPTCHA
-                                        ref={recaptchaRef}
-                                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || ""}
-                                        onChange={(token) => {
-                                            setRecaptchaToken(token);
-                                            if (errors.recaptcha) {
-                                                setErrors(prev => ({ ...prev, recaptcha: '' }));
-                                            }
-                                        }}
-                                        onExpired={() => setRecaptchaToken(null)}
-                                    />
-                                    {errors.recaptcha && (
-                                        <p className="mt-1 text-sm text-red-600">{errors.recaptcha}</p>
-                                    )}
-                                </div>
-                            </div>
+                            {/*
+                              With reCAPTCHA v3, there is no visible component to render.
+                              The reCAPTCHA badge will appear in the bottom-right corner of the site automatically.
+                            */}
                         </div>
                     </div>
 

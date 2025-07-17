@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
 import {Home} from "./pages/home.jsx";
 import {Portfolio} from "./pages/portfolio.tsx";
 import {Team} from "./pages/team.tsx";
@@ -20,50 +21,39 @@ import WhatsAppSticky from './components/WhatsAppSticky';
 
 
 function App() {
-    return (
-        <>
-            <BrowserRouter>
+    const recaptchaV3SiteKey = import.meta.env.VITE_RECAPTCHA_V3_SITE_KEY;
 
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route path="/portfolio" element={<Portfolio />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact-us" element={<Contact />} />
-                    <Route path="/privacy-policy" element={<Privacy />} />
-                    <Route path="/terms-and-conditions" element={<Terms />} />
-                    <Route path="/partnership" element={<Partners />} />
-                    <Route path="/careers" element={<Career />} />
-                    <Route path="/sitemap" element={<SitemapPage />} />
-                    <Route path="/save-in-gold-case-study" element={<SaveInGoldCase />} />
-                    <Route path="/socialpro-case-study" element={<SocialproCase />} />
-                    <Route path="/all-hype-case-study" element={<AllHypeCase />} />
-                    <Route path="/faroo-case-study" element={<FarooCase />} />
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
-            </BrowserRouter>
-            <WhatsAppSticky />
-            {/*<div>*/}
-            {/*  <a href="https://vite.dev" target="_blank">*/}
-            {/*    <img src={viteLogo} className="logo" alt="Vite logo" />*/}
-            {/*  </a>*/}
-            {/*  <a href="https://react.dev" target="_blank">*/}
-            {/*    <img src={reactLogo} className="logo react" alt="React logo" />*/}
-            {/*  </a>*/}
-            {/*</div>*/}
-            {/*<h1>Vite + React</h1>*/}
-            {/*<div className="card">*/}
-            {/*  <button onClick={() => setCount((count) => count + 1)}>*/}
-            {/*    count is {count}*/}
-            {/*  </button>*/}
-            {/*  <p>*/}
-            {/*    Edit <code>src/App.jsx</code> and save to test HMR*/}
-            {/*  </p>*/}
-            {/*</div>*/}
-            {/*<p className="read-the-docs">*/}
-            {/*  Click on the Vite and React logos to learn more*/}
-            {/*</p>*/}
-        </>
+     if (!recaptchaV3SiteKey) {
+         console.error("Fatal: VITE_RECAPTCHA_V3_SITE_KEY is not defined in .env");
+         return <div>Configuration error: Application cannot start.</div>;
+     }
+
+     return (
+
+             <GoogleReCaptchaProvider reCaptchaKey={recaptchaV3SiteKey}>
+                 <BrowserRouter>
+
+                     <Routes>
+                         <Route index element={<Home />} />
+                         <Route path="/portfolio" element={<Portfolio />} />
+                         <Route path="/team" element={<Team />} />
+                         <Route path="/about" element={<About />} />
+                         <Route path="/contact-us" element={<Contact />} />
+                         <Route path="/privacy-policy" element={<Privacy />} />
+                         <Route path="/terms-and-conditions" element={<Terms />} />
+                         <Route path="/partnership" element={<Partners />} />
+                         <Route path="/careers" element={<Career />} />
+                         <Route path="/sitemap" element={<SitemapPage />} />
+                         <Route path="/save-in-gold-case-study" element={<SaveInGoldCase />} />
+                         <Route path="/socialpro-case-study" element={<SocialproCase />} />
+                         <Route path="/all-hype-case-study" element={<AllHypeCase />} />
+                         <Route path="/faroo-case-study" element={<FarooCase />} />
+                         <Route path="*" element={<NotFound />} />
+                     </Routes>
+                 </BrowserRouter>
+                 <WhatsAppSticky />
+
+             </GoogleReCaptchaProvider>
     )
 }
 
