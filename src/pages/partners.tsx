@@ -1,20 +1,10 @@
-// import { useEffect } from "react";
-// import { setPageTitle } from "../lib/utils";
-
 import Navbar from "../components/navBar.tsx";
 import PartnersHero from "../components/partnersHero.tsx";
 import PartnersWith from "../components/partnersWithDataDaur.tsx";
 import FooterCompo from "../components/footer.tsx";
-import {Helmet} from "react-helmet";
-
-
+import {Helmet} from 'react-helmet-async';
 
 export const Partners = () => {
-
-    // useEffect(() => {
-    //     setPageTitle("Our Partners");
-    // }, []);
-
     return (
         <>
             <Helmet>
@@ -25,10 +15,10 @@ export const Partners = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <PartnersHero />
-                <PartnersWith />
-                <FooterCompo />
+                <Navbar/>
+                <PartnersHero/>
+                <PartnersWith/>
+                <FooterCompo/>
             </div>
         </>
     );

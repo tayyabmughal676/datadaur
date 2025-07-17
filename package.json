@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:frontend": "vite",
-    "dev:backend": "node server/index.js",
-    "dev": "concurrently \"yarn:dev:frontend\" \"yarn:dev:backend\"",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -21,7 +19,6 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-google-recaptcha": "^3.1.0",
-    "react-google-recaptcha-v3": "^1.11.0",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^7.6.2",
     "react-router-sitemap": "^1.2.0",
@@ -31,7 +28,6 @@
     "zod": "^3.25.72"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2",
     "@eslint/js": "^9.25.0",
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.2",

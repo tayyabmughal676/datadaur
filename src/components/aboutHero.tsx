@@ -21,14 +21,16 @@ const AboutHero = () => {
                         <h1 className="font-outfit font-semibold text-3xl sm:text-5xl lg:text-6xl xl:text-6xl leading-tight">
                                 <span className="text-[#604CC3]/60 block"> {/* Changed opacity here */}
                                     Where
-                                    <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent"> {/* Changed opacity here */}
+                                    <span
+                                        className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent"> {/* Changed opacity here */}
                                         Vision {''}
                                     </span>
                                     and
                                 </span>
 
                             <span className="text-[#604CC3]/60 block">
-                                    <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent"> {/* Changed opacity here */}
+                                    <span
+                                        className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent"> {/* Changed opacity here */}
                                         Design
                                     </span>
                                 {' '}Intersect

@@ -37,13 +37,20 @@ const AboutOurStory: React.FC = () => {
                     </h3>
                     <p className="font-body font-normal text-base lg:text-lg text-black leading-relaxed">
                         DataDaur is a UAE-based technology company with over five years of experience delivering smart,
-                        scalable, and future-focused digital solutions. We offer a full suite of services, including IT management,
-                        software engineering, AI agent development using our Model Context Protocol (MCP Package), mobile app development,
-                        website design, and comprehensive maintenance packages. Our mission is simple: to help businesses
-                        harness the power of technology and data to solve real-world challenges. At our core, we believe data
-                        is more than information—it’s a strategic asset. Through intelligent AI systems and thoughtfully engineered
-                        digital products, we empower organizations to make smarter decisions, automate complex processes, and scale
-                        with confidence. Whether you're a startup launching your first product or an enterprise modernizing operations,
+                        scalable, and future-focused digital solutions. We offer a full suite of services, including IT
+                        management,
+                        software engineering, AI agent development using our Model Context Protocol (MCP Package),
+                        mobile app development,
+                        website design, and comprehensive maintenance packages. Our mission is simple: to help
+                        businesses
+                        harness the power of technology and data to solve real-world challenges. At our core, we believe
+                        data
+                        is more than information—it’s a strategic asset. Through intelligent AI systems and thoughtfully
+                        engineered
+                        digital products, we empower organizations to make smarter decisions, automate complex
+                        processes, and scale
+                        with confidence. Whether you're a startup launching your first product or an enterprise
+                        modernizing operations,
                         we bring the vision, expertise, and innovation to help you move forward.
                     </p>
                 </div>
@@ -68,8 +75,9 @@ const AboutOurStory: React.FC = () => {
                         className="bg-white text-center rounded-2xl p-8 lg:p-10 shadow-lg flex flex-col h-full transition-transform duration-300 hover:scale-105"
                     >
                         <div className="flex items-center justify-center mb-6">
-                            <div className="w-12 h-12 bg-gradient-to-r from-[#604CC3] to-[#2E245D] rounded-full flex items-center justify-center mr-4">
-                                <img src={item.icon} alt={`${item.title} Icon`} className="w-6 h-6" />
+                            <div
+                                className="w-12 h-12 bg-gradient-to-r from-[#604CC3] to-[#2E245D] rounded-full flex items-center justify-center mr-4">
+                                <img src={item.icon} alt={`${item.title} Icon`} className="w-6 h-6"/>
                             </div>
                             <h3 className="font-heading font-medium text-heading-md">
                                 {item.title}

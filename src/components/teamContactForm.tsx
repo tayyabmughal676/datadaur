@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { cn } from '../lib/utils';
+import React, {useState} from 'react';
+import {cn} from '../lib/utils';
 
 //hello
 interface FormData {
@@ -48,21 +48,21 @@ const teamContactForm: React.FC = () => {
     ];
 
     const countryOptions = [
-        { value: '', label: 'United Arab Emirates (UAE)' },
-        { value: 'us', label: 'United States' },
-        { value: 'uk', label: 'United Kingdom' },
-        { value: 'pk', label: 'Pakistan' }
+        {value: '', label: 'United Arab Emirates (UAE)'},
+        {value: 'us', label: 'United States'},
+        {value: 'uk', label: 'United Kingdom'},
+        {value: 'pk', label: 'Pakistan'}
     ];
 
     const countryCodes = [
-        { value: '+971', label: '+971' },
-        { value: '+1', label: '+1' },
-        { value: '+44', label: '+44' },
-        { value: '+92', label: '+92' }
+        {value: '+971', label: '+971'},
+        {value: '+1', label: '+1'},
+        {value: '+44', label: '+44'},
+        {value: '+92', label: '+92'}
     ];
 
     const teamhandleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -85,7 +85,7 @@ const teamContactForm: React.FC = () => {
         }));
     };
 
-    const teamhandleSubmit = (e: React.FormEvent) => {
+    const teamHandleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
         // Handle form submission here
@@ -102,7 +102,7 @@ const teamContactForm: React.FC = () => {
             </div>
 
             {/* Form */}
-            <form onSubmit={teamhandleSubmit} className="space-y-8">
+            <form onSubmit={teamHandleSubmit} className="space-y-8">
                 {/* Name and Company Row */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Full Name */}

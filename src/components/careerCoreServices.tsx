@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../lib/utils';
+import {cn} from '../lib/utils';
 
 interface ServicesCardProps {
     title: string;
@@ -9,10 +9,10 @@ interface ServicesCardProps {
 }
 
 const ServicesCard: React.FC<ServicesCardProps> = ({
-                                                     title,
-                                                     features,
-                                                     className
-                                                 }) => {
+                                                       title,
+                                                       features,
+                                                       className
+                                                   }) => {
     return (
         <div className={cn(
             "bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105",
@@ -66,7 +66,7 @@ const CoreServices: React.FC = () => {
     const SaasDevFeatures = [
         'Multi-tenant architecture design',
         'Subscription management and billing',
-       ' Cloud-native scalability'
+        ' Cloud-native scalability'
     ]
     const WebDesignAndDevFeatures = [
         'Custom, brand-aligned responsive designs',

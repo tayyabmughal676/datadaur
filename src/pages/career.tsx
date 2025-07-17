@@ -3,13 +3,11 @@ import CareerHero from "../components/careerHero.tsx";
 import CareerIntro from "../components/careerIntro.tsx";
 import CoreServices from "../components/careerCoreServices.tsx";
 import IndusWeServe from "../components/careerIndusWeServe.tsx";
-
 import FooterCompo from "../components/footer.tsx";
-import {Helmet} from "react-helmet";
+import {Helmet} from 'react-helmet-async';
 
 
 export const Career = () => {
-
 
     return (
         <>
@@ -21,12 +19,12 @@ export const Career = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <CareerHero />
-                <CareerIntro />
-                <CoreServices />
-                <IndusWeServe />
-                <FooterCompo />
+                <Navbar/>
+                <CareerHero/>
+                <CareerIntro/>
+                <CoreServices/>
+                <IndusWeServe/>
+                <FooterCompo/>
             </div>
         </>
     );

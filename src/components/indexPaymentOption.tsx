@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../lib/utils';
+import {cn} from '../lib/utils';
 
 // Import payment option logos
 import upworkLogo from '../assets/upwork-logo.svg';
@@ -27,7 +27,7 @@ import youtubeLogo from '../assets/youtube-logo.svg';
 import apifyLogo from '../assets/apify-logo.svg';
 import hl7Logo from '../assets/fhir-logo.svg';
 import typescriptLogo from "../assets/typescript-logo.svg";
-import type { JSX } from 'react/jsx-runtime';
+import type {JSX} from 'react/jsx-runtime';
 
 
 interface PaymentOptionsProps {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../lib/utils';
+import {cn} from '../lib/utils';
 
 import signatureImg from '../assets/signature.svg';
 import ceoImage from '../assets/tayyab-mughal.svg';
@@ -17,7 +17,7 @@ interface OurTeamSectionProps {
     className?: string;
 }
 
-const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
+const OurTeamSection: React.FC<OurTeamSectionProps> = ({className}) => {
     const leadership = [
         {
             name: "Tayyab Mughal",
@@ -89,8 +89,10 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                     {/* Leadership Section */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-12 lg:mb-20">
                         {leadership.map(leader => (
-                            <div key={leader.name} className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
-                                <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                            <div key={leader.name}
+                                 className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
+                                <div
+                                    className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
                                     <img
                                         src={leader.image}
                                         alt={`${leader.name} - ${leader.title}`}
@@ -120,8 +122,10 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                                     team.length % 2 !== 0 && index === team.length - 1 && "col-span-2"
                                 )}
                             >
-                                <div className="w-24 h-24 sm:w-40 sm:h-40 transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
-                                    <img src={member.image} alt={`${member.name} - ${member.title}`} className="w-full h-full object-cover" />
+                                <div
+                                    className="w-24 h-24 sm:w-40 sm:h-40 transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                    <img src={member.image} alt={`${member.name} - ${member.title}`}
+                                         className="w-full h-full object-cover"/>
                                 </div>
                                 <div className="text-center">
                                     <h3 className="team-member-name">{member.name}</h3>
@@ -137,8 +141,10 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                         <div className="grid grid-cols-4 gap-x-8">
                             {team.slice(0, 4).map((member) => (
                                 <div key={member.name} className="flex flex-col items-center space-y-4">
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
-                                        <img src={member.image} alt={`${member.name} - ${member.title}`} className="w-full h-full object-cover" />
+                                    <div
+                                        className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                        <img src={member.image} alt={`${member.name} - ${member.title}`}
+                                             className="w-full h-full object-cover"/>
                                     </div>
                                     <div className="text-center">
                                         <h3 className="team-member-name">{member.name}</h3>
@@ -151,8 +157,10 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
                         <div className="grid grid-cols-4 gap-x-8">
                             {team.slice(4, 8).map((member) => (
                                 <div key={member.name} className="flex flex-col items-center space-y-4">
-                                    <div className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
-                                        <img src={member.image} alt={`${member.name} - ${member.title}`} className="w-full h-full object-cover" />
+                                    <div
+                                        className="w-24 h-24 sm:w-40 sm:h-40 xl:w-[220px] xl:h-[220px] transition-transform duration-300 hover:scale-105 rounded-full bg-gray-200 shadow-md overflow-hidden">
+                                        <img src={member.image} alt={`${member.name} - ${member.title}`}
+                                             className="w-full h-full object-cover"/>
                                     </div>
                                     <div className="text-center">
                                         <h3 className="team-member-name">{member.name}</h3>
@@ -169,11 +177,13 @@ const OurTeamSection: React.FC<OurTeamSectionProps> = ({ className }) => {
             <div className="bg-white py-10 px-4 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
                 <div className="max-w-6xl mx-auto text-center">
                     <p className="team-bottom-text leading-relaxed">
-                        At DataDaur, we’re a team that truly cares about what we create. With the right mix of skill, experience, and passion, we work closely with you to build digital solutions that are reliable, thoughtful, and built to help your business grow.
+                        At DataDaur, we’re a team that truly cares about what we create. With the right mix of skill,
+                        experience, and passion, we work closely with you to build digital solutions that are reliable,
+                        thoughtful, and built to help your business grow.
                     </p>
                     <div className="flex justify-end mt-4">
                         <div className="w-32 h-12 sm:w-40 sm:h-14 md:w-48 md:h-16 flex items-center justify-center">
-                            <img src={signatureImg} alt="DataDaur Signature" className="w-full h-full" />
+                            <img src={signatureImg} alt="DataDaur Signature" className="w-full h-full"/>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { cn } from '../lib/utils';
+import React, {useState} from 'react';
+import {cn} from '../lib/utils';
 import ResumeUploadModal from './ResumeUploadModal';
 import ComingSoonModal from './ComingSoonModal';
 
@@ -115,12 +115,14 @@ const IndusWeServe: React.FC = () => {
                 </div>
 
                 {/* Additional Opportunities Section */}
-                <div className="text-center bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
+                <div
+                    className="text-center bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
                     <h2 className="font-medium text-3xl sm:text-[28px] text-black mb-4">
                         Work with me
                     </h2>
                     <p className="font-normal text-base text-black mb-8 max-w-2xl mx-auto">
-                        Work with a partner who values clarity, creativity, and results—because great software is built on trust, not just tech.
+                        Work with a partner who values clarity, creativity, and results—because great software is built
+                        on trust, not just tech.
                     </p>
 
                     <h3 className="font-bold text-xl sm:text-[20px] text-black mb-4">
@@ -141,24 +143,27 @@ const IndusWeServe: React.FC = () => {
                         Upload Resume
                     </button>
                 </div>
-                <div className="text-center mt-24 bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
+                <div
+                    className="text-center mt-24 bg-white rounded-xl shadow-xl p-6 sm:p-8 border border-gray-100 transition-transform duration-300 hover:scale-105">
                     <h3 className="font-medium text-2xl sm:text-[28px] text-black mb-4">
                         Be a Part of DataDaur's Next Innovation
                     </h3>
                     <p className="font-normal text-base text-black mb-8 max-w-2xl mx-auto">
-                        We're always on the lookout for creative minds, tech innovators, and problem solvers. Let's build the future together.
+                        We're always on the lookout for creative minds, tech innovators, and problem solvers. Let's
+                        build the future together.
                     </p>
                     <button
                         onClick={() => setShowComingSoonModal(true)}
-                        type="button" className="px-3 py-2 bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white rounded-lg hover:shadow-md transition-all">
+                        type="button"
+                        className="px-3 py-2 bg-gradient-to-r from-[#604CC3] to-[#2E245D] text-white rounded-lg hover:shadow-md transition-all">
                         Explore Job Openings
                     </button>
                 </div>
             </div>
 
             {/* Add this modal component */}
-            {showResumeModal && <ResumeUploadModal onClose={() => setShowResumeModal(false)} />}
-            {showComingSoonModal && <ComingSoonModal onClose={() => setShowComingSoonModal(false)} />}
+            {showResumeModal && <ResumeUploadModal onClose={() => setShowResumeModal(false)}/>}
+            {showComingSoonModal && <ComingSoonModal onClose={() => setShowComingSoonModal(false)}/>}
         </section>
     );
 };

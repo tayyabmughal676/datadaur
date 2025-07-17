@@ -21,15 +21,17 @@ const TermsHero = () => {
                         <h1 className="font-semibold text-3xl sm:text-5xl lg:text-6xl xl:text-6xl leading-tight">
                             <span className="text-[#604CC3]/60 block">
                                     The
-                                <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent "> {/* Changed opacity here */}
+                                <span
+                                    className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent "> {/* Changed opacity here */}
                                     Rules {''}
                                 </span>
                                 That
                             </span>
 
-                            <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent block"> {/* Changed opacity here */}
+                            <span
+                                className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent block"> {/* Changed opacity here */}
                                 Respect {''}
-                                    <span className="text-[#604CC3]/60">
+                                <span className="text-[#604CC3]/60">
                                         the Craft
                                     </span>
                             </span>

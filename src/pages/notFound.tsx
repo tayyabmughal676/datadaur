@@ -1,22 +1,19 @@
-import { useEffect } from "react";
-import { setPageTitle } from "../lib/utils";
-
 import Navbar from "../components/navBar.tsx";
 import NotFoundSection from "../components/notFoundAll.tsx";
 import FooterCompo from "../components/footer.tsx";
+import {Helmet} from "react-helmet-async";
 
+export const NotFound = () => (
+    <>
+        <Helmet>
+            <title>404 – Page Not Found | DataDaur</title>
+            <meta name="description"
+                  content="The page you’re looking for doesn’t exist. Let us help you get back on track."/>
+            <meta name="robots" content="noindex, follow"/>
+        </Helmet>
 
-export const NotFound = () => {
-    useEffect(() => {
-        setPageTitle("Not Found");
-    }, []);
-    return (
-        <div>
-            <Navbar/>
-            <NotFoundSection />
-            <FooterCompo/>
-        </div>
-    );
-};
-
-//hello
+        <Navbar/>
+        <NotFoundSection/>
+        <FooterCompo/>
+    </>
+);
