@@ -23,7 +23,9 @@ const termsContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl">
-                        Welcome to <strong>DataDaur</strong>. These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our platform, you agree to comply with these Terms. If you disagree with any part of the terms, you may not access the site.
+                        Welcome to <strong>DataDaur</strong>. These Terms and Conditions ("Terms") govern your use of
+                        our website and services. By accessing or using our platform, you agree to comply with these
+                        Terms. If you disagree with any part of the terms, you may not access the site.
                     </p>
                 </div>
 
@@ -36,7 +38,9 @@ const termsContent: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-black leading-relaxed mb-4 text-base sm:text-lg lg:text-xl">
-                            DataDaur is a UAE-based digital solutions provider with over 5 years of experience in IT management, AI development, software engineering, and web/mobile app development. We provide innovative, reliable, and secure technology services to clients globally.
+                            DataDaur is a UAE-based digital solutions provider with over 5 years of experience in IT
+                            management, AI development, software engineering, and web/mobile app development. We provide
+                            innovative, reliable, and secure technology services to clients globally.
                         </p>
                     </div>
                 </div>
@@ -63,7 +67,8 @@ const termsContent: React.FC = () => {
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Unauthorized access, reverse engineering, or automated data extraction is strictly prohibited.
+                                Unauthorized access, reverse engineering, or automated data extraction is strictly
+                                prohibited.
                             </li>
                         </ul>
                     </div>
@@ -78,7 +83,9 @@ const termsContent: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-black leading-relaxed mb-4 text-base sm:text-lg lg:text-xl">
-                            All content, graphics, software, and materials on this site are the intellectual property of DataDaur unless otherwise stated. Reproduction, distribution, or modification of any material without written consent is forbidden.
+                            All content, graphics, software, and materials on this site are the intellectual property of
+                            DataDaur unless otherwise stated. Reproduction, distribution, or modification of any
+                            material without written consent is forbidden.
                         </p>
                     </div>
                 </div>
@@ -94,11 +101,13 @@ const termsContent: React.FC = () => {
                         <ul className="space-y-2 ml-2 sm:ml-4">
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                You are responsible for ensuring that your use of our services complies with applicable laws and regulations.
+                                You are responsible for ensuring that your use of our services complies with applicable
+                                laws and regulations.
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                Any data or files uploaded through forms must not infringe on third-party rights or contain malware.
+                                Any data or files uploaded through forms must not infringe on third-party rights or
+                                contain malware.
                             </li>
                         </ul>
                     </div>
@@ -113,7 +122,9 @@ const termsContent: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-black leading-relaxed mb-4 text-base sm:text-lg lg:text-xl">
-                            We reserve the right to modify or discontinue services temporarily or permanently without notice. While we strive for uninterrupted availability, we are not liable for downtime or technical issues caused by third-party providers.
+                            We reserve the right to modify or discontinue services temporarily or permanently without
+                            notice. While we strive for uninterrupted availability, we are not liable for downtime or
+                            technical issues caused by third-party providers.
                         </p>
                     </div>
                 </div>
@@ -127,7 +138,9 @@ const termsContent: React.FC = () => {
                     </div>
                     <div>
                         <p className="text-black leading-relaxed mb-4 text-base sm:text-lg lg:text-xl">
-                            DataDaur shall not be liable for any indirect, incidental, or consequential damages resulting from your use of our services. All services are provided "as is" without warranties of any kind unless explicitly stated.
+                            DataDaur shall not be liable for any indirect, incidental, or consequential damages
+                            resulting from your use of our services. All services are provided "as is" without
+                            warranties of any kind unless explicitly stated.
                         </p>
                     </div>
                 </div>
@@ -140,7 +153,8 @@ const termsContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        You agree to indemnify and hold harmless DataDaur, its affiliates, and employees from any claims, losses, or damages resulting from your violation of these Terms or misuse of services.
+                        You agree to indemnify and hold harmless DataDaur, its affiliates, and employees from any
+                        claims, losses, or damages resulting from your violation of these Terms or misuse of services.
                     </p>
                 </div>
 
@@ -152,7 +166,8 @@ const termsContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        These Terms are governed by the laws of the United Arab Emirates. Any disputes shall be subject to the exclusive jurisdiction of the courts in Dubai.
+                        These Terms are governed by the laws of the United Arab Emirates. Any disputes shall be subject
+                        to the exclusive jurisdiction of the courts in Dubai.
                     </p>
                 </div>
 
@@ -164,7 +179,8 @@ const termsContent: React.FC = () => {
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed ml-0 sm:ml-12 text-base sm:text-lg lg:text-xl">
-                        We may revise these Terms periodically. Continued use of the site after changes implies your acceptance of the revised Terms. We recommend reviewing this page regularly.
+                        We may revise these Terms periodically. Continued use of the site after changes implies your
+                        acceptance of the revised Terms. We recommend reviewing this page regularly.
                     </p>
                 </div>
 
@@ -184,7 +200,8 @@ const termsContent: React.FC = () => {
                                 <span className="w-2 h-2 gradient-bg rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                 <span>
                                     <strong>Email: </strong>
-                                    <a className="hover:text-[#604CC3] underline" href="mailto:contact@datadaur.com">contact@datadaur.com</a>
+                                    <a className="hover:text-[#604CC3] underline"
+                                       href="mailto:contact@datadaur.com">contact@datadaur.com</a>
                                 </span>
                             </li>
                             <li className="text-black flex items-start text-sm sm:text-base lg:text-lg">

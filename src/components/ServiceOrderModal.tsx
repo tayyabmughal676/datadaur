@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from 'react'; // Import useEffect
-import { z } from 'zod';
+import React, {useState, useRef, useEffect} from 'react'; // Import useEffect
+import {z} from 'zod';
 import axios from 'axios';
-import { cn } from '../lib/utils';
-import { countryData } from './countryData';
+import {cn} from '../lib/utils';
+import {countryData} from './countryData';
 import Swal from 'sweetalert2';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 // Zod schema and constants remain the same
 const serviceOrderSchema = z.object({
-    email: z.string().trim().min(1, { message: 'Email is required.' }).email({ message: 'Please enter a valid email address.' }),
-    countryCode: z.string().min(1, { message: 'Country code is required.' }),
-    phone: z.string().trim().min(7, { message: 'Phone number must be at least 7 digits.' }).regex(/^\d+$/, { message: 'Phone number can only contain digits.' }),
-    startDate: z.string().min(1, { message: 'Start date is required.' }),
-    deadline: z.string().min(1, { message: 'Deadline is required.' }),
-    projectDetails: z.string().trim().min(20, { message: 'Project details must be at least 20 characters.' }),
+    email: z.string().trim().min(1, {message: 'Email is required.'}).email({message: 'Please enter a valid email address.'}),
+    countryCode: z.string().min(1, {message: 'Country code is required.'}),
+    phone: z.string().trim().min(7, {message: 'Phone number must be at least 7 digits.'}).regex(/^\d+$/, {message: 'Phone number can only contain digits.'}),
+    startDate: z.string().min(1, {message: 'Start date is required.'}),
+    deadline: z.string().min(1, {message: 'Deadline is required.'}),
+    projectDetails: z.string().trim().min(20, {message: 'Project details must be at least 20 characters.'}),
 });
 
 const countryCodes = [...new Map(countryData.map(item => [item.dialCode, item])).values()]
@@ -42,7 +42,7 @@ interface ServiceOrderModalProps {
     serviceDescription: string[];
 }
 
-const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceTitle, serviceDescription }) => {
+const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({onClose, serviceTitle, serviceDescription}) => {
     const [formData, setFormData] = useState({
         email: '',
         countryCode: '+971',
@@ -53,8 +53,10 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
     });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
     useEffect(() => {
         const originalStyle = window.getComputedStyle(document.body).overflow;
@@ -65,10 +67,10 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
     }, []);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        const {name, value} = e.target;
+        setFormData(prev => ({...prev, [name]: value}));
         if (errors[name]) {
-            setErrors(prev => ({ ...prev, [name]: '' }));
+            setErrors(prev => ({...prev, [name]: ''}));
         }
     };
 
@@ -92,24 +94,23 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
         e.preventDefault();
         if (!validateForm()) return;
 
-        if (!executeRecaptcha) {
-            Toast.fire({ icon: 'error', title: 'reCAPTCHA is not ready. Please try again.' });
+        if (!recaptchaToken) {
+            setErrors(prev => ({...prev, recaptcha: 'Please complete the ReCAPTCHA challenge.'}));
             return;
         }
 
         setIsSubmitting(true);
 
-        const token = await executeRecaptcha('serviceOrder');
-
         try {
             const dataToSend = {
                 ...formData,
-                recaptchaToken: token,
                 service: serviceTitle,
+                access_key: accessKey,
                 subject: `New Service Order: ${serviceTitle}`,
+                from_name: "DataDaur Services",
             };
 
-            const response = await axios.post('/api/service-order', dataToSend);
+            const response = await axios.post('https://api.web3forms.com/submit', dataToSend);
 
             if (response.data.success) {
                 Toast.fire({
@@ -123,6 +124,9 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                         'event_label': 'Main Contact Form Submission'
                     });
                 }
+
+                recaptchaRef.current?.reset();
+                setRecaptchaToken(null);
 
                 setTimeout(() => {
                     onClose();
@@ -144,8 +148,10 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
     };
 
     return (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={onClose}>
-            <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+             onClick={onClose}>
+            <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] flex flex-col"
+                 onClick={(e) => e.stopPropagation()}>
 
                 {/* --- HEADER (Fixed) --- */}
                 <div className="flex-shrink-0 p-6 sm:p-8 border-b border-gray-200">
@@ -168,7 +174,8 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
 
                         <div className="space-y-6">
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium mb-2 font-outfit text-black">Email *</label>
+                                <label htmlFor="email"
+                                       className="block text-sm font-medium mb-2 font-outfit text-black">Email *</label>
                                 <input
                                     type="email"
                                     id="email"
@@ -186,7 +193,9 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                                 {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                             </div>
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium mb-2 font-outfit text-black">Phone Number *</label>
+                                <label htmlFor="phone"
+                                       className="block text-sm font-medium mb-2 font-outfit text-black">Phone Number
+                                    *</label>
                                 <div className="flex min-w-0">
                                     <select
                                         name="countryCode"
@@ -226,7 +235,9 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label htmlFor="startDate" className="block text-sm font-medium mb-2 font-outfit text-black">Estimated Start Date *</label>
+                                    <label htmlFor="startDate"
+                                           className="block text-sm font-medium mb-2 font-outfit text-black">Estimated
+                                        Start Date *</label>
                                     <input
                                         type="date"
                                         id="startDate"
@@ -240,10 +251,13 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                                             errors.startDate && "border-red-500 focus:ring-red-500"
                                         )}
                                     />
-                                    {errors.startDate && <p className="mt-1 text-sm text-red-600">{errors.startDate}</p>}
+                                    {errors.startDate &&
+                                        <p className="mt-1 text-sm text-red-600">{errors.startDate}</p>}
                                 </div>
                                 <div>
-                                    <label htmlFor="deadline" className="block text-sm font-medium mb-2 font-outfit text-black">Deadline *</label>
+                                    <label htmlFor="deadline"
+                                           className="block text-sm font-medium mb-2 font-outfit text-black">Deadline
+                                        *</label>
                                     <input
                                         type="date"
                                         id="deadline"
@@ -261,7 +275,9 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="projectDetails" className="block text-sm font-medium mb-2 font-outfit text-black">Project Details *</label>
+                                <label htmlFor="projectDetails"
+                                       className="block text-sm font-medium mb-2 font-outfit text-black">Project Details
+                                    *</label>
                                 <textarea
                                     id="projectDetails"
                                     name="projectDetails"
@@ -272,17 +288,33 @@ const ServiceOrderModal: React.FC<ServiceOrderModalProps> = ({ onClose, serviceT
                                     className={cn(
                                         "w-full px-4 py-3 rounded-lg border transition-colors duration-200 resize-none",
                                         "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                                        "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent","custom-scrollbar",
+                                        "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent", "custom-scrollbar",
                                         errors.projectDetails && "border-red-500 focus:ring-red-500"
                                     )}
                                 />
-                                {errors.projectDetails && <p className="mt-1 text-sm text-red-600">{errors.projectDetails}</p>}
+                                {errors.projectDetails &&
+                                    <p className="mt-1 text-sm text-red-600">{errors.projectDetails}</p>}
                             </div>
 
-                            {/*
-                              With reCAPTCHA v3, there is no visible component to render.
-                              The reCAPTCHA badge will appear in the bottom-right corner of the site automatically.
-                            */}
+                            {/* --- REFACTOR: Moved ReCAPTCHA to the scrollable body --- */}
+                            <div className="flex justify-center pt-4">
+                                <div>
+                                    <ReCAPTCHA
+                                        ref={recaptchaRef}
+                                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || ""}
+                                        onChange={(token) => {
+                                            setRecaptchaToken(token);
+                                            if (errors.recaptcha) {
+                                                setErrors(prev => ({...prev, recaptcha: ''}));
+                                            }
+                                        }}
+                                        onExpired={() => setRecaptchaToken(null)}
+                                    />
+                                    {errors.recaptcha && (
+                                        <p className="mt-1 text-sm text-red-600">{errors.recaptcha}</p>
+                                    )}
+                                </div>
+                            </div>
                         </div>
                     </div>
 

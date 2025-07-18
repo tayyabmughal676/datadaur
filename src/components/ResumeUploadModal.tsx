@@ -4,7 +4,7 @@ interface ResumeUploadModalProps {
     onClose: () => void;
 }
 
-const ResumeUploadModal: React.FC<ResumeUploadModalProps> = ({ onClose }) => {
+const ResumeUploadModal: React.FC<ResumeUploadModalProps> = ({onClose}) => {
     return (
         // Backdrop with blur effect, closes modal on click
         <div
@@ -16,14 +16,17 @@ const ResumeUploadModal: React.FC<ResumeUploadModalProps> = ({ onClose }) => {
                 className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center"
                 onClick={(e) => e.stopPropagation()}
             >
-                <svg className="w-16 h-16 mx-auto text-[#604CC3] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                <svg className="w-16 h-16 mx-auto text-[#604CC3] mb-4" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
                 <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3">
                     Apply Directly via Email
                 </h2>
                 <p className="text-gray-600 text-base sm:text-lg mb-6 max-w-md mx-auto">
-                    Our direct resume upload is currently being upgraded. To ensure we receive your application, please send your resume and portfolio to:
+                    Our direct resume upload is currently being upgraded. To ensure we receive your application, please
+                    send your resume and portfolio to:
                 </p>
                 <div className="mb-8">
                     <p className="text-lg sm:text-xl font-semibold text-[#2E245D] bg-gray-100 rounded-lg py-3 px-5 inline-block">
@@ -42,15 +45,6 @@ const ResumeUploadModal: React.FC<ResumeUploadModalProps> = ({ onClose }) => {
 };
 
 export default ResumeUploadModal;
-
-
-
-
-
-
-
-
-
 
 
 // import React, { useState } from 'react';

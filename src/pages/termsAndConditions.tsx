@@ -1,19 +1,10 @@
-// import { useEffect } from "react";
-// import { setPageTitle } from "../lib/utils";
-
 import Navbar from "../components/navBar.tsx";
 import FooterCompo from "../components/footer.tsx";
 import TermsHero from "../components/termsHero.tsx";
 import TermsContent from "../components/termsContent.tsx";
-import {Helmet} from "react-helmet";
-
+import {Helmet} from 'react-helmet-async';
 
 export const Terms = () => {
-
-    // useEffect(() => {
-    //     setPageTitle("Terms & Conditions");
-    // }, []);
-
     return (
         <>
             <Helmet>
@@ -24,15 +15,12 @@ export const Terms = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <TermsHero />
-                <TermsContent />
-                <FooterCompo />
+                <Navbar/>
+                <TermsHero/>
+                <TermsContent/>
+                <FooterCompo/>
             </div>
         </>
 
     );
 };
-
-
-//hello

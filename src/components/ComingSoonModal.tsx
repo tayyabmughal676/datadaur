@@ -4,7 +4,7 @@ interface ComingSoonModalProps {
     onClose: () => void;
 }
 
-const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ onClose }) => {
+const ComingSoonModal: React.FC<ComingSoonModalProps> = ({onClose}) => {
     return (
         // Backdrop with blur effect, closes modal on click
         <div
@@ -16,8 +16,10 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ onClose }) => {
                 className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center"
                 onClick={(e) => e.stopPropagation()}
             >
-                <svg className="w-16 h-16 mx-auto text-[#604CC3] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                <svg className="w-16 h-16 mx-auto text-[#604CC3] mb-4" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                          d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
 
                 <h2 className="text-2xl sm:text-3xl font-bold text-black mb-3">
@@ -25,7 +27,8 @@ const ComingSoonModal: React.FC<ComingSoonModalProps> = ({ onClose }) => {
                 </h2>
 
                 <p className="text-gray-600 text-base sm:text-lg mb-8">
-                    We're currently building our dedicated careers page to bring you exciting opportunities. Stay tuned for new job openings and be a part of our journey.
+                    We're currently building our dedicated careers page to bring you exciting opportunities. Stay tuned
+                    for new job openings and be a part of our journey.
                 </p>
 
                 <button

@@ -1,18 +1,10 @@
-// import { useEffect } from "react";
-// import { setPageTitle } from "../lib/utils";
-
 import Navbar from "../components/navBar.tsx";
 import SitemapHero from "../components/sitemapHero.tsx";
 import SitemapContent from "../components/sitemapContent.tsx";
 import FooterCompo from "../components/footer.tsx";
-import {Helmet} from "react-helmet";
-
+import {Helmet} from 'react-helmet-async';
 
 export const SitemapPage = () => {
-
-    // useEffect(() => {
-    //     setPageTitle("Privacy Policy");
-    // }, []);
 
     return (
         <>
@@ -24,10 +16,10 @@ export const SitemapPage = () => {
                 />
             </Helmet>
             <div>
-                <Navbar />
-                <SitemapHero />
-                <SitemapContent />
-                <FooterCompo />
+                <Navbar/>
+                <SitemapHero/>
+                <SitemapContent/>
+                <FooterCompo/>
             </div>
         </>
 

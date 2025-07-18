@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
-import { cn } from "../lib/utils.tsx";
+import React, {useState, useEffect, useRef} from 'react';
+import {useLocation} from 'react-router-dom';
+import {cn} from "../lib/utils.tsx";
 import logoImg from "../assets/logo.svg";
-import { Menu, X } from 'lucide-react';
+import {Menu, X} from 'lucide-react';
 
 import whatsappIcon from '../assets/whatsapp-icon.svg';
 import emailIcon from '../assets/msg-icon.svg';
@@ -10,15 +10,15 @@ import emailIcon from '../assets/msg-icon.svg';
 const NavBar: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
-    const { pathname } = useLocation();
+    const {pathname} = useLocation();
     const mobileMenuRef = useRef<HTMLDivElement>(null); // Ref for mobile menu container
 
     const navItems = [
-        { name: 'Home', href: '/' },
-        { name: 'Portfolio', href: '/portfolio' },
-        { name: 'Team', href: '/team' },
-        { name: 'About', href: '/about' },
-        { name: 'Contact Us', href: '/contact-us' },
+        {name: 'Home', href: '/'},
+        {name: 'Portfolio', href: '/portfolio'},
+        {name: 'Team', href: '/team'},
+        {name: 'About', href: '/about'},
+        {name: 'Contact Us', href: '/contact-us'},
     ];
 
     const toggleMobileMenu = () => {
@@ -144,9 +144,9 @@ const NavBar: React.FC = () => {
                                     aria-label="Toggle navigation menu"
                                 >
                                     {isMobileMenuOpen ? (
-                                        <X className="block h-6 w-6" aria-hidden="true" />
+                                        <X className="block h-6 w-6" aria-hidden="true"/>
                                     ) : (
-                                        <Menu className="block h-6 w-6" aria-hidden="true" />
+                                        <Menu className="block h-6 w-6" aria-hidden="true"/>
                                     )}
                                 </button>
                             </div>
@@ -194,14 +194,15 @@ const NavBar: React.FC = () => {
                     ></div>
 
                     {/* Modal Content */}
-                    <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden border-2 border-transparent bg-gradient-to-r from-[#604CC3] to-[#2E245D] p-0.5">
+                    <div
+                        className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 overflow-hidden border-2 border-transparent bg-gradient-to-r from-[#604CC3] to-[#2E245D] p-0.5">
                         <div className="bg-white rounded-2xl p-8">
                             {/* Close Button */}
                             <button
                                 onClick={closeContactPopup}
                                 className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
                             >
-                                <X className="w-5 h-5 text-gray-500" />
+                                <X className="w-5 h-5 text-gray-500"/>
                             </button>
 
                             {/* Header */}
@@ -220,8 +221,9 @@ const NavBar: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200"
                                 >
-                                    <div className="w-16 h-16 bg-[#E0E9F7] rounded-full flex items-center justify-center flex-shrink-0">
-                                        <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8" />
+                                    <div
+                                        className="w-16 h-16 bg-[#E0E9F7] rounded-full flex items-center justify-center flex-shrink-0">
+                                        <img src={whatsappIcon} alt="WhatsApp" className="w-8 h-8"/>
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-semibold bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent font-outfit">
@@ -237,8 +239,9 @@ const NavBar: React.FC = () => {
                                     rel="noopener noreferrer"
                                     className="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200"
                                 >
-                                    <div className="w-16 h-16 bg-[#E0E9F7] rounded-full flex items-center justify-center flex-shrink-0">
-                                        <img src={emailIcon} alt="Email" className="w-8 h-8" />
+                                    <div
+                                        className="w-16 h-16 bg-[#E0E9F7] rounded-full flex items-center justify-center flex-shrink-0">
+                                        <img src={emailIcon} alt="Email" className="w-8 h-8"/>
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-semibold bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent font-outfit">

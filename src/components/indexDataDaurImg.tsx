@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../lib/utils';
+import {cn} from '../lib/utils';
 import backImg from '../assets/datadaur-p.svg';
 import youtubeIcon from '../assets/you-p.svg';
 // import instagramIcon from '../assets/insta-p.svg';
@@ -68,7 +68,7 @@ const DataDaurLogoImg: React.FC = () => {
                 </div>
                 {/* Social Media Icons */}
                 <div className="flex justify-end space-x-4 mt-12 sm:space-x-6 md:space-x-8">
-                    {socialLinks.map(({ href, icon, label }) => (
+                    {socialLinks.map(({href, icon, label}) => (
                         <a
                             key={label}
                             href={href}

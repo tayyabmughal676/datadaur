@@ -16,7 +16,8 @@ const FarooHero = () => {
             <div className="relative z-10 max-w-7xl mx-auto p-6 pt-20">
                 <div className="space-y-6">
                     <div className="space-y-2">
-                        <img src={farooGroupImg} className="flex items-center justify-center overflow-hidden" alt="Mobile Group"/>
+                        <img src={farooGroupImg} className="flex items-center justify-center overflow-hidden"
+                             alt="Mobile Group"/>
                     </div>
                 </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { cn } from '../lib/utils';
-import { Link } from 'react-router-dom';
+import {cn} from '../lib/utils';
+import {Link} from 'react-router-dom';
 
 import saveingoldImg from '../assets/saveingold.png';
 import socialproImg from '../assets/socialpro.png';
@@ -61,7 +61,7 @@ const defaultWorkItems: WorkItem[] = [
     },
 ];
 
-const OurWork: React.FC<OurWorkProps> = ({ workItems = defaultWorkItems }) => {
+const OurWork: React.FC<OurWorkProps> = ({workItems = defaultWorkItems}) => {
     return (
         <section className="py-16 px-8 sm:px-8 md:px-10 max-w-7xl mx-auto">
             {/* Section Title */}
@@ -72,7 +72,7 @@ const OurWork: React.FC<OurWorkProps> = ({ workItems = defaultWorkItems }) => {
             {/* Work Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                 {workItems.map((work) => (
-                    <WorkCard key={work.id} work={work} />
+                    <WorkCard key={work.id} work={work}/>
                 ))}
             </div>
         </section>
@@ -84,7 +84,7 @@ interface WorkCardProps {
 }
 
 
-const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
+const WorkCard: React.FC<WorkCardProps> = ({work}) => {
     // Define the card's inner content. This will be used inside either a <Link> or a <div>.
     const cardBody = (
         <>

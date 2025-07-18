@@ -1,14 +1,15 @@
 declare global {
     interface Window {
-        gtag: (...args: unknown[]) => void;
+        gtag: (...args: any[]) => void;
     }
 }
-import React, { useState } from 'react';
-import { z } from 'zod';
-import { cn } from '../lib/utils';
+//hello
+import React, {useState, useRef} from 'react';
+import {z} from 'zod';
+import {cn} from '../lib/utils';
 import axios from 'axios';
-import { countryData } from './countryData';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import {countryData} from './countryData';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Swal from 'sweetalert2'; // Import SweetAlert2
 
 // Zod validation schema
@@ -92,7 +93,7 @@ const budgetOptions = [
 
 // Generate country options from countryData
 const countryOptions = [
-    { value: '', label: 'Select a country' },
+    {value: '', label: 'Select a country'},
     ...countryData.map(country => ({
         value: country.code.toLowerCase(),
         label: `${country.name} (${country.code})`
@@ -125,8 +126,8 @@ const IndexContactForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [responseMessage, setResponseMessage] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
-    // Get the v3 execute function from the hook
-    const { executeRecaptcha } = useGoogleReCaptcha();
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+    const recaptchaRef = useRef<ReCAPTCHA>(null);
 
     // Function to show SweetAlert2 errors
     const showErrorAlert = (errors: FormErrors) => {
@@ -183,7 +184,7 @@ const IndexContactForm: React.FC = () => {
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -259,37 +260,29 @@ const IndexContactForm: React.FC = () => {
             return;
         }
 
-        if (!executeRecaptcha) {
-            console.error("reCAPTCHA has not loaded");
-            showErrorMessage("reCAPTCHA is not ready. Please try again.");
+        if (!recaptchaToken) {
+            const recaptchaError = {recaptcha: 'Please complete the ReCAPTCHA challenge.'};
+            setErrors(prev => ({...prev, ...recaptchaError}));
+            showErrorAlert(recaptchaError);
             return;
         }
 
         setIsSubmitting(true);
         setResponseMessage(null);
 
-        // Get the reCAPTCHA token just before submitting the form
-        const token = await executeRecaptcha('contactForm');
-
         const dataToSend = {
             ...formData,
-            recaptchaToken: token, // This token MUST be verified on your backend
-            // access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY, // This is for web3forms and not needed for your own backend
+            access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "7606fa07-b450-4219-b7bb-5e78bdfc5897", // Use environment variable
             subject: `New Contact Form Submission from ${formData.fullName}`,
             from_name: "DataDaur",
         };
 
         try {
-            // This now points to your backend server.
-            // During development, this will be proxied by Vite.
-            // In production, Vercel will route this to your serverless function.
-            const response = await axios.post('/api/contact', dataToSend);
+            const response = await axios.post('https://api.web3forms.com/submit', dataToSend);
 
-            // NOTE: The above request to web3forms will likely fail because it's not
-            // set up to verify a v3 token. The code below assumes you've switched
             if (response.data.success) {
                 const successMessage = 'Thank you! Your message has been sent successfully.';
-                setResponseMessage({ type: 'success', message: successMessage });
+                setResponseMessage({type: 'success', message: successMessage});
                 showSuccessAlert(successMessage);
 
                 if (window.gtag) {
@@ -304,15 +297,17 @@ const IndexContactForm: React.FC = () => {
                     country: '', city: '', interests: [], budget: '', projectDescription: ''
                 });
                 setErrors({});
+                recaptchaRef.current?.reset();
+                setRecaptchaToken(null);
             } else {
                 const errorMessage = response.data.message || 'An error occurred. Please try again.';
-                setResponseMessage({ type: 'error', message: errorMessage });
+                setResponseMessage({type: 'error', message: errorMessage});
                 showErrorMessage(errorMessage);
             }
         } catch (error) {
             console.error("Form submission error:", error);
             const errorMessage = 'An error occurred while sending the form. Please try again later.';
-            setResponseMessage({ type: 'error', message: errorMessage });
+            setResponseMessage({type: 'error', message: errorMessage});
             showErrorMessage(errorMessage);
         } finally {
             setIsSubmitting(false);
@@ -654,7 +649,8 @@ const IndexContactForm: React.FC = () => {
                     )}
 
                     <p className="text-xs text-gray-500 mt-2 font-outfit">
-                        This is the minimum starting price for any project. The final price will be determined based on the project scope and timelines
+                        This is the minimum starting price for any project. The final price will be determined based on
+                        the project scope and timelines
                     </p>
                 </div>
 
@@ -676,7 +672,7 @@ const IndexContactForm: React.FC = () => {
                         className={cn(
                             "w-full px-4 py-3 rounded-lg border transition-colors duration-200 resize-none",
                             "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent","custom-scrollbar",
+                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent", "custom-scrollbar",
                             errors.projectDescription && "border-red-500 focus:ring-red-500"
                         )}
                     />
@@ -685,10 +681,23 @@ const IndexContactForm: React.FC = () => {
                     )}
                 </div>
 
-                {/*
-                  With reCAPTCHA v3, there is no visible component to render.
-                  The reCAPTCHA badge will appear in the bottom-right corner automatically.
-                */}
+                {/* ReCAPTCHA component */}
+                <div className="pt-2 flex flex-col items-center">
+                    <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "YOUR_FALLBACK_SITE_KEY"}
+                        onChange={(token) => {
+                            setRecaptchaToken(token);
+                            if (errors.recaptcha) {
+                                setErrors(prev => ({...prev, recaptcha: ''}));
+                            }
+                        }}
+                        onExpired={() => setRecaptchaToken(null)}
+                    />
+                    {errors.recaptcha && (
+                        <p className="mt-1 text-sm text-red-600">{errors.recaptcha}</p>
+                    )}
+                </div>
 
                 {/* Submit Button and Response Message */}
                 <div className="flex flex-col items-center gap-4">

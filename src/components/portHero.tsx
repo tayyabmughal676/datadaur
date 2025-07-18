@@ -20,7 +20,8 @@ const PortHero = () => {
                             <span className="text-[#604CC3]/60 block">
                                 Crafted Experiences,
                             </span>
-                            <span className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent block">
+                            <span
+                                className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent block">
                                 Clear Results
                             </span>
                         </h1>
