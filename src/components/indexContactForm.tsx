@@ -4,11 +4,11 @@ declare global {
     }
 }
 //hello
-import React, { useState, useRef } from 'react';
-import { z } from 'zod';
-import { cn } from '../lib/utils';
+import React, {useState, useRef} from 'react';
+import {z} from 'zod';
+import {cn} from '../lib/utils';
 import axios from 'axios';
-import { countryData } from './countryData';
+import {countryData} from './countryData';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Swal from 'sweetalert2'; // Import SweetAlert2
 
@@ -93,7 +93,7 @@ const budgetOptions = [
 
 // Generate country options from countryData
 const countryOptions = [
-    { value: '', label: 'Select a country' },
+    {value: '', label: 'Select a country'},
     ...countryData.map(country => ({
         value: country.code.toLowerCase(),
         label: `${country.name} (${country.code})`
@@ -184,7 +184,7 @@ const IndexContactForm: React.FC = () => {
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
+        const {name, value} = e.target;
         setFormData(prev => ({
             ...prev,
             [name]: value
@@ -261,8 +261,8 @@ const IndexContactForm: React.FC = () => {
         }
 
         if (!recaptchaToken) {
-            const recaptchaError = { recaptcha: 'Please complete the ReCAPTCHA challenge.' };
-            setErrors(prev => ({ ...prev, ...recaptchaError }));
+            const recaptchaError = {recaptcha: 'Please complete the ReCAPTCHA challenge.'};
+            setErrors(prev => ({...prev, ...recaptchaError}));
             showErrorAlert(recaptchaError);
             return;
         }
@@ -282,7 +282,7 @@ const IndexContactForm: React.FC = () => {
 
             if (response.data.success) {
                 const successMessage = 'Thank you! Your message has been sent successfully.';
-                setResponseMessage({ type: 'success', message: successMessage });
+                setResponseMessage({type: 'success', message: successMessage});
                 showSuccessAlert(successMessage);
 
                 if (window.gtag) {
@@ -301,13 +301,13 @@ const IndexContactForm: React.FC = () => {
                 setRecaptchaToken(null);
             } else {
                 const errorMessage = response.data.message || 'An error occurred. Please try again.';
-                setResponseMessage({ type: 'error', message: errorMessage });
+                setResponseMessage({type: 'error', message: errorMessage});
                 showErrorMessage(errorMessage);
             }
         } catch (error) {
             console.error("Form submission error:", error);
             const errorMessage = 'An error occurred while sending the form. Please try again later.';
-            setResponseMessage({ type: 'error', message: errorMessage });
+            setResponseMessage({type: 'error', message: errorMessage});
             showErrorMessage(errorMessage);
         } finally {
             setIsSubmitting(false);
@@ -649,7 +649,8 @@ const IndexContactForm: React.FC = () => {
                     )}
 
                     <p className="text-xs text-gray-500 mt-2 font-outfit">
-                        This is the minimum starting price for any project. The final price will be determined based on the project scope and timelines
+                        This is the minimum starting price for any project. The final price will be determined based on
+                        the project scope and timelines
                     </p>
                 </div>
 
@@ -671,7 +672,7 @@ const IndexContactForm: React.FC = () => {
                         className={cn(
                             "w-full px-4 py-3 rounded-lg border transition-colors duration-200 resize-none",
                             "bg-gray-50 border-gray-300 font-outfit placeholder-[#757575]",
-                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent","custom-scrollbar",
+                            "focus:outline-none focus:ring-1 focus:ring-[#604CC3] focus:border-transparent", "custom-scrollbar",
                             errors.projectDescription && "border-red-500 focus:ring-red-500"
                         )}
                     />
@@ -688,7 +689,7 @@ const IndexContactForm: React.FC = () => {
                         onChange={(token) => {
                             setRecaptchaToken(token);
                             if (errors.recaptcha) {
-                                setErrors(prev => ({ ...prev, recaptcha: '' }));
+                                setErrors(prev => ({...prev, recaptcha: ''}));
                             }
                         }}
                         onExpired={() => setRecaptchaToken(null)}
