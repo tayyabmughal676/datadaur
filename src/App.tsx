@@ -16,12 +16,19 @@ import {FarooCase} from "./pages/farooCaseStudy.tsx";
 import {NotFound} from "./pages/notFound.tsx";
 import WhatsAppSticky from './components/WhatsAppSticky';
 import {HelmetProvider} from "react-helmet-async";
-
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 function App() {
+
+    const recaptchaV3SiteKey = import.meta.env.VITE_RECAPTCHA_V3_SITE_KEY;
+    if (!recaptchaV3SiteKey) {
+        console.error("Fatal: VITE_RECAPTCHA_V3_SITE_KEY is not defined in .env");
+        return <div>Configuration error: Application cannot start.</div>;
+    }
+
     return (
-        <>
-            <HelmetProvider>
+        <GoogleReCaptchaProvider reCaptchaKey={recaptchaV3SiteKey}>
+        <HelmetProvider>
                 <BrowserRouter>
                     <Routes>
                         <Route index element={<Home/>}/>
@@ -43,7 +50,7 @@ function App() {
                 </BrowserRouter>
                 <WhatsAppSticky/>
             </HelmetProvider>
-        </>
+        </GoogleReCaptchaProvider>
     )
 }
 
