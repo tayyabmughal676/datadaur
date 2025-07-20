@@ -8,8 +8,8 @@ const WhatsAppSticky: React.FC = () => (
     <div
         style={{
             position: 'fixed',
-            bottom: '24px',
-            right: '24px',
+            bottom: '100px',
+            right: '18px',
             zIndex: 1000,
             display: 'flex',
             alignItems: 'center',
