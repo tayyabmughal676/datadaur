@@ -10,7 +10,7 @@ import {Partners} from "./pages/partners.tsx";
 import {Career} from "./pages/career.tsx";
 import {SitemapPage} from "./pages/sitemap.tsx";
 import {SaveInGoldCase} from "./pages/saveInGoldCS.tsx"
-import {SocialProCase} from "./pages/socialproCaseStudy.tsx";
+import {SocialproCase} from "./pages/socialproCaseStudy.tsx";
 import {AllHypeCase} from "./pages/allHypeCaseStudy.tsx";
 import {FarooCase} from "./pages/farooCaseStudy.tsx";
 import {NotFound} from "./pages/notFound.tsx";

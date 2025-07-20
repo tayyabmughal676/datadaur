@@ -24,4 +24,13 @@ export default defineConfig({
     },
   },
   publicDir: 'public',
+  server: {
+    proxy: {
+      // Proxy API requests to your Express server during development
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+    }
+  }
 })
