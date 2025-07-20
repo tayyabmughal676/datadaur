@@ -10,13 +10,13 @@ import {Partners} from "./pages/partners.tsx";
 import {Career} from "./pages/career.tsx";
 import {SitemapPage} from "./pages/sitemap.tsx";
 import {SaveInGoldCase} from "./pages/saveInGoldCS.tsx"
-import {SocialProCase} from "./pages/socialproCaseStudy.tsx";
 import {AllHypeCase} from "./pages/allHypeCaseStudy.tsx";
 import {FarooCase} from "./pages/farooCaseStudy.tsx";
 import {NotFound} from "./pages/notFound.tsx";
 import WhatsAppSticky from './components/WhatsAppSticky';
 import {HelmetProvider} from "react-helmet-async";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import {GoogleReCaptchaProvider} from "react-google-recaptcha-v3";
+import {SocialProCase} from "./pages/socialproCaseStudy.tsx";
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey={recaptchaV3SiteKey}>
-        <HelmetProvider>
+            <HelmetProvider>
                 <BrowserRouter>
                     <Routes>
                         <Route index element={<Home/>}/>
