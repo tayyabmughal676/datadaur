@@ -2,11 +2,11 @@ import React from 'react';
 import {cn} from '../lib/utils';
 import {Link} from 'react-router-dom';
 
-import saveingoldImg from '../assets/saveingold.png';
-import socialproImg from '../assets/socialpro.png';
-import allHypeImg from "../assets/all-hype.png";
-import farooImg from "../assets/faroo.png";
-import arrowIcon from '../assets/arrow-1.svg';
+import saveingoldImg from '../assets/saveingold-banner.png';
+import socialproImg from '../assets/socialpro-banner.png';
+import allHypeImg from "../assets/all-hype-banner.png";
+import farooImg from "../assets/faroo-banner.png";
+import arrowIcon from '../assets/arrow-icon.svg';
 
 interface WorkItem {
     id: number;

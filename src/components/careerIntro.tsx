@@ -1,7 +1,6 @@
-// import React, { useState } from 'react';
 import {cn} from '../lib/utils';
 
-import introImg from '../assets/intro-img.jpg'
+import introImg from '../assets/career-intro-img.jpg'
 
 
 const CareerIntro = () => {

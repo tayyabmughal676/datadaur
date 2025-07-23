@@ -6,7 +6,6 @@ import PaymentOption from "../components/indexPaymentOption.tsx";
 import TeamSection from "../components/indexTeamSection.tsx";
 import ContactForm from "../components/indexContactForm.tsx";
 import WhyDataDaur from "../components/indexWhyDataDaur.tsx";
-// import DataDaurLogoImg from "../components/indexDataDaurImg.tsx";
 import FooterCompo from "../components/footer.tsx";
 import {Helmet} from 'react-helmet-async';
 
@@ -84,7 +83,6 @@ export const Home = () => {
                 <WhyDataDaur/>
                 <TeamSection/>
                 <ContactForm/>
-                {/*<DataDaurLogoImg />*/}
                 <FooterCompo/>
             </div>
         </>

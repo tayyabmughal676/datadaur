@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {cn} from '../lib/utils';
 import logoImg from '../assets/logo-white.svg';
-// import instagramIcon from '../assets/insta-p.svg';
-// import facebookIcon from '../assets/face-p.svg';
-import twitterIcon from '../assets/x-p.svg';
-import linkedinIcon from '../assets/link-p.svg';
-import youtubeIcon from '../assets/you-p.svg';
-import butterflyIcon from '../assets/butter-p.svg';
+import twitterIcon from '../assets/x-purple-logo.svg';
+import linkedinIcon from '../assets/linkedin-purple-logo.svg';
+import youtubeIcon from '../assets/youtube-purple-logo.svg';
+import butterflyIcon from '../assets/bsky-purple-logo.svg';
 
 interface SocialLink {
     href: string;
@@ -26,8 +24,6 @@ interface FooterSection {
 
 const FooterCompo: React.FC = () => {
     const socialLinks: SocialLink[] = [
-        // { href: '#', icon: instagramIcon, label: 'Instagram' },
-        // { href: '#', icon: facebookIcon, label: 'Facebook' },
         {href: 'https://x.com/DataDaur/', icon: twitterIcon, label: 'Twitter'},
         {href: 'https://www.linkedin.com/company/datadaur/?viewAsMember=true', icon: linkedinIcon, label: 'LinkedIn'},
         {href: 'https://www.youtube.com/@DataDaurAISchool', icon: youtubeIcon, label: 'YouTube'},
@@ -41,7 +37,6 @@ const FooterCompo: React.FC = () => {
             {href: '/portfolio', label: 'Portfolio'},
             {href: '/team', label: 'Team'},
             {href: '/about', label: 'About'},
-            // { href: '#', label: 'Case-Study' },
             {href: '/partnership', label: 'Partnership'},
             {href: '/careers', label: 'Careers'},
             {href: '/contact-us', label: 'Contact'},

@@ -1,22 +1,22 @@
 import React from 'react';
 
 import socialproOutcomesImg from "../assets/socialpro-outcomes.svg";
-import existinAppImg from "../assets/existing-app.svg";
-import emojisImg from "../assets/emojis.svg";
-import workflowImg from "../assets/workflow-1.svg";
-import workflowIIImg from "../assets/workflow-2.svg";
-import workflowIIIImg from "../assets/workflow-3.svg";
-import projectDashImg from "../assets/p-dash.png";
-import projectForecastImg from "../assets/forecast.png";
-import projReportImg from "../assets/m-report.png";
-import labourHourImg from "../assets/labor-hour.png";
-import socialSpendImg from "../assets/social-spend.png";
-import localContentImg from "../assets/local-con.png";
-import setting1Img from "../assets/setting-1.svg";
-import setting2Img from "../assets/setting-2.svg";
-import setting3Img from "../assets/setting-3.svg";
-import setting4Img from "../assets/setting-4.svg";
-import thinkImg from "../assets/think-img.svg";
+import existinAppImg from "../assets/analyzing-existing-app.svg";
+import emojisImg from "../assets/mapping-user-journey-socialpro.svg";
+import workflowImg from "../assets/refining-through-teamwork-workflow-1.svg";
+import workflowIIImg from "../assets/refining-through-teamwork-workflow-2.svg";
+import workflowIIIImg from "../assets/refining-through-teamwork-workflow-3.svg";
+import projectDashImg from "../assets/socialpro-project-dashboard.png";
+import projectForecastImg from "../assets/socialpro-forecast.png";
+import projReportImg from "../assets/socialpro-monthly-report.png";
+import labourHourImg from "../assets/socialpro-labor-hour.png";
+import socialSpendImg from "../assets/socialpro-social-spend.png";
+import localContentImg from "../assets/socialpro-local-content.png";
+import setting1Img from "../assets/socialpro-setting-1.svg";
+import setting2Img from "../assets/socialpro-setting-2.svg";
+import setting3Img from "../assets/socialpro-setting-3.svg";
+import setting4Img from "../assets/socialpro-setting-4.svg";
+import thinkImg from "../assets/quotes-img.svg";
 
 
 const SocialProContent: React.FC = () => {
@@ -161,7 +161,7 @@ const SocialProContent: React.FC = () => {
                     <div className="relative">
                         <img
                             src={emojisImg}
-                            alt="Team collaboration"
+                            alt="Mapping The User Journey"
                             className="w-full h-full rounded-2xl transition-transform duration-300 hover:scale-90"
                         />
                     </div>
@@ -170,7 +170,7 @@ const SocialProContent: React.FC = () => {
                 <div className="mb-8 sm:mb-12">
                     <div className="flex items-start gap-2 sm:gap-4 mb-8">
                         <h2 className="font-semibold text-2xl sm:text-3xl lg:text-4xl gradient-text">
-                            Mapping the User Journey
+                            Refining Through Teamwork
                         </h2>
                     </div>
                     <p className="text-black leading-relaxed text-base sm:text-lg lg:text-xl mb-8">
@@ -182,21 +182,21 @@ const SocialProContent: React.FC = () => {
                         <div className="relative">
                             <img
                                 src={workflowImg}
-                                alt="Workflow Phase 1"
+                                alt="Refining Through Teamwork Workflow Phase 1"
                                 className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                         <div className="relative">
                             <img
                                 src={workflowIIImg}
-                                alt="Workflow Phase 2"
+                                alt="Refining Through Teamwork Workflow Phase 2"
                                 className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
                         <div className="relative">
                             <img
                                 src={workflowIIIImg}
-                                alt="Workflow Phase 3"
+                                alt="Refining Through Teamwork Workflow Phase 3"
                                 className="w-full h-auto rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -215,7 +215,7 @@ const SocialProContent: React.FC = () => {
                         <div className=" lg:order-2">
                             <img
                                 src={projectDashImg}
-                                alt="Development & IT Consultations"
+                                alt="SocialPro Project Dashboard"
                                 className="w-full h-auto border-6 border-[#604CC3]/40 rounded-2xl transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -235,7 +235,7 @@ const SocialProContent: React.FC = () => {
                         <div className="lg:order-3">
                             <img
                                 src={projectForecastImg}
-                                alt="AI Agent Development Package"
+                                alt="SocialPro Forecasting"
                                 className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -255,7 +255,7 @@ const SocialProContent: React.FC = () => {
                         <div className="lg:order-6">
                             <img
                                 src={projReportImg}
-                                alt="AI Model Context Protocol MCP Package"
+                                alt="SocialPro Project Reporting"
                                 className="w-full h-full transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -276,7 +276,7 @@ const SocialProContent: React.FC = () => {
                         <div className="lg:order-7">
                             <img
                                 src={labourHourImg}
-                                alt="Mobile Application Development Package"
+                                alt="SocialPro Labour Hour"
                                 className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -295,7 +295,7 @@ const SocialProContent: React.FC = () => {
                         <div className="lg:order-10">
                             <img
                                 src={socialSpendImg}
-                                alt="Website Package"
+                                alt="SocialPro Social Spend"
                                 className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -319,7 +319,7 @@ const SocialProContent: React.FC = () => {
                         <div className="lg:order-11">
                             <img
                                 src={localContentImg}
-                                alt="Maintenance Package"
+                                alt="SocialPro Local Content"
                                 className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -339,7 +339,7 @@ const SocialProContent: React.FC = () => {
                         <div className="lg:order-13">
                             <img
                                 src={socialSpendImg}
-                                alt="Website Package"
+                                alt="SocialPro Report Confirmation"
                                 className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -372,30 +372,31 @@ const SocialProContent: React.FC = () => {
                             <div className="">
                                 <img
                                     src={setting1Img}
-                                    alt="Development & IT Consultations"
+                                    alt="SocialPro Organizational Setting"
                                     className="w-full h-auto transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                             <div className="">
                                 <img
                                     src={setting2Img}
-                                    alt="AI Agent Development Package"
+                                    alt="SocialPro Profile Setting"
                                     className="w-full h-auto transition-transform duration-300 hover:scale-90"
-                                />
-                            </div>
-                            <div className="">
-                                <img
-                                    src={setting3Img}
-                                    alt="AI Model Context Protocol MCP Package"
-                                    className="w-full h-full transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
 
                             <div className="">
                                 <img
                                     src={setting4Img}
-                                    alt="Mobile Application Development Package"
+                                    alt="SocialPro Password Setting"
                                     className="w-full h-auto transition-transform duration-300 hover:scale-90"
+                                />
+                            </div>
+
+                            <div className="">
+                                <img
+                                    src={setting3Img}
+                                    alt="SocialPro User&Premission Setting"
+                                    className="w-full h-full transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
                         </div>

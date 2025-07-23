@@ -3,7 +3,7 @@ import eyeIcon from '../assets/eye-icon.svg';
 import archIcon from '../assets/arch-icon.svg';
 import teamCollaboration from '../assets/story-img.svg';
 
-// Data for the mission/vision cards for easier management
+
 const missionItems = [
     {
         icon: archIcon,

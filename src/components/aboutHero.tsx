@@ -1,6 +1,5 @@
 import ellipseImgBg from "../assets/ellipse.svg";
 
-//hello
 const AboutHero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -19,10 +18,10 @@ const AboutHero = () => {
                     {/* Main Heading */}
                     <div className="space-y-2">
                         <h1 className="font-outfit font-semibold text-3xl sm:text-5xl lg:text-6xl xl:text-6xl leading-tight">
-                                <span className="text-[#604CC3]/60 block"> {/* Changed opacity here */}
+                                <span className="text-[#604CC3]/60 block">
                                     Where
                                     <span
-                                        className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent"> {/* Changed opacity here */}
+                                        className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent">
                                         Vision {''}
                                     </span>
                                     and
@@ -30,7 +29,7 @@ const AboutHero = () => {
 
                             <span className="text-[#604CC3]/60 block">
                                     <span
-                                        className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent"> {/* Changed opacity here */}
+                                        className="bg-gradient-to-r from-[#604CC3] to-[#2E245D] bg-clip-text text-transparent">
                                         Design
                                     </span>
                                 {' '}Intersect

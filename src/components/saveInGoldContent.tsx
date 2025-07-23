@@ -1,13 +1,13 @@
 import React from 'react';
 
-import shuftiproImg from "../assets/shuftipro.svg";
-import existinAppImg from "../assets/existing-app.svg";
-import mobilesGroupImages from "../assets/mobile-group-6.svg";
-import fullAppImages from "../assets/full-app-shots.svg";
-import craditPartIImg from "../assets/credit-part1.svg"
-import craditPartIIImg from "../assets/credit-part-2.svg"
-import craditPartIIIImg from "../assets/credit-part3.svg"
-import thinkImg from "../assets/think-img.svg"
+import shuftiproImg from "../assets/understanding-the-prob-shuftipro.svg";
+import existinAppImg from "../assets/analyzing-existing-app.svg";
+import mobilesGroupImages from "../assets/the-solution-shuftipro.svg";
+import fullAppImages from "../assets/redesign-workflow-saveingold.svg";
+import craditPartIImg from "../assets/debit-card-integration-part1.svg"
+import craditPartIIImg from "../assets/debit-card-integration-part2.svg"
+import craditPartIIIImg from "../assets/debit-card-integration-part3.svg"
+import thinkImg from "../assets/quotes-img.svg"
 
 
 const SaveInGoldContent: React.FC = () => {
@@ -95,7 +95,7 @@ const SaveInGoldContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={shuftiproImg}
-                                    alt="" className=" transition-transform duration-300 hover:scale-90"/>
+                                    alt="Understanding The Problems" className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
                         </div>
                     </div>
@@ -266,12 +266,12 @@ const SaveInGoldContent: React.FC = () => {
                         <div className="relative">
                             <img
                                 src={craditPartIImg}
-                                alt="Old registration flow mobile screens"
+                                alt="Debit Card Integration Part 1"
                                 className="w-full h-auto mb-12 transition-transform duration-300 hover:scale-90"
                             />
                             <img
                                 src={craditPartIIImg}
-                                alt="Old registration flow mobile screens"
+                                alt="Debit Card Integration Part 2"
                                 className="w-full h-auto transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -283,7 +283,7 @@ const SaveInGoldContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={craditPartIIIImg}
-                                    alt="Old registration flow mobile screens"
+                                    alt="Debit Card Integration Part 3"
                                     className="w-full h-auto mb-12 transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
@@ -301,8 +301,8 @@ const SaveInGoldContent: React.FC = () => {
                     <div className="bg-gradient-note border-l-4 border-gradient-primary md:px-12 p-6 sm:p-8 rounded-lg">
                         <div className="flex flex-col md:flex-row gap-6">
                             <div className="flex gap-4 md:flex-col justify-center items-center">
-                                <img src={thinkImg} alt="Think Icons"
-                                     className=" transition-transform duration-300 hover:scale-90"/>
+                                <img src={thinkImg} alt="Quotes Icons"
+                                     className="transition-transform duration-300 hover:scale-90"/>
                             </div>
 
                             <div className="flex-1">

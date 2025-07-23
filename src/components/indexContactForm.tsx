@@ -10,7 +10,7 @@ import {cn} from '../lib/utils';
 import axios from 'axios';
 import {countryData} from './countryData';
 import ReCAPTCHA from 'react-google-recaptcha';
-import Swal from 'sweetalert2'; // Import SweetAlert2
+import Swal from 'sweetalert2';
 
 // Zod validation schema
 const contactFormSchema = z.object({
@@ -71,7 +71,6 @@ interface FormErrors {
     [key: string]: string;
 }
 
-// Define constants outside the component for better performance
 const interestOptions = [
     'AI Agent Development',
     'Software as a Service (SaaS) Development',

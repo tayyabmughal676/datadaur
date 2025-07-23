@@ -1,4 +1,4 @@
-import productLifeImg from '../assets/life-cycle-1.svg';
+import productLifeImg from '../assets/product-life-cycle.svg';
 
 
 const ProductLifeCycle = () => {

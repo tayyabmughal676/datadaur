@@ -1,6 +1,3 @@
-// import { useEffect } from "react";
-// import { setPageTitle } from "../lib/utils";
-
 import Navbar from "../components/navBar.tsx";
 import SocialProHero from "../components/socialproHero.tsx";
 import SocialProContent from "../components/socialProContent.tsx";

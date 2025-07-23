@@ -226,7 +226,7 @@ const FarooContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={farooCreateAccImg}
-                                    alt="Faroo Wireframes"
+                                    alt="Faroo Authentication"
                                     className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
@@ -243,7 +243,7 @@ const FarooContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={farooAccImg}
-                                    alt="Faroo Wireframes"
+                                    alt="Faroo Service Booking System (Pet Owners)"
                                     className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                                 />
                             </div>
@@ -307,7 +307,7 @@ const FarooContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={farooPaymentImg}
-                                    alt="Faroo Wireframes"
+                                    alt="Faroo Payment"
                                     className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                                 />
                             </div>

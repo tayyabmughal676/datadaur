@@ -17,7 +17,7 @@ const SocialProHero = () => {
                 <div className="space-y-6">
                     <div className="space-y-2">
                         <img src={socialProImg} className="flex items-center justify-center overflow-hidden"
-                             alt="Mobile Group"/>
+                             alt="SocialPro Banner Image"/>
                     </div>
                 </div>
 

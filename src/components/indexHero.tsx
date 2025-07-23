@@ -1,5 +1,5 @@
 import ellipseImgBg from "../assets/ellipse.svg";
-import dotsImg from "../assets/dots.svg";
+import dotsImg from "../assets/three-circle-img.svg";
 
 const Hero = () => {
     return (
@@ -40,10 +40,10 @@ const Hero = () => {
                         </p>
                     </div>
 
-                    {/* Right Side (Dots Image): Hidden on mobile, visible on sm and up */}
+                    {/* Right Side (Three Circles Image): Hidden on mobile, visible on sm and up */}
                     <div className="hidden sm:flex relative items-center justify-center lg:justify-end">
                         <div className="relative w-full max-w-md lg:max-w-lg xl:max-w-xl">
-                            <img src={dotsImg} alt="dots image" className="w-full h-full object-cover"/>
+                            <img src={dotsImg} alt="Three Circle Image" className="w-full h-full object-cover"/>
                         </div>
                     </div>
                 </div>

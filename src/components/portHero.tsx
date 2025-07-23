@@ -1,6 +1,6 @@
 import ellipseImgBg from "../assets/ellipse.svg";
 
-//hello
+
 const PortHero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
