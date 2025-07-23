@@ -1,5 +1,5 @@
 import ellipseImgBg from "../assets/ellipse.svg";
-import farooGroupImg from "../assets/faroo.png"
+import farooGroupImg from "../assets/faroo-banner.png"
 
 const FarooHero = () => {
     return (
@@ -17,7 +17,7 @@ const FarooHero = () => {
                 <div className="space-y-6">
                     <div className="space-y-2">
                         <img src={farooGroupImg} className="flex items-center justify-center overflow-hidden"
-                             alt="Mobile Group"/>
+                             alt="Faroo Banner"/>
                     </div>
                 </div>
 

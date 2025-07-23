@@ -1,12 +1,12 @@
 import React from 'react';
 import {useState} from 'react';
 import {cn} from '../lib/utils';
-import pyramidImg from '../assets/pyramid.svg';
-import blendImg from '../assets/blend.svg';
-import brainImg from '../assets/brain.svg';
-import flowerImage from '../assets/flower.svg';
-import spinnerImage from '../assets/spinner.svg';
-import wheelImage from '../assets/wheel.svg';
+import devAndITImg from '../assets/dev-&-it-consultations.svg';
+import aiAgentDevImg from '../assets/ai-agent-dev.svg';
+import AIModelContextProtocolImg from '../assets/ai-model-context-protocol.svg';
+import mobileApplicationDevelopmentImg from '../assets/mobile-application-development.svg';
+import websitePackageImg from '../assets/website-package.svg';
+import maintenancePackageImg from '../assets/maintenance-package.svg';
 
 import ServiceOrderModal from './ServiceOrderModal';
 
@@ -48,7 +48,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
                     <div
                         className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl p-4 lg:order-2 transition-transform duration-300 hover:scale-105">
                         <img
-                            src={blendImg}
+                            src={devAndITImg}
                             alt="Development & IT Consultations"
                             className="w-full h-auto p-4"
                         />
@@ -84,7 +84,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
                     <div
                         className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-3 transition-transform duration-300 hover:scale-105">
                         <img
-                            src={brainImg}
+                            src={aiAgentDevImg}
                             alt="AI Agent Development Package"
                             className="w-full h-auto p-4"
                         />
@@ -124,7 +124,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
                     <div
                         className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-6 transition-transform duration-300 hover:scale-105">
                         <img
-                            src={pyramidImg}
+                            src={AIModelContextProtocolImg}
                             alt="AI Model Context Protocol MCP Package"
                             className="w-full h-full p-4"
                         />
@@ -160,7 +160,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
                     <div
                         className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-7 transition-transform duration-300 hover:scale-105">
                         <img
-                            src={flowerImage}
+                            src={mobileApplicationDevelopmentImg}
                             alt="Mobile Application Development Package"
                             className="w-full h-auto p-4"
                         />
@@ -193,7 +193,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
                     <div
                         className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-10 transition-transform duration-300 hover:scale-105">
                         <img
-                            src={spinnerImage}
+                            src={websitePackageImg}
                             alt="Website Package"
                             className="w-full h-auto p-4"
                         />
@@ -224,7 +224,7 @@ const ServiceWeOffer: React.FC<ServiceWeOfferProps> = ({className}) => {
                     <div
                         className="mb-6 sm:mb-8 lg:mb-16 bg-white rounded-3xl shadow-2xl py-10 px-8 lg:order-11 transition-transform duration-300 hover:scale-105">
                         <img
-                            src={wheelImage}
+                            src={maintenancePackageImg}
                             alt="Maintenance Package"
                             className="w-full h-auto p-4"
                         />

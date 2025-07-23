@@ -10,8 +10,8 @@ import asmatWazirImage from '../assets/azmat-wazir.svg';
 import usmanNazirImage from '../assets/usman-nazir.svg';
 import madeehMehmoodImage from '../assets/madeeh-mehmood.svg';
 import haiderImage from '../assets/haider-ali.svg';
-import moazamImage from '../assets/moazam_mughal.svg';
-import ahmedImage from '../assets/ahmad.svg';
+import moazamImage from '../assets/moazam-mughal.svg';
+import ahmedImage from '../assets/ahmad-amir.svg';
 import hussainImage from '../assets/hussain-shahid.svg';
 import signatureImg from '../assets/signature.svg';
 

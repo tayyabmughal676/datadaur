@@ -1,12 +1,12 @@
 import React from 'react';
 
-import jackPerterImg from "../assets/jack-peterson.svg";
-import emmaJohnImg from "../assets/emma-john.svg";
-import userFlowChartImg from "../assets/flow-chart.svg";
-import wireFramesImg from "../assets/wireframes.svg";
+import jackPerterImg from "../assets/allhype-jack-peterson.svg";
+import emmaJohnImg from "../assets/allhype-emma-john.svg";
+import userFlowChartImg from "../assets/allhype-user-flowchart.svg";
+import wireFramesImg from "../assets/allhype-wireframes.svg";
 import allHypeAuthenticationImg from "../assets/all-hype-authentication.svg";
-import myTripCalenderImg from "../assets/my-calender-trip.png";
-import travelModeImg from "../assets/travel-mode.svg";
+import myTripCalenderImg from "../assets/allhype-my-calender-trip.png";
+import travelModeImg from "../assets/allhype-travel-mode.svg";
 import allHypeSelectLocationImg from "../assets/allhype-select-location.svg";
 import allHypeFriendsImg from "../assets/all-hype-friends.svg";
 
@@ -173,7 +173,7 @@ const AllHypeContent: React.FC = () => {
                         <div className="relative">
                             <img
                                 src={userFlowChartImg}
-                                alt="Jack Peterson"
+                                alt="AllHype User Flowchart"
                                 className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -186,7 +186,7 @@ const AllHypeContent: React.FC = () => {
                         <div className="relative">
                             <img
                                 src={wireFramesImg}
-                                alt="Jack Peterson"
+                                alt="AllHype WireFrame"
                                 className="w-full h-auto mb-4 transition-transform duration-300 hover:scale-90"
                             />
                         </div>
@@ -262,7 +262,7 @@ const AllHypeContent: React.FC = () => {
                             <div className="relative">
                                 <img
                                     src={myTripCalenderImg}
-                                    alt="My Trip Calender"
+                                    alt="AllHype My Trip Calender"
                                     className=" transition-transform duration-300 hover:scale-90"/>
                             </div>
                         </div>
@@ -293,7 +293,7 @@ const AllHypeContent: React.FC = () => {
                     <div className="relative">
                         <img
                             src={travelModeImg}
-                            alt="Travel Mode" className="mb-12 transition-transform duration-300 hover:scale-90"/>
+                            alt="AllHype Travel Mode" className="mb-12 transition-transform duration-300 hover:scale-90"/>
                     </div>
 
                     <div className="mb-12">

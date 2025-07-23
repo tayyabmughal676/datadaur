@@ -19,7 +19,7 @@ import reactLogo from '../assets/react.svg';
 
 
 // Import tech icons for second row
-import appliumLogo from '../assets/appiumconf-logo.svg';
+import appiumLogo from '../assets/appiumconf-logo.svg';
 import woocommerceLogo from '../assets/WooCommerce.svg';
 import threeSixtyLogo from '../assets/SOC2-Logo.svg';
 import zapLogo from '../assets/zap-logo.svg';
@@ -60,7 +60,7 @@ const PaymentOptions: React.FC<PaymentOptionsProps> = ({className}) => {
     ];
 
     const secondRowIcons: IconProps[] = [
-        {src: appliumLogo, alt: 'Applium', name: 'applium'},
+        {src: appiumLogo, alt: 'Appium', name: 'appium'},
         {src: woocommerceLogo, alt: 'WooCommerce', name: 'woocommerce'},
         {src: threeSixtyLogo, alt: '360', name: '360'},
         {src: zapLogo, alt: 'Zap', name: 'zap'},

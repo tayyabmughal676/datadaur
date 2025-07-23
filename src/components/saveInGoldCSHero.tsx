@@ -1,5 +1,5 @@
 import ellipseImgBg from "../assets/ellipse.svg";
-import mobileGroup from "../assets/mobile-group.svg"
+import mobileGroup from "../assets/saveingold-banner.svg"
 
 const SaveInGoldHero = () => {
     return (
@@ -17,7 +17,7 @@ const SaveInGoldHero = () => {
                 <div className="space-y-6">
                     <div className="space-y-2">
                         <img src={mobileGroup} className="flex items-center justify-center overflow-hidden"
-                             alt="Mobile Group"/>
+                             alt="Mobile Group Image"/>
                     </div>
                 </div>
 
